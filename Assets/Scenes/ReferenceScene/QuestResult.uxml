@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:VisualElement style="flex-grow: 1; width: 20%;">
+            <ui:VisualElement style="flex-grow: 0; width: 85%; height: 160px; background-color: rgba(72, 72, 72, 0.83); border-top-left-radius: 19px; border-top-right-radius: 19px; border-bottom-right-radius: 19px; border-bottom-left-radius: 19px; -unity-text-align: middle-center; margin-top: 15px; margin-bottom: 15px; margin-left: 15px; margin-right: 15px;">
+                <ui:Label tabindex="-1" text="Задание провалено&#10;Транспорт утерян&#10;Отряд не вернулся&#10;Репутация -987" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(255, 28, 0); font-size: 27px;" />
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-grow: 0; width: 85%; height: 160px; background-color: rgba(72, 72, 72, 0.83); border-top-left-radius: 19px; border-top-right-radius: 19px; border-bottom-right-radius: 19px; border-bottom-left-radius: 19px; -unity-text-align: middle-center; margin-top: 15px; margin-right: 15px; margin-bottom: 15px; margin-left: 15px;">
+                <ui:Label tabindex="-1" text="Задание выполнено&#10;Транспорт в норме&#10;Отряд пострадал&#10;Репутация +32" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(0, 3, 255); font-size: 27px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
