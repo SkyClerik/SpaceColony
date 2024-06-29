@@ -1,41 +1,60 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace AvatarLogic
 {
-    public class StateMashine : MonoBehaviour
+    [System.Serializable]
+    public class StateMashine : ILitleMono
     {
         [SerializeField]
-        private IStateBase _curentState;
-        private IStateBase _defaultState { get; set; }
-        [SerializeField]
-        private Dictionary<Type, IStateBase> _states = new Dictionary<Type, IStateBase>();
-        public Dictionary<Type, IStateBase> States { get => _states; set => _states = value; }
+        private List<StateBase> _states = new List<StateBase>();
 
-        public void SetState(Type type)
+        private StateBase _curentState;
+        private StateBase _defaultState;
+        private CarBehaviour _avatarBehaviour;
+
+        public void SetState(AvatarStateID stateID)
         {
-            _states.TryGetValue(type, out IStateBase state);
-
-            if (state.Previously() == true)
+            foreach (var state in _states)
             {
-                _curentState = state;
+                if (state.stateID == stateID)
+                {
+                    SetCurentState(state);
+                    return;
+                }
+            }
+            SetCurentState(_defaultState);
+        }
+
+        public void Start(GameObject owner)
+        {
+            for (int i = 0; i < _states.Count; i++)
+            {
+                _states[i] = GameObject.Instantiate(_states[i]);
+            }
+
+            if (owner.TryGetComponent(out CarBehaviour avatarBehaviour))
+            {
+                _avatarBehaviour = avatarBehaviour;
+
+                if (_states.Count != 0)
+                {
+                    _defaultState = _states[0];
+                    SetCurentState(_defaultState);
+                }
             }
         }
 
-        private void Update()
+        public void Update()
         {
             _curentState?.Update();
         }
 
-        internal void SetDefault(IStateBase iStateBase)
+        private void SetCurentState(StateBase state)
         {
-            _defaultState = iStateBase;
-
-        }
-        internal void DefaultState()
-        {
-            SetState(_defaultState.GetType());
+            _curentState = state;
+            _curentState?.Init(_avatarBehaviour);
+            _curentState?.Start();
         }
     }
 }

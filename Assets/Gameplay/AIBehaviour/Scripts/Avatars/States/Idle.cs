@@ -1,20 +1,23 @@
+using UnityEngine;
+
 namespace AvatarLogic
 {
-    public class Idle : IStateBase
+    [CreateAssetMenu(fileName = "Idle", menuName = "AI/State/Idle")]
+    public class Idle : StateBase
     {
-        private AvatarBehaviour _avatarData;
-        public Idle(AvatarBehaviour avatarData)
+        private CarBehaviour _avatarBehaviour;
+
+        public override void Init(CarBehaviour avatarBehaviour)
         {
-            _avatarData = avatarData;
+            _avatarBehaviour = avatarBehaviour;
         }
 
-        public bool Previously()
+        public override void Start()
         {
-            // Проверка для корректного запуска состояния, если не пошли то не меняем
-            return true;
+
         }
 
-        public void Update()
+        public override void Update()
         {
 
         }

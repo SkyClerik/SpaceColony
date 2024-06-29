@@ -1,0 +1,16 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Screen" style="flex-grow: 1; align-items: center; justify-content: center; align-self: center; flex-direction: row;">
+        <ui:VisualElement style="flex-grow: 1; align-items: flex-end; width: 10%;">
+            <ui:Button text="Описание" parse-escape-sequences="true" display-tooltip-when-elided="true" style="height: 175px; width: 32px; white-space: normal;" />
+            <ui:Button text="Задания" parse-escape-sequences="true" display-tooltip-when-elided="true" style="height: 175px; width: 32px; white-space: normal;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Window" picking-mode="Ignore" style="flex-grow: 0; position: relative; width: 80%; height: 644px; border-left-color: rgba(58, 58, 58, 0.94); border-right-color: rgba(58, 58, 58, 0.94); border-top-color: rgba(58, 58, 58, 0.94); border-bottom-color: rgba(58, 58, 58, 0.94); background-color: rgba(48, 48, 48, 0.98);">
+            <ui:VisualElement name="Header" style="flex-grow: 0; flex-direction: row; justify-content: space-between; align-items: center; align-self: auto; height: 128px;">
+                <ui:Label tabindex="-1" text="Название здания" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 72px; -unity-font-style: bold; color: rgb(255, 255, 255); -unity-text-align: middle-left; white-space: nowrap;" />
+                <ui:Button text="Отмена" parse-escape-sequences="true" display-tooltip-when-elided="true" name="QuitButton" style="color: rgb(238, 52, 0); -unity-font-style: bold; font-size: 23px; background-color: rgb(82, 82, 82); border-left-color: rgb(255, 126, 0); border-right-color: rgb(255, 126, 0); border-top-color: rgb(255, 126, 0); border-bottom-color: rgb(255, 126, 0);" />
+            </ui:VisualElement>
+            <ui:Label tabindex="-1" text="Описание здания. Зачем нужно. Важные события связанные с ним." parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); -unity-font-style: bold; font-size: 53px; white-space: normal;" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; width: 10%;" />
+    </ui:VisualElement>
+</ui:UXML>

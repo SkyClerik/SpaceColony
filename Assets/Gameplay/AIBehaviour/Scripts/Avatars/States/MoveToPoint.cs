@@ -4,62 +4,42 @@ using UnityEngine.AI;
 
 namespace AvatarLogic
 {
-    internal class MoveToPoint : IStateBase
+    [CreateAssetMenu(fileName = "MoveToPoint", menuName = "AI/State/MoveToPoint")]
+    internal class MoveToPoint : StateBase
     {
-        private AvatarBehaviour _avatarData;
-        private float _timer = -1f;
-        private float _currectTime = 0f;
-        private bool _isWait
+        private CarBehaviour _carBehaviour;
+
+        private Vector3 _nextPosition;
+        private int _currentCornerIndex;
+
+        private const int _valueZero = 0;
+        private const int _valueOne = 1;
+
+        public override void Init(CarBehaviour avatarBehaviour)
         {
-            get
-            {
-                if (_timer == 0)
-                    return false;
-
-                if (_currectTime >= _timer)
-                {
-                    _currectTime = 0f;
-                    _timer = -1;
-                    return false;
-                }
-
-                if (_timer > 0)
-                    _currectTime += Time.deltaTime;
-
-                return true;
-            }
+            _carBehaviour = avatarBehaviour;
         }
 
-        public MoveToPoint(AvatarBehaviour avatarData)
+        public override void Start()
         {
-            _avatarData = avatarData;
-            _avatarData.NavMeshAgent.stoppingDistance = 0.2f;
+            _carBehaviour.NavMeshAgent.SetDestination(_carBehaviour.MoveDestination.position);
         }
 
-        public bool Previously()
+        public override void Update()
         {
-            return true;
-        }
-
-        public void Update()
-        {
-            if (_avatarData.NavMeshAgent.enabled == false)
+            if (_carBehaviour.NavMeshAgent.enabled == false)
                 return;
 
             MoveToTargetOrStop();
-            FindClosesEdgeEverySecond();
+            FindClosesEdge();
         }
 
-        private void FindClosesEdgeEverySecond()
+        private void FindClosesEdge()
         {
-            if (_isWait == true)
-                return;
-
-            if (NavMesh.FindClosestEdge(_avatarData.NavMeshAgent.destination, out NavMeshHit hit, NavMesh.AllAreas) == false)
+            if (NavMesh.FindClosestEdge(_carBehaviour.NavMeshAgent.destination, out NavMeshHit hit, NavMesh.AllAreas) == false)
             {
                 MoveEnd();
             }
-            _timer = 1f;
         }
 
         private void MoveToTargetOrStop()
@@ -70,20 +50,23 @@ namespace AvatarLogic
             }
             else
             {
-                _avatarData.SetRotation(_avatarData.NavMeshAgent.destination);
-                _avatarData.NavMeshAgent.velocity = _avatarData.transform.forward * _avatarData.NavMeshAgent.speed;
+                _currentCornerIndex = _carBehaviour.NavMeshAgent.path.corners.Length > _valueOne ? _valueOne : _valueZero;
+                _nextPosition = _carBehaviour.NavMeshAgent.path.corners[_currentCornerIndex];
+                _carBehaviour.SetRotation(_nextPosition, _carBehaviour.NavMeshAgent.angularSpeed);
             }
         }
 
         private void MoveEnd()
         {
-            _avatarData.NavMeshAgent.ResetPath();
+            _carBehaviour.NavMeshAgent?.ResetPath();
+            Debug.Log($"Машина достигла цели", _carBehaviour.gameObject);
+            _carBehaviour.EndMoveToPoin();
         }
 
         private bool DistanceLessStoppingDistance()
         {
-            float distance = (_avatarData.NavMeshAgent.destination - _avatarData.transform.position).magnitude;
-            if (distance <= _avatarData.NavMeshAgent.stoppingDistance)
+            float distance = (_carBehaviour.NavMeshAgent.destination - _carBehaviour.transform.position).magnitude;
+            if (distance <= _carBehaviour.NavMeshAgent.stoppingDistance)
                 return true;
 
             return false;
