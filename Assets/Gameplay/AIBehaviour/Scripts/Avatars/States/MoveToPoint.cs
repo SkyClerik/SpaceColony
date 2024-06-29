@@ -15,9 +15,9 @@ namespace AvatarLogic
         private const int _valueZero = 0;
         private const int _valueOne = 1;
 
-        public override void Init(CarBehaviour avatarBehaviour)
+        public override void Init(CarBehaviour carBehaviour)
         {
-            _carBehaviour = avatarBehaviour;
+            _carBehaviour = carBehaviour;
         }
 
         public override void Start()
@@ -58,7 +58,6 @@ namespace AvatarLogic
 
         private void MoveEnd()
         {
-            _carBehaviour.NavMeshAgent?.ResetPath();
             Debug.Log($"Машина достигла цели", _carBehaviour.gameObject);
             _carBehaviour.EndMoveToPoin();
         }

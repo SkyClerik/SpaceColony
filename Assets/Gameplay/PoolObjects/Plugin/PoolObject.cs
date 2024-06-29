@@ -1,9 +1,12 @@
 using UnityEngine;
 
-public class PoolObject : MonoBehaviour, IPoolObject
+namespace PoolObjectSystem
 {
-    public void SetActiveObject(bool active)
+    public class PoolObject : MonoBehaviour, IPoolObject
     {
-        //Debug.Log($"Создан объект");
+        public void SetActiveObject(bool active)
+        {
+            //Debug.Log($"Создан объект");
+        }
     }
 }

@@ -14,7 +14,6 @@ namespace Gameplay
         private CarBehaviour _carInMission;
 
         public QuestData QuestData => _questData;
-
         public Transform ParkingPosition => _parkingPosition;
 
         public void SetProgress(bool progress) => _inProgress = progress;
@@ -39,6 +38,15 @@ namespace Gameplay
                 _carInMission.MoveToQuest(this, ParkingPosition);
                 _inProgress = true;
             }
+        }
+
+        public void MissionFinished()
+        {
+            SetProgress(false);
+
+            Guild.Instance.AddReputation(_questData.AddReputation);
+            //TODO Reputation add OR REMOVE
+            //Guild.Instance.AddReputation(-_questData.RemoveReputation);
         }
     }
 }

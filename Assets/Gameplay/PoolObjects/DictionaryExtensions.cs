@@ -1,22 +1,25 @@
 using System.Collections.Generic;
 
-public static class DictionaryExtensions
+namespace PoolObjectSystem
 {
-    public static TKey[] Shuffle<TKey, TValue>(
-       this Dictionary<TKey, TValue> source)
+    public static class DictionaryExtensions
     {
-        System.Random r = new System.Random();
-        TKey[] wviTKey = new TKey[source.Count];
-        source.Keys.CopyTo(wviTKey, 0);
-
-        for (int i = wviTKey.Length; i > 1; i--)
+        public static TKey[] Shuffle<TKey, TValue>(
+           this Dictionary<TKey, TValue> source)
         {
-            int k = r.Next(i);
-            TKey temp = wviTKey[k];
-            wviTKey[k] = wviTKey[i - 1];
-            wviTKey[i - 1] = temp;
-        }
+            System.Random r = new System.Random();
+            TKey[] wviTKey = new TKey[source.Count];
+            source.Keys.CopyTo(wviTKey, 0);
 
-        return wviTKey;
+            for (int i = wviTKey.Length; i > 1; i--)
+            {
+                int k = r.Next(i);
+                TKey temp = wviTKey[k];
+                wviTKey[k] = wviTKey[i - 1];
+                wviTKey[i - 1] = temp;
+            }
+
+            return wviTKey;
+        }
     }
 }

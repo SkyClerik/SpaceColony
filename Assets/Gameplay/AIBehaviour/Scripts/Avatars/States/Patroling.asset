@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca1d4685c3b8a924aa70c1fcfca30e8d, type: 3}
   m_Name: Patroling
   m_EditorClassIdentifier: 
-  stateID: 0
+  stateID: 2
   _patrolingRadius: 10

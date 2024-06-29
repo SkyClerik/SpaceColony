@@ -1,4 +1,5 @@
 using AvatarLogic;
+using PoolObjectSystem;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,16 +16,12 @@ public class CarController : Singleton<CarController>
 
     public bool TryFindFreeCar(out CarBehaviour carBehaviour)
     {
-        foreach (var car in _cars)
+        var car = BasePooler.Instance.Get(PoolObjectID.Car);
+        if (car.TryGetComponent(out carBehaviour))
         {
-            if (car.Busy)
-                continue;
-
-            carBehaviour = car;
             return true;
         }
 
-        carBehaviour = null;
         return false;
     }
 }

@@ -1,97 +1,103 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasePooler : Singleton<BasePooler>
+namespace PoolObjectSystem
 {
-    [SerializeField]
-    private List<ObjectInfo> _bulletObjects;
-    private Dictionary<string, BaseObjectPool> _bulletPool = new();
-
-    private void Start()
+    public class BasePooler : Singleton<BasePooler>
     {
-        foreach (var obj in _bulletObjects)
-            _bulletPool.Add(obj.GetPrefab.name, new BaseObjectPool(obj.GetAmount, obj.GetPrefab));
-    }
+        [SerializeField]
+        private List<ObjectInfo> _prefabs;
+        private Dictionary<PoolObjectID, BaseObjectPool> _objectPool = new();
 
-    public GameObject Get(string id)
-    {
-        if (_bulletPool.TryGetValue(id, out BaseObjectPool carPool))
-            return carPool.Get();
+        public List<ObjectInfo> GetPrefabs => _prefabs;
 
-        return null;
-    }
-
-    public GameObject GetRandom(IPoolObject type)
-    {
-        string[] myShufledKeys;
-        BaseObjectPool myShufledValue = null;
-
-        //Debug.LogError($"type : {type.GetType()}");
-
-        if (type.ToString() is "Bullet")
+        private void Start()
         {
-            myShufledKeys = _bulletPool.Shuffle();
-            myShufledValue = _bulletPool[myShufledKeys[0]];
+            foreach (var obj in _prefabs)
+                _objectPool.Add(obj.GetPoolID, new BaseObjectPool(obj.GetAmount, obj.GetPrefab));
         }
 
-        return myShufledValue.Get();
-    }
-}
-
-[System.Serializable]
-public class BaseObjectPool
-{
-    private GameObject _default;
-    public List<GameObject> Objects = new List<GameObject>();
-
-    public BaseObjectPool(int count, GameObject prefab)
-    {
-        _default = prefab;
-        for (int i = 0; i < count; i++)
-            Objects.Add(CreateNewObject());
-    }
-
-    public GameObject CreateNewObject()
-    {
-        var obj = GetInstantiate(_default);
-        obj.GetComponent<IPoolObject>().SetActiveObject(false);
-        Objects.Add(obj);
-        return obj;
-    }
-
-    private GameObject GetInstantiate(GameObject prefab)
-    {
-        var obj = Object.Instantiate(prefab);
-        obj.name = prefab.name;
-        return obj;
-    }
-
-    public GameObject Get()
-    {
-        foreach (var go in Objects)
+        public GameObject Get(PoolObjectID poolObjectID)
         {
-            if (go.activeInHierarchy == false)
+            if (_objectPool.TryGetValue(poolObjectID, out BaseObjectPool carPool))
+                return carPool.Get();
+
+            return null;
+        }
+
+        public GameObject GetRandom(PoolObjectID poolObjectID)
+        {
+            PoolObjectID[] myShufledKeys;
+            BaseObjectPool myShufledValue = null;
+
+            if (poolObjectID is PoolObjectID.bullet)
             {
-                go.transform.parent = null;
-                return go;
+                myShufledKeys = _objectPool.Shuffle();
+                myShufledValue = _objectPool[myShufledKeys[0]];
             }
+
+            return myShufledValue.Get();
         }
-        var newGO = CreateNewObject();
-        newGO.transform.parent = null;
-        return newGO;
     }
-}
 
-[System.Serializable]
-public struct ObjectInfo
-{
-    [SerializeField]
-    private GameObject _prefab;
-    private string _id;
-    [SerializeField]
-    private int _amount;
+    [System.Serializable]
+    public class BaseObjectPool
+    {
+        private GameObject _default;
+        public List<GameObject> Objects = new List<GameObject>();
 
-    public GameObject GetPrefab => _prefab;
-    public string GetId => _id;
-    public int GetAmount => _amount;
+        public BaseObjectPool(int count, GameObject prefab)
+        {
+            _default = prefab;
+            for (int i = 0; i < count; i++)
+                Objects.Add(CreateNewObject());
+        }
+
+        public GameObject CreateNewObject()
+        {
+            var obj = GetInstantiate(_default);
+            obj.GetComponent<IPoolObject>().SetActiveObject(false);
+            Objects.Add(obj);
+            return obj;
+        }
+
+        private GameObject GetInstantiate(GameObject prefab)
+        {
+            var obj = Object.Instantiate(prefab);
+            obj.name = prefab.name;
+            return obj;
+        }
+
+        public GameObject Get()
+        {
+            foreach (var go in Objects)
+            {
+                if (go.activeInHierarchy == false)
+                {
+                    go.transform.parent = null;
+                    return go;
+                }
+            }
+            var newGO = CreateNewObject();
+            newGO.transform.parent = null;
+            return newGO;
+        }
+    }
+
+    [System.Serializable]
+    public class ObjectInfo
+    {
+        [SerializeField]
+        private GameObject _prefab;
+        [SerializeField]
+        private PoolObjectID _id;
+        [SerializeField]
+        private int _amount;
+
+        public GameObject GetPrefab => _prefab;
+        public PoolObjectID GetPoolID => _id;
+        public int GetAmount => _amount;
+
+        public void SetPoolID(byte i) => _id = (PoolObjectID)i;
+    }
 }

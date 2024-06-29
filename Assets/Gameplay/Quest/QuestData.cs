@@ -8,6 +8,8 @@ namespace Gameplay
         public string Title;
         [TextArea]
         public string Description;
+        public int AddReputation;
+        public int RemoveReputation;
 
         public byte[] onlyDates = new byte[30];
 

@@ -42,12 +42,13 @@ namespace AvatarLogic
         {
             _busy = true;
             _destination = targetPosition;
+            _stateMashine.Start(gameObject);
             _stateMashine.SetState(stateID: AvatarStateID.MoveToPoint);
         }
 
         public void MoveToQuest(Quest quest, Transform targetPosition)
         {
-            ResetCar(Guild.Instance.PparkingPosition);
+            ResetCar(Guild.Instance.ParkingPosition);
             _questInProcess = quest;
             MoveToPoint(targetPosition);
         }
@@ -55,9 +56,9 @@ namespace AvatarLogic
         public void MoveToGuild()
         {
             ResetCar(_questInProcess.ParkingPosition);
-            _questInProcess.SetProgress(false);
+            _questInProcess.MissionFinished();
             _questInProcess = null;
-            MoveToPoint(Guild.Instance.PparkingPosition);
+            MoveToPoint(Guild.Instance.ParkingPosition);
         }
 
         public void EndMoveToPoin()
@@ -72,7 +73,6 @@ namespace AvatarLogic
         {
             _busy = false;
             Debug.Log($"Машина вернулась на базу", gameObject);
-            //TODO убрать в pool
             gameObject.SetActive(false);
         }
 

@@ -11,7 +11,9 @@ namespace AvatarLogic
 
         private StateBase _curentState;
         private StateBase _defaultState;
-        private CarBehaviour _avatarBehaviour;
+        private CarBehaviour _carBehaviour;
+
+        private bool _isReady;
 
         public void SetState(AvatarStateID stateID)
         {
@@ -28,6 +30,9 @@ namespace AvatarLogic
 
         public void Start(GameObject owner)
         {
+            if (_isReady)
+                return;
+
             for (int i = 0; i < _states.Count; i++)
             {
                 _states[i] = GameObject.Instantiate(_states[i]);
@@ -35,7 +40,7 @@ namespace AvatarLogic
 
             if (owner.TryGetComponent(out CarBehaviour avatarBehaviour))
             {
-                _avatarBehaviour = avatarBehaviour;
+                _carBehaviour = avatarBehaviour;
 
                 if (_states.Count != 0)
                 {
@@ -43,6 +48,7 @@ namespace AvatarLogic
                     SetCurentState(_defaultState);
                 }
             }
+            _isReady = true;
         }
 
         public void Update()
@@ -53,7 +59,7 @@ namespace AvatarLogic
         private void SetCurentState(StateBase state)
         {
             _curentState = state;
-            _curentState?.Init(_avatarBehaviour);
+            _curentState?.Init(_carBehaviour);
             _curentState?.Start();
         }
     }

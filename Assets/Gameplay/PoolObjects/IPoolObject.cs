@@ -1,4 +1,7 @@
-public interface IPoolObject
+namespace PoolObjectSystem
 {
-    void SetActiveObject(bool active);
+    public interface IPoolObject
+    {
+        void SetActiveObject(bool active);
+    }
 }
