@@ -1,4 +1,5 @@
 using AvatarLogic;
+using PoolObjectSystem;
 using UnityEngine;
 
 namespace Gameplay
@@ -33,10 +34,11 @@ namespace Gameplay
 
         public void SendOnMission()
         {
-            if (CarController.Instance.TryFindFreeCar(out _carInMission))
+            var car = Pool.Instance.Get(PoolObjectID.Car);
+            if (car.TryGetComponent(out CarBehaviour _carInMission))
             {
                 _carInMission.MoveToQuest(this, ParkingPosition);
-                _inProgress = true;
+                SetProgress(true);
             }
         }
 
@@ -44,9 +46,16 @@ namespace Gameplay
         {
             SetProgress(false);
 
-            Guild.Instance.AddReputation(_questData.AddReputation);
-            //TODO Reputation add OR REMOVE
-            //Guild.Instance.AddReputation(-_questData.RemoveReputation);
+            MissionSucces();
+            //MissionFail();
+
+            RemoveQuest();
         }
+
+        private void MissionSucces() => Guild.Instance.AddReputation(_questData.AddReputation);
+
+        private void MissionFail() => Guild.Instance.AddReputation(-_questData.RemoveReputation);
+
+        private void RemoveQuest() => _questData = null;
     }
 }

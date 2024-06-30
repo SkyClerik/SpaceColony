@@ -11,10 +11,13 @@ namespace Gameplay
         public int AddReputation;
         public int RemoveReputation;
 
-        public byte[] onlyDates = new byte[30];
+        public byte[] OnlyDates = new byte[30];
 
-        public bool _onlyDay = false;
-        public bool _onlyNight = false;
+        public bool OnlyDay = false;
+        public bool OnlyNight = false;
+
+        public int HowMuchExperienceNeeded = 10;
+        public int WhatBonusFromProfession = 10;
 
         public Transform ParkingPosition { get; set; }
     }

@@ -1,0 +1,60 @@
+.mini-header {
+    flex-grow: 1;
+    flex-shrink: 0;
+    font-size: 18px;
+}
+
+.main-header {
+    flex-grow: 0;
+    font-size: 50px;
+}
+
+.visual-icon-container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+    background-color: rgb(14, 14, 14);
+    border-width: 1px;
+    border-color: rgb(75, 75, 75);
+    -unity-background-scale-mode: scale-to-fit;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+.visual-icon {
+    -unity-background-scale-mode: scale-to-fit;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    flex-shrink: 1;
+    flex-grow: 0;
+}
+
+.slot-icon {
+    height: 48px;
+    width: 48px;
+    background-image: none;
+    -unity-background-scale-mode: scale-to-fit;
+    border-width: 1px;
+    border-color: rgb(75, 75, 75);
+}
+
+.slot-icon-highlighted {
+    border-width: 1px;
+    border-color: rgb(202, 158, 0);
+    transform-origin: center;
+    position: absolute;
+    visibility: hidden;
+}

@@ -8,10 +8,8 @@ namespace PoolObjectSystem
     public class PoolEnumBuilderEditor : Editor
     {
         private PoolEnumBuilder _target;
-
         private string _allText;
         private string _objectsNames;
-
 
         private void OnEnable()
         {
@@ -28,14 +26,15 @@ namespace PoolObjectSystem
 
                 for (int i = 0; i < _target.GameObjects.Count; i++)
                 {
-                    _objectsNames += $"{_target.GameObjects[i].name} = {i},\n";
+                    var name = _target.GameObjects[i].name.Replace(" ", "");
+                    _objectsNames += $"{name} = {i},\n";
                 }
                 _allText = $"public enum PoolObjectID : byte\r\n{{\n{_objectsNames}}}";
 
                 string filePath = AssetDatabase.GetAssetPath(_target.TextAsset);
                 File.WriteAllText(filePath, _allText);
             }
-
+            EditorUtility.SetDirty(_target.TextAsset);
             EditorUtility.SetDirty(_target);
         }
     }

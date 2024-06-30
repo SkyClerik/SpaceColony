@@ -1,0 +1,23 @@
+.close_item_box {
+    width: 32px;
+    height: 32px;
+    background-color: rgb(64, 63, 64);
+    flex-shrink: 0;
+    -unity-background-scale-mode: stretch-to-fill;
+    border-left-color: rgb(103, 103, 103);
+    border-right-color: rgb(103, 103, 103);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(0, 0, 0);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    margin-top: 8px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    margin-left: 8px;
+}
+
+.window_background {
+    background-color: rgb(49, 48, 49);
+}

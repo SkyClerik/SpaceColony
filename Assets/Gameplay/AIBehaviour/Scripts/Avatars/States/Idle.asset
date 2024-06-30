@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 119a86bf8698a324f8328b7ff950274b, type: 3}
   m_Name: Idle
   m_EditorClassIdentifier: 
-  stateID: 0
+  stateID: 2

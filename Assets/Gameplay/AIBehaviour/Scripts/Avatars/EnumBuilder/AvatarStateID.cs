@@ -1,6 +1,6 @@
 public enum AvatarStateID : byte
 {
-Idle = 0,
-MoveToPoint = 1,
-Patroling = 2,
+MoveToPoint = 0,
+Patroling = 1,
+Idle = 2,
 }

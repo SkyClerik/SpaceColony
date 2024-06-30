@@ -1,16 +1,17 @@
+using System;
 using UnityEditor;
 using UnityEngine;
 
 namespace PoolObjectSystem
 {
-    [CustomEditor(typeof(BasePooler))]
+    [CustomEditor(typeof(Pool))]
     public class BasePoolerEditor : Editor
     {
-        private BasePooler _target;
+        private Pool _target;
 
         private void OnEnable()
         {
-            _target = target as BasePooler;
+            _target = target as Pool;
         }
 
         public override void OnInspectorGUI()
@@ -24,7 +25,12 @@ namespace PoolObjectSystem
             {
                 for (int i = 0; i < _target.GetPrefabs.Count; i++)
                 {
-                    _target.GetPrefabs[i].SetPoolID((byte)i);
+                    foreach (var id in Enum.GetValues(typeof(PoolObjectID)))
+                    {
+                        var name = _target.GetPrefabs[i].GetPrefab.name.Replace(" ", "");
+                        if (id.ToString() == name)
+                            _target.GetPrefabs[i].SetPoolID((PoolObjectID)id);
+                    }
                 }
             }
 

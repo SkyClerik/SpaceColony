@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
@@ -8,7 +9,6 @@ namespace AvatarLogic
     public class EnumBuilderEditor : Editor
     {
         private EnumBuilder _target;
-
         private string _resultText;
         private string _objectsNames;
 
@@ -33,7 +33,8 @@ namespace AvatarLogic
 
                 for (int i = 0; i < _target.States.Count; i++)
                 {
-                    _objectsNames += $"{_target.States[i].name} = {i},\n";
+                    var name = _target.States[i].name.Replace(" ", "");
+                    _objectsNames += $"{name} = {i},\n";
                 }
                 _resultText = $"public enum AvatarStateID : byte\r\n{{\n{_objectsNames}}}";
 
@@ -45,8 +46,15 @@ namespace AvatarLogic
             {
                 for (int i = 0; i < _target.States.Count; i++)
                 {
-                    EditorUtility.SetDirty(_target.States[i]);
-                    _target.States[i].stateID = (AvatarStateID)i;
+                    foreach (var id in Enum.GetValues(typeof(AvatarStateID)))
+                    {
+                        var name = _target.States[i].name.Replace(" ", "");
+                        if (id.ToString() == name)
+                        {
+                            _target.States[i].stateID = (AvatarStateID)id;
+                            EditorUtility.SetDirty(_target.States[i]);
+                        }
+                    }
                 }
             }
 

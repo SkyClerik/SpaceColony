@@ -1,0 +1,64 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; flex-direction: column;">
+        <ui:VisualElement picking-mode="Ignore" name="Line01" style="flex-grow: 0; justify-content: flex-start; flex-direction: column;">
+            <ui:VisualElement picking-mode="Ignore" name="ProgressLine" style="flex-grow: 1; background-color: rgb(255, 102, 0); display: flex; visibility: visible; overflow: visible; height: 5px;" />
+            <ui:ProgressBar value="50" style="flex-grow: 1; height: 5px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; display: none; visibility: hidden; overflow: hidden;" />
+        </ui:VisualElement>
+        <ui:VisualElement picking-mode="Ignore" name="Line02" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; align-items: flex-start; justify-content: space-between;">
+            <ui:VisualElement name="Left" picking-mode="Ignore" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: column; align-items: flex-start; display: flex; visibility: visible; overflow: visible;">
+                <ui:VisualElement name="pivot" style="flex-grow: 1; display: none; visibility: hidden; overflow: hidden;">
+                    <ui:VisualElement name="Money" picking-mode="Ignore" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
+                        <ui:Label tabindex="-1" text="13,154,121,452,452,245" display-tooltip-when-elided="true" name="ReputationValueLabel" style="color: rgb(255, 255, 255); font-size: 30px;" />
+                        <ui:Label tabindex="-1" text="R" display-tooltip-when-elided="true" name="MoneyTypeLabel" style="color: rgb(83, 255, 0); font-size: 30px; -unity-font-style: bold;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="DateElement" picking-mode="Ignore" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
+                        <ui:Label tabindex="-1" text="12 декабря 2022" display-tooltip-when-elided="true" name="DateLabel" style="color: rgb(255, 255, 255); font-size: 20px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Right" picking-mode="Ignore" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: column; align-items: flex-end;">
+                <ui:VisualElement name="pivot" style="flex-grow: 1; display: flex;">
+                    <ui:VisualElement name="ReputationElement" picking-mode="Ignore" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row-reverse;">
+                        <ui:Label tabindex="-1" text="R" display-tooltip-when-elided="true" name="MoneyTypeLabel" style="color: rgb(83, 255, 0); font-size: 30px; -unity-font-style: bold;" />
+                        <ui:Label tabindex="-1" text="35.321.321.31.321" display-tooltip-when-elided="true" name="ReputationValueLabel" style="color: rgb(255, 255, 255); font-size: 30px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="DateElement" picking-mode="Ignore" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row-reverse;">
+                        <ui:Label tabindex="-1" text="12 декабря 2022" display-tooltip-when-elided="true" name="DateLabel" style="color: rgb(255, 255, 255); font-size: 20px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Line03" style="flex-grow: 1; align-items: center; flex-direction: row; justify-content: flex-start;">
+            <ui:VisualElement name="pivot" style="flex-grow: 1; flex-direction: row; justify-content: center; align-self: flex-end; display: flex; flex-shrink: 1;">
+                <ui:VisualElement style="flex-grow: 0; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-top-width: 7px; border-right-width: 7px; border-bottom-width: 7px; border-left-width: 7px; border-top-left-radius: 2px; border-top-right-radius: 2px; border-bottom-right-radius: 2px; border-bottom-left-radius: 2px; width: 150px; height: 200px; flex-direction: column;">
+                    <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Gameplay/HUD/Images/CarRef.png?fileID=2800000&amp;guid=b95b5534400906248809a180966abd4d&amp;type=3#CarRef&quot;); -unity-background-scale-mode: scale-to-fit;" />
+                    <ui:ProgressBar value="22" title="my-progress" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 0; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-top-width: 7px; border-right-width: 7px; border-bottom-width: 7px; border-left-width: 7px; border-top-left-radius: 2px; border-top-right-radius: 2px; border-bottom-right-radius: 2px; border-bottom-left-radius: 2px; width: 150px; height: 200px; flex-direction: column;">
+                    <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Gameplay/HUD/Images/CarRef.png?fileID=2800000&amp;guid=b95b5534400906248809a180966abd4d&amp;type=3#CarRef&quot;); -unity-background-scale-mode: scale-to-fit;" />
+                    <ui:ProgressBar value="22" title="my-progress" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 0; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-top-width: 7px; border-right-width: 7px; border-bottom-width: 7px; border-left-width: 7px; border-top-left-radius: 2px; border-top-right-radius: 2px; border-bottom-right-radius: 2px; border-bottom-left-radius: 2px; width: 150px; height: 200px; flex-direction: column;">
+                    <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Gameplay/HUD/Images/CarRef.png?fileID=2800000&amp;guid=b95b5534400906248809a180966abd4d&amp;type=3#CarRef&quot;); -unity-background-scale-mode: scale-to-fit;" />
+                    <ui:ProgressBar value="22" title="my-progress" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 0; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-top-width: 7px; border-right-width: 7px; border-bottom-width: 7px; border-left-width: 7px; border-top-left-radius: 2px; border-top-right-radius: 2px; border-bottom-right-radius: 2px; border-bottom-left-radius: 2px; width: 150px; height: 200px; flex-direction: column;">
+                    <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Gameplay/HUD/Images/CarRef.png?fileID=2800000&amp;guid=b95b5534400906248809a180966abd4d&amp;type=3#CarRef&quot;); -unity-background-scale-mode: scale-to-fit;" />
+                    <ui:ProgressBar value="22" title="my-progress" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 0; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-top-width: 7px; border-right-width: 7px; border-bottom-width: 7px; border-left-width: 7px; border-top-left-radius: 2px; border-top-right-radius: 2px; border-bottom-right-radius: 2px; border-bottom-left-radius: 2px; width: 150px; height: 200px; flex-direction: column;">
+                    <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Gameplay/HUD/Images/CarRef.png?fileID=2800000&amp;guid=b95b5534400906248809a180966abd4d&amp;type=3#CarRef&quot;); -unity-background-scale-mode: scale-to-fit;" />
+                    <ui:ProgressBar value="22" title="my-progress" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 0; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-top-width: 7px; border-right-width: 7px; border-bottom-width: 7px; border-left-width: 7px; border-top-left-radius: 2px; border-top-right-radius: 2px; border-bottom-right-radius: 2px; border-bottom-left-radius: 2px; width: 150px; height: 200px; flex-direction: column;">
+                    <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Gameplay/HUD/Images/CarRef.png?fileID=2800000&amp;guid=b95b5534400906248809a180966abd4d&amp;type=3#CarRef&quot;); -unity-background-scale-mode: scale-to-fit;" />
+                    <ui:ProgressBar value="22" title="my-progress" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 0; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-top-width: 7px; border-right-width: 7px; border-bottom-width: 7px; border-left-width: 7px; border-top-left-radius: 2px; border-top-right-radius: 2px; border-bottom-right-radius: 2px; border-bottom-left-radius: 2px; width: 150px; height: 200px; flex-direction: column;">
+                    <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Gameplay/HUD/Images/CarRef.png?fileID=2800000&amp;guid=b95b5534400906248809a180966abd4d&amp;type=3#CarRef&quot;); -unity-background-scale-mode: scale-to-fit;" />
+                    <ui:ProgressBar value="22" title="my-progress" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

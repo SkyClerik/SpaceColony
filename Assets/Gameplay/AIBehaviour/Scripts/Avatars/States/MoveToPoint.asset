@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01e514ff9dfa50941845613f0bd3fa04, type: 3}
   m_Name: MoveToPoint
   m_EditorClassIdentifier: 
-  stateID: 1
+  stateID: 0
