@@ -1,0 +1,62 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Develop/QuestEditor/UI/DevelopLobby/DefaultStyle.uss?fileID=7433441132597879392&amp;guid=021ff31015004064d80e1824d746fa3c&amp;type=3#DefaultStyle" />
+    <ui:VisualElement name="canvas" style="flex-grow: 1; align-items: center; justify-content: center;">
+        <ui:VisualElement name="quest_page" style="flex-grow: 0; background-color: rgb(91, 91, 91); border-left-color: rgb(255, 112, 0); border-right-color: rgb(255, 112, 0); border-top-color: rgb(255, 112, 0); border-bottom-color: rgb(255, 112, 0); border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-top-left-radius: 2px; border-top-right-radius: 2px; border-bottom-right-radius: 2px; border-bottom-left-radius: 2px; align-items: flex-start;">
+            <ui:TextField picking-mode="Ignore" label="Заголовок" value="&quot;Заголовок задания&quot;" name="text_field_title" style="width: 600px; justify-content: center; flex-direction: column;" />
+            <ui:TextField picking-mode="Ignore" label="Доп. заголовок" value="Не обязательный заголовок" mask-character="*" name="text_field_pos_title" style="width: 600px; justify-content: center; flex-direction: column;" />
+            <ui:TextField picking-mode="Ignore" value="Основное описание задания." name="text_field_description" label="Текст задания" style="width: 600px; height: 300px; white-space: normal; flex-wrap: wrap; -unity-text-align: upper-left; align-items: stretch; justify-content: center; flex-direction: column;" />
+            <ui:ScrollView style="align-items: stretch;">
+                <ui:VisualElement name="Toggles" style="flex-grow: 1; align-items: flex-start; flex-direction: column; flex-shrink: 1;">
+                    <ui:Toggle label="Грязный" name="dirty_toggle" style="flex-direction: row-reverse; color: rgb(255, 255, 255); -unity-font-style: bold;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Calendar" style="flex-grow: 1; display: none; align-items: center; visibility: visible;">
+                    <ui:VisualElement name="Space" style="flex-grow: 1; height: 20px;" />
+                    <ui:Toggle label="По числам" style="flex-direction: row-reverse; color: rgb(255, 255, 255); -unity-font-style: bold;" />
+                    <ui:VisualElement name="VisualElement" style="flex-grow: 0;">
+                        <ui:VisualElement style="flex-grow: 0; flex-direction: row; justify-content: center; align-items: center;">
+                            <ui:Button text="1" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 1;" />
+                            <ui:Button text="2" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 1;" />
+                            <ui:Button text="3" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 1;" />
+                            <ui:Button text="4" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 1;" />
+                            <ui:Button text="5" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 1;" />
+                            <ui:Button text="6" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 1;" />
+                            <ui:Button text="7" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 1;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="flex-grow: 0; flex-direction: row; justify-content: center; align-items: center;">
+                            <ui:Button text="8" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 1;" />
+                            <ui:Button text="9" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 1;" />
+                            <ui:Button text="10" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 1;" />
+                            <ui:Button text="11" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 1;" />
+                            <ui:Button text="12" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 1;" />
+                            <ui:Button text="13" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 1;" />
+                            <ui:Button text="14" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 1;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="flex-grow: 0; flex-direction: row; justify-content: center; align-items: center;">
+                            <ui:Button text="15" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 1;" />
+                            <ui:Button text="16" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 1;" />
+                            <ui:Button text="17" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 1;" />
+                            <ui:Button text="18" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 1;" />
+                            <ui:Button text="19" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 1;" />
+                            <ui:Button text="20" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 1;" />
+                            <ui:Button text="21" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 1;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="flex-grow: 0; flex-direction: row; justify-content: center; align-self: auto; align-items: center;">
+                            <ui:Button text="22" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 1;" />
+                            <ui:Button text="23" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 1;" />
+                            <ui:Button text="24" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 1;" />
+                            <ui:Button text="25" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 1;" />
+                            <ui:Button text="26" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 1;" />
+                            <ui:Button text="27" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 1;" />
+                            <ui:Button text="28" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 1;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Space" style="flex-grow: 1; height: 20px;" />
+                <ui:VisualElement name="Buttons" style="flex-grow: 1; flex-direction: row; width: 600px; justify-content: space-around; align-items: center;">
+                    <ui:Button text="Отправить" parse-escape-sequences="true" display-tooltip-when-elided="true" name="send_button" style="width: 180px;" />
+                    <ui:Button text="Отмена" parse-escape-sequences="true" display-tooltip-when-elided="true" name="back_button" style="width: 180px;" />
+                </ui:VisualElement>
+            </ui:ScrollView>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

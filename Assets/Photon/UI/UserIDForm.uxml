@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
+        <ui:VisualElement style="flex-grow: 1;" />
+        <ui:VisualElement style="flex-grow: 1; justify-content: center;">
+            <ui:VisualElement style="flex-grow: 0; flex-shrink: 1; background-color: rgb(46, 46, 46); border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-left-radius: 1px; border-top-right-radius: 1px; border-bottom-right-radius: 1px; border-bottom-left-radius: 1px;">
+                <ui:VisualElement style="flex-grow: 0;">
+                    <ui:Label tabindex="-1" text="User ID" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 40px; color: rgb(255, 107, 0);" />
+                    <ui:TextField picking-mode="Ignore" value="Enter User ID" name="input_text" />
+                    <ui:Button text="Connect" parse-escape-sequences="true" display-tooltip-when-elided="true" name="connect_button" style="color: rgb(255, 255, 255); -unity-font-style: bold; font-size: 20px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1;" />
+    </ui:VisualElement>
+</ui:UXML>

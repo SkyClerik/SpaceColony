@@ -26,7 +26,7 @@ namespace Gameplay
 
         private void OnMouseDown()
         {
-            if (_inProgress)
+            if (_inProgress || _questData == null)
                 return;
 
             QuestUserInterface.Instance.View(quest: this);

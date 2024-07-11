@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "155510286829",
+    "project_id": "spacecolony-ca31e",
+    "storage_bucket": "spacecolony-ca31e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:155510286829:android:cf06cebcb05ccfe050dfe4",
+        "android_client_info": {
+          "package_name": "com.UnityTechnologies.com.unity.template.urpblank"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3JPpP4wLNPu5F2scLwE74Sqf3g16Tn1w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,41 @@
+.unity-text-element--inner-input-field-component {
+    color: rgb(0, 0, 0);
+    white-space: normal;
+    text-overflow: clip;
+    -unity-text-align: upper-left;
+    flex-wrap: wrap;
+    flex-grow: 0;
+    flex-shrink: 1;
+    font-size: 20px;
+}
+
+.unity-text-field__label {
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+    -unity-text-align: upper-left;
+    min-width: 50px;
+}
+
+.unity-button {
+    background-color: rgb(67, 67, 67);
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-left;
+    border-left-color: rgb(178, 76, 0);
+    border-right-color: rgb(178, 76, 0);
+    border-top-color: rgb(178, 76, 0);
+    border-bottom-color: rgb(178, 76, 0);
+}
+
+.unity-button:hover {
+    background-color: rgb(67, 67, 67);
+    color: rgb(255, 93, 0);
+    font-size: 32px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-left;
+    border-left-color: rgb(236, 62, 0);
+    border-right-color: rgb(236, 62, 0);
+    border-top-color: rgb(236, 62, 0);
+    border-bottom-color: rgb(236, 62, 0);
+}

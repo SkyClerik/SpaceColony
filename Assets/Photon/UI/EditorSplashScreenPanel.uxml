@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:VisualElement style="flex-grow: 1; justify-content: center;">
+            <ui:Label tabindex="-1" text="Chat Demo" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); -unity-font-style: bold; font-size: 79px; -unity-text-align: middle-center;" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1;">
+            <ui:Label tabindex="-1" text="Это простая демонстрация чата Photon.&#10;В Canvas есть несколько панелей для разных контекстов.&#10;Они отключены намеренно, чтобы скрипты могли их активировать.&#10;Скрипт IgnoreUiRaycastWhenInactive не позволяет неактивным панелям блокировать ввод.&#10;&#10;Все пользователи должны использовать идентификатор пользователя (чтобы их можно было найти как друзей).&#10;Это сообщение исчезнет во время выполнения." parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-text-align: middle-center; font-size: 33px; color: rgb(255, 255, 255);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

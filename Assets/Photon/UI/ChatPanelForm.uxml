@@ -1,0 +1,42 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-left-radius: 1px; border-top-right-radius: 1px; border-bottom-right-radius: 1px; border-bottom-left-radius: 1px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; flex-direction: column;">
+        <ui:VisualElement style="flex-grow: 0; height: 10%;" />
+        <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
+            <ui:VisualElement picking-mode="Ignore" style="flex-grow: 0; flex-direction: column; width: 587px;">
+                <ui:VisualElement style="flex-grow: 1;">
+                    <ui:Label tabindex="-1" text="Chanels" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 30px; color: rgb(255, 127, 0);" />
+                    <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-left-radius: 1px; border-top-right-radius: 1px; border-bottom-right-radius: 1px; border-bottom-left-radius: 1px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 5px; margin-right: 5px; margin-bottom: 5px; margin-left: 5px;">
+                        <ui:VisualElement style="flex-grow: 0; background-color: rgb(60, 60, 60);">
+                            <ui:Label tabindex="-1" text="Chanel" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); -unity-font-style: bold; font-size: 30px; -unity-text-align: upper-center;" />
+                        </ui:VisualElement>
+                        <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 1;">
+                    <ui:Label tabindex="-1" text="Friends" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 30px; color: rgb(255, 127, 0);" />
+                    <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-left-radius: 1px; border-top-right-radius: 1px; border-bottom-right-radius: 1px; border-bottom-left-radius: 1px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 5px; margin-right: 5px; margin-bottom: 5px; margin-left: 5px;">
+                        <ui:VisualElement style="flex-grow: 0; background-color: rgb(60, 60, 60); flex-direction: row; justify-content: space-around;">
+                            <ui:Label tabindex="-1" text="Offline" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); -unity-font-style: bold; font-size: 30px; -unity-text-align: upper-center;" />
+                            <ui:Label tabindex="-1" text="Joe" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); -unity-font-style: bold; font-size: 30px; -unity-text-align: upper-center;" />
+                            <ui:Label tabindex="-1" text="100%" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); -unity-font-style: bold; font-size: 30px; -unity-text-align: upper-center;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; flex-direction: column;">
+                <ui:Label tabindex="-1" text="Chat" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 30px; color: rgb(255, 127, 0);" />
+                <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-left-radius: 1px; border-top-right-radius: 1px; border-bottom-right-radius: 1px; border-bottom-left-radius: 1px; margin-top: 5px; margin-right: 5px; margin-bottom: 5px; margin-left: 5px; flex-direction: column; align-items: auto; flex-wrap: nowrap;">
+                    <ui:VisualElement style="flex-grow: 1; flex-direction: column-reverse; flex-shrink: 1; width: 100%; height: 100%; align-items: flex-start;">
+                        <ui:Label tabindex="-1" text="Not in chat yet" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ChatTextTest" style="color: rgb(255, 255, 255); font-size: 26px; -unity-font-style: bold; flex-shrink: 0; flex-grow: 0; flex-wrap: nowrap; white-space: normal; -unity-text-align: middle-left; width: 100%;" />
+                        <ui:Label tabindex="-1" text="Not in chat yet" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); font-size: 26px; -unity-font-style: bold; flex-shrink: 0; flex-grow: 0; flex-wrap: nowrap; white-space: normal; -unity-text-align: middle-left; width: 100%;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement picking-mode="Ignore" style="flex-grow: 0; width: 100%; height: 80px; margin-top: 5px; margin-right: 5px; margin-bottom: 5px; margin-left: 5px; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-left-radius: 1px; border-top-right-radius: 1px; border-bottom-right-radius: 1px; border-bottom-left-radius: 1px; flex-direction: row; justify-content: space-between;">
+                    <ui:Button text="?" parse-escape-sequences="true" display-tooltip-when-elided="true" style="min-width: 60px; flex-grow: 0; font-size: 50px;" />
+                    <ui:TextField picking-mode="Ignore" value="Enter chat message..." name="InputFieldChat" style="flex-grow: 1; font-size: 50px; color: rgb(0, 0, 0);" />
+                    <ui:Button text="Send" parse-escape-sequences="true" display-tooltip-when-elided="true" name="send_button" style="font-size: 40px; color: rgb(255, 255, 255); -unity-font-style: bold; min-width: 130px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

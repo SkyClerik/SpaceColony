@@ -1,6 +1,7 @@
 using UnityEngine.UIElements;
 using SkyClerikExt;
 using UnityEngine;
+using System;
 
 namespace Gameplay
 {
@@ -33,6 +34,9 @@ namespace Gameplay
             var right = _rootElement.Q("Right");
             _reputationValueElement = right.Q<Label>(_reputationValueElementName);
             LoadReputation();
+
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
         }
 
         public void UpdateReputation(int value)

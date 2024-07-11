@@ -26,6 +26,8 @@ ehthumbs.db
 /[Bb]uilds/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
+/Assets/Firebase/
+/Assets/ExternalDependencyManager/
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
