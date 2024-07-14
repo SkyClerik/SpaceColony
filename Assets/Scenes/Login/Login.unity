@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80165b04b5be58941943a909671f9d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _questData: {fileID: 11400000, guid: c2acf8ec471639a429b314e21a48a197, type: 2}
   _mainMenuScene: {fileID: 102900000, guid: 1c319f5758e8f4b48b9a2c11cf4d41c3, type: 3}
   _developQuestScene: {fileID: 102900000, guid: 923ca9b46faa12a4c9140d4f594908bf,
     type: 3}

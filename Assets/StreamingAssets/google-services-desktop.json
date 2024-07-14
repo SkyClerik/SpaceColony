@@ -2,6 +2,7 @@
   "project_info": {
     "project_number": "155510286829",
     "project_id": "spacecolony-ca31e",
+    "firebase_url": "https://spacecolony-ca31e-default-rtdb.asia-southeast1.firebasedatabase.app/",
     "storage_bucket": "spacecolony-ca31e.appspot.com"
   },
   "client": [

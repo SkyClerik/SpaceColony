@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace SkyClerikExt
 {
@@ -32,6 +33,11 @@ namespace SkyClerikExt
                 str = str.Insert(str.Length - t, " ");
 
             return str;
+        }
+
+        public static bool IsValidEmail(this string email)
+        {
+            return Regex.IsMatch(email, @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
         }
     }
 }

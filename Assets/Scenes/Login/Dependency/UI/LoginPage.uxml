@@ -2,9 +2,13 @@
     <Style src="project://database/Assets/Scenes/DevelopQuests/Dependency/UI/DefaultStyle.uss?fileID=7433441132597879392&amp;guid=021ff31015004064d80e1824d746fa3c&amp;type=3#DefaultStyle" />
     <ui:VisualElement name="canvas" style="flex-grow: 1; align-items: center; justify-content: center;">
         <ui:VisualElement name="main_lobby" style="flex-grow: 0; background-color: rgb(91, 91, 91); border-left-color: rgb(255, 112, 0); border-right-color: rgb(255, 112, 0); border-top-color: rgb(255, 112, 0); border-bottom-color: rgb(255, 112, 0); border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-top-left-radius: 2px; border-top-right-radius: 2px; border-bottom-right-radius: 2px; border-bottom-left-radius: 2px; align-items: center; display: flex; width: 100%;">
-            <ui:TextField picking-mode="Ignore" label="Пользователь" value="Admin" name="text_field_login" style="width: 100%; white-space: normal; flex-direction: column;" />
-            <ui:TextField picking-mode="Ignore" label="Почта" value="SpaceColony@sc.com" mask-character="*" name="text_field_mail" style="width: 100%; white-space: normal; flex-direction: column;" />
-            <ui:TextField picking-mode="Ignore" label="Пароль" value="*****" name="text_field_password" style="width: 100%; white-space: normal; flex-direction: column;" />
+            <ui:TextField picking-mode="Ignore" label="Пользователь" value="Admin" name="text_field_login" style="width: 100%; white-space: normal; flex-direction: column; display: none;" />
+            <ui:TextField picking-mode="Ignore" label="Почта" value="SpaceColony@sc.com" mask-character="*" name="text_field_mail" style="width: 100%; white-space: normal; flex-direction: column;">
+                <ui:Label tabindex="-1" text="Это мало похоже на почту" parse-escape-sequences="true" display-tooltip-when-elided="true" name="mail_exeption" style="font-size: 20px; color: rgb(255, 0, 0); align-items: flex-start; flex-grow: 0; flex-shrink: 1; flex-wrap: wrap; -unity-text-align: upper-left; display: none;" />
+            </ui:TextField>
+            <ui:TextField picking-mode="Ignore" label="Пароль" value="*****" name="text_field_password" style="width: 100%; white-space: normal; flex-direction: column;">
+                <ui:Label tabindex="-1" text="Пароль должен содержать минимум 6 символов" parse-escape-sequences="true" display-tooltip-when-elided="true" name="password_exeption" style="font-size: 20px; color: rgb(255, 0, 0); align-items: flex-start; flex-grow: 0; flex-shrink: 1; flex-wrap: wrap; -unity-text-align: upper-left; display: none;" />
+            </ui:TextField>
             <ui:VisualElement name="Buttons" style="flex-grow: 1; flex-direction: row; width: 100%; justify-content: space-around;">
                 <ui:Button text="Войти" parse-escape-sequences="true" display-tooltip-when-elided="true" name="signin_button" style="min-width: 200px; -unity-text-align: middle-center;" />
                 <ui:Button text="Регистрация" parse-escape-sequences="true" display-tooltip-when-elided="true" name="registration_button" style="display: flex; visibility: visible; min-width: 200px; -unity-text-align: middle-center;" />
