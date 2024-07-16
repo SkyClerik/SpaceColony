@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement style="flex-grow: 1; flex-direction: column;">
+    <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; flex-direction: column;">
         <ui:VisualElement picking-mode="Ignore" name="Line01" style="flex-grow: 0; justify-content: flex-start; flex-direction: column;">
             <ui:VisualElement picking-mode="Ignore" name="ProgressLine" style="flex-grow: 1; background-color: rgb(255, 102, 0); display: flex; visibility: visible; overflow: visible; height: 5px;" />
             <ui:ProgressBar value="50" picking-mode="Ignore" style="flex-grow: 1; height: 5px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; display: none; visibility: hidden; overflow: hidden;" />
