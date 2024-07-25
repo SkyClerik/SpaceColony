@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Screen" picking-mode="Ignore" style="flex-grow: 1; align-items: center; justify-content: center; align-self: center;">
+        <ui:VisualElement name="Window" picking-mode="Ignore" style="flex-grow: 0; position: relative; width: 80%; height: 644px; border-left-color: rgba(58, 58, 58, 0.94); border-right-color: rgba(58, 58, 58, 0.94); border-top-color: rgba(58, 58, 58, 0.94); border-bottom-color: rgba(58, 58, 58, 0.94); background-color: rgba(48, 48, 48, 0.98);">
+            <ui:VisualElement name="Header" style="flex-grow: 0; flex-direction: row; justify-content: space-between;">
+                <ui:Label tabindex="-1" text="База игрока" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 72px; -unity-font-style: bold; color: rgb(255, 255, 255); -unity-text-align: middle-left; white-space: nowrap;" />
+                <ui:Button text="X" parse-escape-sequences="true" display-tooltip-when-elided="true" name="HideButton" />
+            </ui:VisualElement>
+            <ui:Label tabindex="-1" text="Что тут будет пока не знаю. Скорее всего огромное древо кнопочек и вкладочек" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); -unity-font-style: bold; font-size: 53px; white-space: normal;" />
+            <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center; justify-content: space-around;">
+                <ui:VisualElement style="flex-grow: 0; flex-shrink: 1; height: 200px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

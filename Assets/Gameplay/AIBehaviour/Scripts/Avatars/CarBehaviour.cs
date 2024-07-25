@@ -1,4 +1,5 @@
 using Gameplay;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -11,12 +12,13 @@ namespace AvatarLogic
         private StateMashine _stateMashine = new StateMashine();
         [SerializeField]
         private Transform _destination;
+        [SerializeField]
+        private List<ActorData> _actors;
 
         private NavMeshAgent _navMeshAgent;
         private bool _busy;
         private Quest _questInProcess;
 
-        public bool Busy => _busy;
         public NavMeshAgent NavMeshAgent { get => _navMeshAgent; set => _navMeshAgent = value; }
         public Transform MoveDestination { get => _destination; set => _destination = value; }
 
@@ -46,8 +48,9 @@ namespace AvatarLogic
             _stateMashine.SetState(stateID: AvatarStateID.MoveToPoint);
         }
 
-        public void MoveToQuest(Quest quest, Transform targetPosition)
+        public void MoveToQuest(Quest quest, Transform targetPosition, List<ActorData> actors)
         {
+            _actors = actors;
             ResetCar(Guild.Instance.ParkingPosition);
             _questInProcess = quest;
             MoveToPoint(targetPosition);
@@ -78,8 +81,8 @@ namespace AvatarLogic
 
         private void ResetCar(Transform startingPoint)
         {
-            gameObject.SetActive(true);
             gameObject.transform.position = startingPoint.position;
+            gameObject.SetActive(true);
         }
     }
 }
