@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using QuestSystem;
 
 namespace Gameplay
 {
@@ -22,6 +23,9 @@ namespace Gameplay
         private Label _titleElement;
         private const string _titleElementName = "title";
 
+        private Label _posTitleElement;
+        private const string _posTitleElementName = "pos_title";
+
         private Label _descriptionElement;
         private const string _descriptionElementName = "description";
 
@@ -33,9 +37,9 @@ namespace Gameplay
 
         private UserInterfaceShare _userInterfaceShare;
 
-        private void Awake() => Init();
+        private void Awake() => InitDocument();
 
-        private void Init()
+        private void InitDocument()
         {
             _userInterfaceShare = UserInterfaceShare.Instance;
 
@@ -49,6 +53,7 @@ namespace Gameplay
             _hideButton.clicked += HideButton_Clicked;
 
             _titleElement = _rootElement.Q<Label>(_titleElementName);
+            _posTitleElement = _rootElement.Q<Label>(_posTitleElementName);
             _descriptionElement = _rootElement.Q<Label>(_descriptionElementName);
 
             Hide();
@@ -58,6 +63,7 @@ namespace Gameplay
         {
             _cells = _rootElement.Q<VisualElement>(_cellsName);
             _cells.Clear();
+            _heroIconElements.Clear();
 
             for (int i = 0; i < _questData.ActorTypes.Count; i++)
             {
@@ -73,6 +79,9 @@ namespace Gameplay
 
         private void OnMouseDownCallback(HeroIconElement heroIconElement)
         {
+            if (heroIconElement.actorData == null)
+                return;
+
             for (int i = 0; i < _heroIconElements.Count; i++)
             {
                 if (heroIconElement == _heroIconElements[i])
@@ -81,6 +90,7 @@ namespace Gameplay
                     Quest.CurrentQuestSelected?.RemoveActor(heroIconElement.actorData);
                     heroIconElement.actorData = null;
                     _heroIconElements[i] = heroIconElement;
+                    ShiftingHeroIconElements(curElement: i);
                 }
             }
         }
@@ -96,7 +106,6 @@ namespace Gameplay
 
                     var icon = _heroIconElements[i].Q(_iconName);
                     icon.style.backgroundImage = new StyleBackground(actorData.Icon);
-                    //icon.style.display = DisplayStyle.Flex;
                     HUDUserInterface.Instance.SetShadow(actorData);
                     return;
                 }
@@ -107,9 +116,6 @@ namespace Gameplay
 
         public void RemoveActor(HeroIconElement heroIconElement)
         {
-            if (heroIconElement.actorData == null)
-                return;
-
             heroIconElement.actorData.Busy = false;
 
             VisualElement icon = heroIconElement.Q<VisualElement>(_iconName);
@@ -118,41 +124,90 @@ namespace Gameplay
             HUDUserInterface.Instance.SetShadow(heroIconElement.actorData);
         }
 
+        private void RemoveParty()
+        {
+            for (int i = 0; i < _heroIconElements.Count; i++)
+            {
+                if (_heroIconElements[i].actorData == null)
+                    continue;
+
+                RemoveActor(_heroIconElements[i]);
+            }
+        }
+
+        private void ShiftingHeroIconElements(int curElement)
+        {
+            for (int c = curElement, n = curElement + 1; c < _heroIconElements.Count && n < _heroIconElements.Count; c++, n++)
+            {
+                _heroIconElements[c].actorData = _heroIconElements[n].actorData;
+
+                if (_heroIconElements[c].actorData != null)
+                {
+                    var curIcon = _heroIconElements[c].Q(_iconName);
+                    curIcon.style.backgroundImage = new StyleBackground(_heroIconElements[c].actorData.Icon);
+                }
+
+                var nextIcon = _heroIconElements[n].Q<VisualElement>(_iconName);
+                nextIcon.style.backgroundImage = null;
+                _heroIconElements[n].actorData = null;
+            }
+        }
+
         private void ApplyButton_Clicked()
         {
             List<ActorData> actors = new List<ActorData>();
             foreach (var item in _heroIconElements)
-                actors.Add(item.actorData);
-            
+            {
+                if (item.actorData != null)
+                    actors.Add(item.actorData);
+            }
+
+            if (actors.Count == 0)
+                return;
+
             _quest.SendOnMission(actors);
             Hide();
         }
 
-        private void HideButton_Clicked() => Hide();
-
-        public void View(Quest quest)
+        private void HideButton_Clicked()
         {
-            if (_userInterfaceShare.CurrentDocument != null)
+            _quest.RemoveParty();
+            RemoveParty();
+            Hide();
+        }
+
+        public void ShowInterface()
+        {
+            _quest = Quest.CurrentQuestSelected;
+            _questData = Quest.CurrentQuestSelected.GetQuestData;
+
+            if (_quest == null || _questData == null)
                 return;
 
-            _quest = quest;
-            _questData = quest.QuestData;
+            if (_userInterfaceShare.CurrentDocument != null)
+                return;
 
             RepaintCalls();
 
             UpdateDisplayInfo();
 
-            _rootElement.style.display = DisplayStyle.Flex;
-            _userInterfaceShare.CurrentDocument = _document;
+            View();
         }
 
         private void UpdateDisplayInfo()
         {
             _titleElement.text = _questData.Title;
+            _posTitleElement.text = _questData.PosTitle;
             _descriptionElement.text = _questData.Description;
         }
 
-        public void Hide()
+        private void View()
+        {
+            _rootElement.style.display = DisplayStyle.Flex;
+            _userInterfaceShare.CurrentDocument = _document;
+        }
+
+        private void Hide()
         {
             _rootElement.style.display = DisplayStyle.None;
             _userInterfaceShare.CurrentDocument = null;

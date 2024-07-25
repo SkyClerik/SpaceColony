@@ -18,6 +18,7 @@ namespace AvatarLogic
         private NavMeshAgent _navMeshAgent;
         private bool _busy;
         private Quest _questInProcess;
+        private HUDUserInterface _hud;
 
         public NavMeshAgent NavMeshAgent { get => _navMeshAgent; set => _navMeshAgent = value; }
         public Transform MoveDestination { get => _destination; set => _destination = value; }
@@ -76,6 +77,14 @@ namespace AvatarLogic
         {
             _busy = false;
             Debug.Log($"Машина вернулась на базу", gameObject);
+            _hud = HUDUserInterface.Instance;
+
+            foreach (var actor in _actors)
+            {
+                actor.Busy = false;
+                _hud.SetShadow(actor);
+            }
+
             gameObject.SetActive(false);
         }
 

@@ -14,5 +14,10 @@ namespace SkyClerikExt
                 return new Color(r, g, b, 1);
             }
         }
+
+        public static Color GetColorTransparent()
+        {
+            return new Color(1f, 1f, 1f, 0f);
+        }
     }
 }

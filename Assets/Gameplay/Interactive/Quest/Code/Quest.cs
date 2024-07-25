@@ -2,16 +2,22 @@ using AvatarLogic;
 using PoolObjectSystem;
 using System.Collections.Generic;
 using UnityEngine;
+using QuestSystem;
+using System.Linq;
 
 namespace Gameplay
 {
     [RequireComponent(typeof(BoxCollider))]
     public class Quest : MonoBehaviour
     {
+        public static Quest CurrentQuestSelected;
+
         [SerializeField]
         private QuestData _questData;
         [SerializeField]
         private Transform _parkingPosition;
+        [SerializeField]
+        private Billboard _billboard;
         [SerializeField]
         private PoolObjectID _transportPoolObjectID;
 
@@ -19,22 +25,32 @@ namespace Gameplay
         private CarBehaviour _carInMission;
         private List<ActorData> _party = new List<ActorData>();
         private int _partyLimit;
-        private int _curPartyCount;
 
-        public static Quest CurrentQuestSelected;
-        public QuestData QuestData { get => _questData; set => _questData = value; }
         public Transform ParkingPosition => _parkingPosition;
-        private bool IsFullParty => _curPartyCount == _partyLimit ? true : false;
+        public QuestData GetQuestData => _questData;
+        private bool IsFullParty => _party.Count == _partyLimit ? true : false;
 
-
-        public void SetProgress(bool progress) => _inProgress = progress;
+        private void Start()
+        {
+            if (_questData != null)
+                QuestInit();
+        }
 
         public void AddQuest(QuestData questData)
         {
+            if (_questData != null)
+                return;
+
             _questData = questData;
+            QuestInit();
+        }
+
+        private void QuestInit()
+        {
             _questData.ParkingPosition = _parkingPosition;
             _partyLimit = _questData.ActorTypes.Count;
-            _party = new List<ActorData>(_partyLimit);
+            _party.Clear();
+            _billboard?.gameObject.SetActive(true);
         }
 
         private void OnMouseDown()
@@ -42,8 +58,10 @@ namespace Gameplay
             if (_inProgress || _questData == null)
                 return;
 
+            QuestInit();
+
             CurrentQuestSelected = this;
-            QuestUserInterface.Instance.View(quest: CurrentQuestSelected);
+            QuestUserInterface.Instance.ShowInterface();
         }
 
         public void SendOnMission(List<ActorData> actors)
@@ -52,22 +70,24 @@ namespace Gameplay
             if (car.TryGetComponent(out CarBehaviour _carInMission))
             {
                 _carInMission.MoveToQuest(quest: this, _parkingPosition, actors);
-                SetProgress(true);
+                _inProgress = true;
             }
         }
 
         public void AddActor(ref ActorData actorData)
         {
+            Debug.Log($"IsFullParty {IsFullParty}");
             if (IsFullParty)
                 return;
 
+            Debug.Log($"actorData.Busy {actorData.Busy}");
             if (actorData.Busy)
                 return;
 
-            _curPartyCount++;
+            Debug.Log($"AddActor");
             _party.Add(actorData);
-            QuestUserInterface.Instance.AddActor(actorData);
             actorData.Busy = true;
+            QuestUserInterface.Instance.AddActor(actorData);
         }
 
         public void RemoveActor(ActorData actorData)
@@ -78,15 +98,22 @@ namespace Gameplay
                 {
                     actorData.Busy = false;
                     _party.RemoveAt(i);
-                    _curPartyCount--;
                     break;
                 }
             }
         }
 
+        public void RemoveParty()
+        {
+            for (int i = 0; i < _party.Count; i++)
+            {
+                RemoveActor(_party[i]);
+            }
+        }
+
         public void MissionFinished()
         {
-            SetProgress(false);
+            _inProgress = false;
 
             MissionSucces();
             //MissionFail();

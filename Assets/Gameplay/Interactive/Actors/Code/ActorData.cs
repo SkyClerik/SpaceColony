@@ -21,5 +21,8 @@ namespace Gameplay
             get => _busy;
             set => _busy = value;
         }
+
+        public int Experience = 0;
+        public int Level = 1;
     }
 }

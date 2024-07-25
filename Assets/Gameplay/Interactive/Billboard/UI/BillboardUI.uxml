@@ -1,7 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement style="flex-grow: 1; width: 256px; height: 256px; background-color: rgba(79, 79, 79, 0);">
-        <ui:VisualElement style="flex-grow: 1; position: absolute; width: 200px; height: 200px; top: 28px; left: 31px; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-top-left-radius: 11px; border-top-right-radius: 11px; border-bottom-right-radius: 11px; border-bottom-left-radius: 11px; border-top-width: 7px; border-right-width: 7px; border-bottom-width: 7px; border-left-width: 7px; background-color: rgb(11, 91, 255);">
-            <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2346436936791262179&amp;guid=99f88923d0dbe2e4daa4d7546d8c1711&amp;type=3#console.infoicon&quot;); -unity-background-image-tint-color: rgb(241, 109, 0);" />
-        </ui:VisualElement>
-    </ui:VisualElement>
-</ui:UXML>

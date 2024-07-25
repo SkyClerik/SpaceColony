@@ -3,7 +3,6 @@ using Firebase.Auth;
 using Firebase.Database;
 using SkyClerikExt;
 using System.Collections;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -34,7 +33,7 @@ public class LoginPage : MonoBehaviour
     private bool _isRegistration = false;
 
     [SerializeField]
-    private Gameplay.QuestData _questData;
+    private QuestSystem.QuestData _questData;
 
     private DatabaseReference _databaseReference;
     private DependencyStatus _dependencyStatus;
@@ -199,7 +198,7 @@ public class LoginPage : MonoBehaviour
         {
             DataSnapshot snapshot = data.Result;
             string text = snapshot.Child("Main").GetRawJsonValue();
-            Gameplay.QuestData result = Instantiate(_questData);
+            QuestSystem.QuestData result = Instantiate(_questData);
             JsonUtility.FromJsonOverwrite(text, result);
             Debug.Log($"result: {result.Description}");
         }

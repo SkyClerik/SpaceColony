@@ -1,14 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Gameplay
+namespace QuestSystem
 {
-    [CreateAssetMenu(fileName = "QuestData", menuName = "Gameplay/Data/QuestData")]
+    [CreateAssetMenu(fileName = "QuestData", menuName = "Data/QuestData")]
     public class QuestData : ScriptableObject
     {
-        public string Title;
+        public string Title = "Title";
+        public string PosTitle = "Pos Title";
         [TextArea]
-        public string Description;
+        public string Description = "Description Text";
+
         public int AddReputation;
         public int RemoveReputation;
 
@@ -23,5 +25,10 @@ namespace Gameplay
         public List<ActorType> ActorTypes;
 
         public Transform ParkingPosition { get; set; }
+
+        public bool OnlyWin = false;
+        public bool OnlyFail = false;
+
+        public int ExpFromWin = 1;
     }
 }

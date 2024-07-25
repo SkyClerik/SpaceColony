@@ -21,6 +21,7 @@ namespace Gameplay
         private VisualElement _cells;
         private const string _cellsName = "cells";
         private List<HeroIconElement> _callsList = new List<HeroIconElement>();
+        private Color _transparentColor = new Color(1, 1, 1, 0);
 
         private void OnEnable()
         {
@@ -64,6 +65,7 @@ namespace Gameplay
 
         private void OnMouseDownCallback(HeroIconElement heroIconElement)
         {
+            Debug.Log($"HUDUserInterface OnMouseDownCallback ");
             if (heroIconElement.actorData.Busy)
                 return;
 
@@ -83,9 +85,7 @@ namespace Gameplay
                     }
                     else
                     {
-                        Color color = Color.white;
-                        color.a = 0;
-                        heroIconElement.style.backgroundColor = color;
+                        heroIconElement.style.backgroundColor = _transparentColor;
                     }
                 }
             }

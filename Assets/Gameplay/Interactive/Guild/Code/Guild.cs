@@ -6,21 +6,17 @@ namespace Gameplay
 {
     public class Guild : Singleton<Guild>
     {
+        public static event Action<int> Reputation—hange;
+
         [SerializeField]
         private Transform _parkingPosition;
         [SerializeField]
         private int _reputation;
-        //[SerializeField]
-        //private List<ActorData> _actorsDatas = new List<ActorData>();
         [SerializeField]
         private List<ActorData> _currentJobActors = new List<ActorData>();
 
         public Transform ParkingPosition => _parkingPosition;
         public int GetReputation => _reputation;
-        //public List<ActorData> ActorsDatas => _actorsDatas;
-
-
-        public static event Action<int> Reputation—hange;
 
         private void Start()
         {

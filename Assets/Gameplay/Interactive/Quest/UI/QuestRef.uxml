@@ -3,18 +3,19 @@
     <ui:VisualElement name="screen" picking-mode="Ignore" style="flex-grow: 1; align-items: center; justify-content: center; align-self: center;">
         <ui:VisualElement name="window" picking-mode="Ignore" style="flex-grow: 0; position: relative; width: 80%; height: 644px; border-left-color: rgba(58, 58, 58, 0.94); border-right-color: rgba(58, 58, 58, 0.94); border-top-color: rgba(58, 58, 58, 0.94); border-bottom-color: rgba(58, 58, 58, 0.94); background-color: rgba(48, 48, 48, 0.98);">
             <ui:VisualElement name="header" style="flex-grow: 1;">
-                <ui:Label tabindex="-1" text="&quot;Прилежность&quot;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="title" style="font-size: 72px; -unity-font-style: bold; color: rgb(255, 255, 255); -unity-text-align: middle-left; white-space: nowrap;" />
+                <ui:Label tabindex="-1" text="&quot;Прилежность&quot;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="title" picking-mode="Ignore" style="font-size: 72px; -unity-font-style: bold; color: rgb(255, 255, 255); -unity-text-align: middle-left; white-space: nowrap;" />
+                <ui:Label tabindex="-1" text="не обязательное поле" parse-escape-sequences="true" display-tooltip-when-elided="true" name="pos_title" picking-mode="Ignore" style="font-size: 58px; -unity-font-style: bold; color: rgb(255, 255, 255); -unity-text-align: middle-left; white-space: nowrap;" />
             </ui:VisualElement>
-            <ui:Label tabindex="-1" text="Description:&#10;Нужно сходить за покупками для старой внучки третьей племянницы бывшего босса." parse-escape-sequences="true" display-tooltip-when-elided="true" name="description" style="color: rgb(255, 255, 255); -unity-font-style: bold; font-size: 53px; white-space: normal;" />
-            <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center; justify-content: space-around;">
-                <ui:VisualElement name="cells" style="flex-grow: 0; flex-direction: row; justify-content: center; align-items: center; align-self: center; margin-top: 0; margin-right: 50px; margin-bottom: 0; margin-left: 50px;">
+            <ui:Label tabindex="-1" text="Description:&#10;Нужно сходить за покупками для старой внучки третьей племянницы бывшего босса." parse-escape-sequences="true" display-tooltip-when-elided="true" name="description" picking-mode="Ignore" style="color: rgb(255, 255, 255); -unity-font-style: normal; font-size: 53px; white-space: normal;" />
+            <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; flex-direction: row; align-items: center; justify-content: space-around;">
+                <ui:VisualElement name="cells" picking-mode="Ignore" style="flex-grow: 0; flex-direction: row; justify-content: center; align-items: center; align-self: center; margin-top: 0; margin-right: 50px; margin-bottom: 0; margin-left: 50px;">
                     <ui:Instance template="HeroIconTemplate" name="HeroIconTemplate" />
                     <ui:Instance template="HeroIconTemplate" name="HeroIconTemplate" />
                     <ui:Instance template="HeroIconTemplate" name="HeroIconTemplate" />
                     <ui:Instance template="HeroIconTemplate" name="HeroIconTemplate" />
                     <ui:Instance template="HeroIconTemplate" name="HeroIconTemplate" />
                 </ui:VisualElement>
-                <ui:VisualElement style="flex-grow: 0; flex-shrink: 1; height: 200px;">
+                <ui:VisualElement picking-mode="Ignore" style="flex-grow: 0; flex-shrink: 1; height: 200px;">
                     <ui:Button text="Отправить" parse-escape-sequences="true" display-tooltip-when-elided="true" name="apply_button" style="height: 100px; width: 150px; color: rgb(33, 156, 0); -unity-font-style: bold; font-size: 23px; background-color: rgb(82, 82, 82); border-left-color: rgb(255, 126, 0); border-right-color: rgb(255, 126, 0); border-top-color: rgb(255, 126, 0); border-bottom-color: rgb(255, 126, 0);" />
                     <ui:Button text="Отмена" parse-escape-sequences="true" display-tooltip-when-elided="true" name="hide_button" style="height: 100px; width: 150px; color: rgb(238, 52, 0); -unity-font-style: bold; font-size: 23px; background-color: rgb(82, 82, 82); border-left-color: rgb(255, 126, 0); border-right-color: rgb(255, 126, 0); border-top-color: rgb(255, 126, 0); border-bottom-color: rgb(255, 126, 0);" />
                 </ui:VisualElement>
