@@ -13,8 +13,8 @@ public class MainMenu : MonoBehaviour
     private Button _exitGameButton;
     private const string _exitGameButtonName = "exit_button";
 
-#if UNITY_EDITOR
     [SerializeField] private Object _loginScene = null;
+#if UNITY_EDITOR
     bool IsValidSceneAsset
     {
         get

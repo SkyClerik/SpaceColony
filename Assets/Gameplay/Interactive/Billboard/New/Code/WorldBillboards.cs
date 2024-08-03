@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 namespace Gameplay
 {
     [RequireComponent(typeof(UIDocument))]
-    public class WorldBillboards : MonoBehaviour
+    public class WorldBillboards : Singleton<WorldBillboards>
     {
         private UIDocument _document;
         private VisualElement _rootElement;
@@ -14,12 +14,9 @@ namespace Gameplay
         [SerializeField]
         private VisualTreeAsset _billboardTemplate;
         private const string _rootTemplateElementName = "root_template_element";
+        private List<Billboard> _billboards = new List<Billboard>();
         [SerializeField]
-        private float _templateVerticalOffset = 0f;
-        [SerializeField]
-        private float _templateHorizontalOffset = 0f;
-        [SerializeField]
-        private List<ObjectAsElement> _questBuilds = new List<ObjectAsElement>();
+        private int _totalBillboards = 10;
 
         private void Awake() => Init();
 
@@ -28,14 +25,14 @@ namespace Gameplay
             _document = GetComponent<UIDocument>();
             _rootElement = _document.rootVisualElement;
 
-
             GC.Collect();
             GC.WaitForPendingFinalizers();
-            foreach (ObjectAsElement item in _questBuilds)
+
+            Billboard billboardCash;
+            for (int i = 0; i < _totalBillboards; i++)
             {
-                item.Image = _billboardTemplate.Instantiate();
-                item.Image.pickingMode = PickingMode.Ignore;
-                _rootElement.Add(item.Image);
+                billboardCash = CreateBillboard(null);
+                billboardCash.style.display = DisplayStyle.None;
             }
         }
 
@@ -43,23 +40,45 @@ namespace Gameplay
         {
             Camera camera = Camera.main;
 
-            foreach (ObjectAsElement item in _questBuilds)
+            foreach (Billboard billboard in _billboards)
             {
-                item.CanvasPosition = Camera.main.WorldToScreenPoint(item.SceneObject.transform.position);
-                item.CanvasPosition.y = (Screen.height - item.CanvasPosition.y) - _templateVerticalOffset;
-                item.CanvasPosition.x = item.CanvasPosition.x - _templateHorizontalOffset;
-                var panelLocalPosition = RuntimePanelUtils.ScreenToPanel(_document.rootVisualElement.panel, item.CanvasPosition);
-                item.Image.style.top = panelLocalPosition.y;
-                item.Image.style.left = panelLocalPosition.x;
+                if (billboard.SceneObject == null)
+                    continue;
+
+                Relocation(billboard);
             }
         }
 
-        [System.Serializable]
-        private class ObjectAsElement
+        public void Relocation(Billboard billboard)
         {
-            public GameObject SceneObject;
-            public Vector2 CanvasPosition;
-            public VisualElement Image;
+            billboard.CanvasPosition = Camera.main.WorldToScreenPoint(billboard.SceneObject.transform.position);
+            billboard.CanvasPosition.y = (Screen.height - billboard.CanvasPosition.y);
+            var panelLocalPosition = RuntimePanelUtils.ScreenToPanel(_rootElement.panel, billboard.CanvasPosition);
+            billboard.style.top = panelLocalPosition.y;
+            billboard.style.left = panelLocalPosition.x;
+        }
+
+        public Billboard GetFreeBillboardFrom(GameObject sceneObject)
+        {
+            for (int i = 0; i < _billboards.Count; i++)
+            {
+                if (_billboards[i].style.display == DisplayStyle.None)
+                {
+                    _billboards[i].SceneObject = sceneObject;
+                    return _billboards[i];
+                }
+            }
+
+            var newBillboard = CreateBillboard(sceneObject);
+            newBillboard.style.display = DisplayStyle.Flex;
+            return newBillboard;
+        }
+
+        private Billboard CreateBillboard(GameObject sceneObject)
+        {
+            var newBillboard = new Billboard(_billboardTemplate, _rootElement, sceneObject);
+            _billboards.Add(newBillboard);
+            return newBillboard;
         }
     }
 }

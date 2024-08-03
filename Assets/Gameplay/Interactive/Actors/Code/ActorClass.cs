@@ -1,4 +1,4 @@
-public enum ActorType : byte
+public enum ActorClass : byte
 {
     Default,
     Worker,

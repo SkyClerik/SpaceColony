@@ -14,10 +14,18 @@ namespace Gameplay
 
         public void SetQuests(List<Quest> quests) => _quests = quests;
 
+        private const int _five = 5;
+        private const int _thirty = 5;
+
         private void Start()
         {
-            int start = Random.Range(0, _quests.Count);
-            int repeat = Random.Range(0, _quests.Count);
+            for (int i = 0; i < _allQuests.Count; i++)
+            {
+                _allQuests[i] = Instantiate(_allQuests[i]);
+            }
+
+            int start = Random.Range(_five, _quests.Count + _five);
+            int repeat = Random.Range(_thirty, _quests.Count + _thirty);
             InvokeRepeating(nameof(AddQuestTo), start, repeat);
         }
 
@@ -27,8 +35,16 @@ namespace Gameplay
             {
                 int r = Random.Range(0, _quests.Count);
                 int a = Random.Range(0, _allQuests.Count);
-                _quests[r].AddQuest(_allQuests[a]);
-                _allQuests.RemoveAt(a);
+
+                if (_quests[r].GetQuestData == null)
+                {
+                    _quests[r].AddQuest(_allQuests[a]);
+
+                    if (!_allQuests[a].Repeatable)
+                        _allQuests.RemoveAt(a);
+                    else
+                        _allQuests[a].NumberImpressions++;
+                }
             }
         }
     }

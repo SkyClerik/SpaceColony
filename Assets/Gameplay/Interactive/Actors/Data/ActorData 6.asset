@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frendlyName: 
   _icon: {fileID: -1485178727, guid: 10351fdc8d687194a92b25586b4f35b2, type: 3}
-  _type: 0
+  _class: 0
   _busy: 0
+  _experience: 2
+  _level: 1
+  _fatigue: 0

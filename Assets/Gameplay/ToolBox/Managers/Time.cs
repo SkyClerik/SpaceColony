@@ -6,10 +6,10 @@ namespace ToolBoxSystem
     [CreateAssetMenu(fileName = "ManagerTime", menuName = "ToolBoxSystem/ManagerTime")]
     public class Time : ManagerBase, IAwake, ITickFixed
     {
-        System.TimeSpan gameTime = new System.TimeSpan(0, 0, 0, 0);   //  https://www.youtube.com/watch?v=YNwHmbinus0
-        float frame = 0f;
+        private System.TimeSpan _gameTime = new System.TimeSpan(0, 0, 0, 0);   //  https://www.youtube.com/watch?v=YNwHmbinus0
+        private float _frame = 0f;
         public List<IRPS> IRPSObjects = new List<IRPS>();
-        private int maxIdentificator = 0;
+        private int _maxIdentificator = 0;
 
         public void OnAwake()
         {
@@ -19,11 +19,11 @@ namespace ToolBoxSystem
         public void TickFixed()
         {
             //  Для запуска каждую секунду
-            frame += UnityEngine.Time.deltaTime;
-            if (frame >= 1)
+            _frame += UnityEngine.Time.deltaTime;
+            if (_frame >= 1)
             {
-                frame = 0;
-                gameTime = gameTime.Add(System.TimeSpan.FromSeconds(1));
+                _frame = 0;
+                _gameTime = _gameTime.Add(System.TimeSpan.FromSeconds(1));
                 PerSecond();
             }
         }
@@ -47,7 +47,7 @@ namespace ToolBoxSystem
 
         public string GetTime()
         {
-            return gameTime.ToString();
+            return _gameTime.ToString();
         }
 
         public void AddIRPSObjects(IRPS extObj)
@@ -84,8 +84,8 @@ namespace ToolBoxSystem
         string GetID()
         {
             Debug.Log("Выдаю новый ID для подписчика таймера");
-            maxIdentificator++;
-            return (maxIdentificator - 1).ToString();
+            _maxIdentificator++;
+            return (_maxIdentificator - 1).ToString();
         }
 
     }

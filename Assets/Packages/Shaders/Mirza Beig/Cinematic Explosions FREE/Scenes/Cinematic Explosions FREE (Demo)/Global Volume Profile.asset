@@ -90,28 +90,28 @@ MonoBehaviour:
   active: 0
   mode:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 1
   gaussianStart:
     m_OverrideState: 1
-    m_Value: 10
+    m_Value: 5
   gaussianEnd:
     m_OverrideState: 1
-    m_Value: 20
+    m_Value: 10
   gaussianMaxRadius:
     m_OverrideState: 1
     m_Value: 1.5
   highQualitySampling:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   focusDistance:
     m_OverrideState: 1
-    m_Value: 16.47
+    m_Value: 16.59
   aperture:
     m_OverrideState: 1
-    m_Value: 4.03
+    m_Value: 2.3
   focalLength:
     m_OverrideState: 1
-    m_Value: 300
+    m_Value: 213
   bladeCount:
     m_OverrideState: 0
     m_Value: 5

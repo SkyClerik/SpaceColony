@@ -59,6 +59,11 @@ namespace Gameplay
             Hide();
         }
 
+        private void ClickedEditorButton()
+        {
+            throw new System.NotImplementedException();
+        }
+
         private void RepaintCalls()
         {
             _cells = _rootElement.Q<VisualElement>(_cellsName);

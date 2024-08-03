@@ -10,19 +10,25 @@ namespace Gameplay
         [SerializeField]
         private Sprite _icon;
         [SerializeField]
-        private ActorType _type;
+        private ActorClass _class;
         [SerializeField]
         private bool _busy = false;
+        [SerializeField]
+        private int _experience = 0;
+        [SerializeField]
+        private int _level = 1;
+        [SerializeField, Tooltip("Усталость")]
+        private int _fatigue = 0;
 
         public Sprite Icon => _icon;
-        public ActorType Type => _type;
+        public ActorClass Type => _class;
         public bool Busy
         {
             get => _busy;
             set => _busy = value;
         }
-
-        public int Experience = 0;
-        public int Level = 1;
+        public int Experience { get => _experience; set => _experience = value; }
+        public int Level { get => _level; set => _level = value; }
+        public int Fatigue { get => _fatigue; set => _fatigue = value; }
     }
 }

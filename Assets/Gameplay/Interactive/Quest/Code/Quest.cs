@@ -3,7 +3,7 @@ using PoolObjectSystem;
 using System.Collections.Generic;
 using UnityEngine;
 using QuestSystem;
-using System.Linq;
+using UnityEngine.UIElements;
 
 namespace Gameplay
 {
@@ -13,10 +13,9 @@ namespace Gameplay
         public static Quest CurrentQuestSelected;
 
         [SerializeField]
-        private QuestData _questData;
-        [SerializeField]
         private Transform _parkingPosition;
         [SerializeField]
+        private GameObject _billboardPoint;
         private Billboard _billboard;
         [SerializeField]
         private PoolObjectID _transportPoolObjectID;
@@ -25,16 +24,11 @@ namespace Gameplay
         private CarBehaviour _carInMission;
         private List<ActorData> _party = new List<ActorData>();
         private int _partyLimit;
+        private QuestData _questData;
 
         public Transform ParkingPosition => _parkingPosition;
         public QuestData GetQuestData => _questData;
         private bool IsFullParty => _party.Count == _partyLimit ? true : false;
-
-        private void Start()
-        {
-            if (_questData != null)
-                QuestInit();
-        }
 
         public void AddQuest(QuestData questData)
         {
@@ -42,6 +36,13 @@ namespace Gameplay
                 return;
 
             _questData = questData;
+
+            WorldBillboards worldBillboards = WorldBillboards.Instance;
+            _billboard = worldBillboards.GetFreeBillboardFrom(_billboardPoint);
+            worldBillboards.Relocation(_billboard);
+            _billboard.Timeout = _questData.GetWaitingTime;
+            _billboard.Tick(null);
+            _billboard.style.display = DisplayStyle.Flex;
             QuestInit();
         }
 
@@ -50,15 +51,23 @@ namespace Gameplay
             _questData.ParkingPosition = _parkingPosition;
             _partyLimit = _questData.ActorTypes.Count;
             _party.Clear();
-            _billboard?.gameObject.SetActive(true);
+            InvokeRepeating(nameof(Tick), 1, 1);
+        }
+
+        private void Tick()
+        {
+            _billboard?.Tick(() =>
+            {
+                CancelInvoke(nameof(Tick));
+                _billboard.Hide();
+                RemoveQuest();
+            });
         }
 
         private void OnMouseDown()
         {
             if (_inProgress || _questData == null)
                 return;
-
-            QuestInit();
 
             CurrentQuestSelected = this;
             QuestUserInterface.Instance.ShowInterface();
@@ -72,19 +81,19 @@ namespace Gameplay
                 _carInMission.MoveToQuest(quest: this, _parkingPosition, actors);
                 _inProgress = true;
             }
+
+            CancelInvoke(nameof(Tick));
+            _billboard.Hide();
         }
 
         public void AddActor(ref ActorData actorData)
         {
-            Debug.Log($"IsFullParty {IsFullParty}");
             if (IsFullParty)
                 return;
 
-            Debug.Log($"actorData.Busy {actorData.Busy}");
             if (actorData.Busy)
                 return;
 
-            Debug.Log($"AddActor");
             _party.Add(actorData);
             actorData.Busy = true;
             QuestUserInterface.Instance.AddActor(actorData);
@@ -113,19 +122,70 @@ namespace Gameplay
 
         public void MissionFinished()
         {
-            _inProgress = false;
+            if (_questData == null)
+            {
+                Debug.Log($"говорят тут null: {_questData}");
+                Debug.Log($"Вопрос, почему тут исчезли данные");
+            }
 
-            MissionSucces();
-            //MissionFail();
+            int exp = 0;
+            float multiplier = 1;
+            foreach (ActorData actorData in _party)
+            {
+                foreach (var typeElement in _questData.ActorTypes)
+                {
+                    if (typeElement.ActorType == actorData.Type)
+                    {
+                        multiplier = typeElement.Multiplier;
+                    }
+                }
 
+                multiplier = (multiplier < 1) ? 1 : multiplier;
+                exp += Mathf.FloorToInt(actorData.Experience * multiplier);
+            }
+
+            CalculateMissionResult(exp);
             RemoveQuest();
         }
 
-        private void MissionSucces() => Guild.Instance.AddReputation(_questData.AddReputation);
+        private void CalculateMissionResult(int exp)
+        {
+            if (exp >= _questData.ExpFromWin)
+            {
+                //TODO Дополнить усталостью
+                MissionSucces();
+            }
+            else
+            {
+                //TODO Дополнить потерями
+                MissionFail();
+            }
+        }
 
-        private void MissionFail() => Guild.Instance.AddReputation(-_questData.RemoveReputation);
+        private void MissionSucces()
+        {
+            //TODO Вызвать панель уведомлений и покащать результат
+            Guild.Instance.AddReputation(_questData.AddReputation);
+            foreach (ActorData actorData in _party)
+            {
+                actorData.Experience += 2;
+            }
+        }
 
-        private void RemoveQuest() => _questData = null;
+        private void MissionFail()
+        {
+            Guild.Instance.AddReputation(-_questData.RemoveReputation);
+            foreach (ActorData actorData in _party)
+            {
+                actorData.Experience += 1;
+            }
+        }
+
+        private void RemoveQuest()
+        {
+            _inProgress = false;
+            _questData = null;
+        }
 
         private void CalculateResult(out MissionResult missionResult)
         {

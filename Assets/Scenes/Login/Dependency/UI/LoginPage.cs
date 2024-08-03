@@ -3,7 +3,6 @@ using Firebase.Auth;
 using Firebase.Database;
 using SkyClerikExt;
 using System.Collections;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -40,16 +39,17 @@ public class LoginPage : MonoBehaviour
     private FirebaseAuth _firebaseAuth;
     private FirebaseUser _firebaseUser;
 
-#if UNITY_EDITOR
     [SerializeField] private Object _mainMenuScene = null;
     [SerializeField] private Object _developQuestScene = null;
+
+#if UNITY_EDITOR
     bool IsMainSceneValid
     {
         get
         {
             if (_mainMenuScene == null)
                 return false;
-            return _mainMenuScene.GetType().Equals(typeof(SceneAsset));
+            return _mainMenuScene.GetType().Equals(typeof(UnityEditor.SceneAsset));
         }
     }
 
@@ -59,7 +59,7 @@ public class LoginPage : MonoBehaviour
         {
             if (_developQuestScene == null)
                 return false;
-            return _developQuestScene.GetType().Equals(typeof(SceneAsset));
+            return _developQuestScene.GetType().Equals(typeof(UnityEditor.SceneAsset));
         }
     }
 
@@ -71,7 +71,6 @@ public class LoginPage : MonoBehaviour
         if (!IsDevelopSceneValid)
             _developQuestScene = null;
     }
-
 #endif
 
     private void Awake()

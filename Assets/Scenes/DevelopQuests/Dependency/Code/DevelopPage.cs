@@ -1,9 +1,8 @@
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
-public class DevelopPage : MonoBehaviour
+public class DevelopPage : Singleton<DevelopPage>
 {
     private UIDocument _document;
     private VisualElement _rootElement;
@@ -13,15 +12,16 @@ public class DevelopPage : MonoBehaviour
     private Button _backButton;
     private const string _backButtonName = "back_button";
 
-#if UNITY_EDITOR
     [SerializeField] private Object _mainMenuScene = null;
+
+#if UNITY_EDITOR
     bool IsValidSceneAsset
     {
         get
         {
             if (_mainMenuScene == null)
                 return false;
-            return _mainMenuScene.GetType().Equals(typeof(SceneAsset));
+            return _mainMenuScene.GetType().Equals(typeof(UnityEditor.SceneAsset));
         }
     }
 
@@ -30,7 +30,6 @@ public class DevelopPage : MonoBehaviour
         if (!IsValidSceneAsset)
             _mainMenuScene = null;
     }
-
 #endif
 
     private void Awake() => Init();
