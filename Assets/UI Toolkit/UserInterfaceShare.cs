@@ -8,7 +8,11 @@ namespace Gameplay
         [SerializeField]
         private VisualTreeAsset _heroIconTemplete;
 
-        public VisualTreeAsset HeroIconTemplete=> _heroIconTemplete;
+        public VisualTreeAsset HeroIconTemplete => _heroIconTemplete;
+
         public UIDocument CurrentDocument { get; set; }
+
+        public Vector2 StartMousePosition { get; set; }
+        public Vector2 EndMousePosition { get; set; }
     }
 }

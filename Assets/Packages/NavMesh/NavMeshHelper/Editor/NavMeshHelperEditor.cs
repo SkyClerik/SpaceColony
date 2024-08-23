@@ -1,3 +1,4 @@
+using Unity.AI.Navigation;
 using UnityEditor;
 using UnityEngine;
 
@@ -14,6 +15,12 @@ public class NavMeshHelperEditor : Editor
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
+
+        if (GUILayout.Button("Update"))
+        {
+            var meshSurface = _navMeshHelper.GetComponent<NavMeshSurface>();
+            meshSurface.BuildNavMesh();
+        }
 
         if (GUILayout.Button("Active"))
         {

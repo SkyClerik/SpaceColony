@@ -1,4 +1,5 @@
 using Gameplay;
+using Gameplay.UI;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -75,17 +76,17 @@ namespace AvatarLogic
 
         public void Finished()
         {
-            _busy = false;
             Debug.Log($"Машина вернулась на базу", gameObject);
-            _hud = HUDUserInterface.Instance;
+            //_busy = false;
+            //_hud = HUDUserInterface.Instance;
 
-            foreach (var actor in _actors)
-            {
-                actor.Busy = false;
-                _hud.SetShadow(actor);
-            }
+            //foreach (var actor in _actors)
+            //{
+            //    actor.Busy = false;
+            //    _hud.SetShadow(actor);
+            //}
 
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
         }
 
         private void ResetCar(Transform startingPoint)

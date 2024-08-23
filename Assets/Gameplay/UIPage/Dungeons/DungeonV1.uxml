@@ -1,0 +1,47 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="HoreIconTemplate" src="project://database/Assets/UI%20Toolkit/Templates/HoreIconTemplate.uxml?fileID=9197481963319205126&amp;guid=6351852cc447e56438346ca35d7bb0a5&amp;type=3#HoreIconTemplate" />
+    <Style src="project://database/Assets/UI%20Toolkit/ShopVisualStyle.uss?fileID=7433441132597879392&amp;guid=6e94202e9a104b744a173ffa7f2da36e&amp;type=3#ShopVisualStyle" />
+    <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
+        <ui:VisualElement style="flex-grow: 1;" />
+        <ui:VisualElement style="flex-grow: 0; align-items: center; justify-content: center;">
+            <ui:VisualElement style="flex-grow: 0;">
+                <ui:VisualElement name="hero_slots" style="flex-grow: 1; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; flex-direction: row; justify-content: space-around; width: 700px; height: 300px;">
+                    <ui:VisualElement name="slot_a" style="flex-grow: 1; align-items: center;">
+                        <ui:VisualElement name="icon_root" style="flex-grow: 1; align-items: center; height: 100px; justify-content: center; align-self: auto; width: 100%;">
+                            <ui:Instance template="HoreIconTemplate" name="HoreIconTemplate" />
+                        </ui:VisualElement>
+                        <ui:Button text="+" parse-escape-sequences="true" display-tooltip-when-elided="true" name="button" style="flex-grow: 0; height: 50px; width: 200px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="slot_b" style="flex-grow: 1; align-items: center;">
+                        <ui:VisualElement name="icon_root" style="flex-grow: 1; align-items: center; height: 100px; justify-content: center; align-self: auto; width: 100%;">
+                            <ui:Instance template="HoreIconTemplate" name="HoreIconTemplate" />
+                        </ui:VisualElement>
+                        <ui:Button text="+" parse-escape-sequences="true" display-tooltip-when-elided="true" name="button" style="flex-grow: 0; height: 50px; width: 200px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="slot_c" style="flex-grow: 1; align-items: center;">
+                        <ui:VisualElement name="icon_root" style="flex-grow: 1; align-items: center; height: 100px; justify-content: center; align-self: auto; width: 100%;">
+                            <ui:Instance template="HoreIconTemplate" name="HoreIconTemplate" />
+                        </ui:VisualElement>
+                        <ui:Button text="+" parse-escape-sequences="true" display-tooltip-when-elided="true" name="button" style="flex-grow: 0; height: 50px; width: 200px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 0; justify-content: center; align-items: flex-start;">
+            <ui:VisualElement style="flex-grow: 0; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0;">
+                <ui:VisualElement name="header" style="flex-grow: 1; background-color: rgba(12, 21, 46, 0.72); height: 100px; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0; -unity-background-image-tint-color: rgb(36, 59, 51); flex-direction: row; justify-content: space-between; align-items: center; padding-left: 30px;">
+                    <ui:Label tabindex="-1" text="Забытая лаборатория" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-font-style: bold; color: rgb(188, 202, 201); font-size: 45px; -unity-text-align: middle-center;" />
+                    <ui:Button text="X" parse-escape-sequences="true" display-tooltip-when-elided="true" style="border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background-color: rgb(176, 5, 0); max-width: 80px; max-height: 80px; min-height: 80px; min-width: 80px; border-right-color: rgb(58, 58, 58); border-left-color: rgb(58, 58, 58); position: relative;" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 1; height: 400px; background-color: rgba(61, 76, 62, 0.55);" />
+                <ui:VisualElement style="flex-grow: 1; height: 100px; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0; background-color: rgba(61, 76, 62, 0.84); flex-direction: row; justify-content: space-around;">
+                    <ui:Button text="Сведения" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                    <ui:Button text="Бой с боссом" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 0; background-color: rgb(14, 126, 194);" />
+                    <ui:Button text="Усиление" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1;" />
+    </ui:VisualElement>
+    <ui:VisualElement name="bottom_panel" picking-mode="Ignore" style="flex-grow: 0; align-self: stretch; height: 10%; background-color: rgb(55, 55, 55); border-top-color: rgb(132, 132, 132); border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;" />
+</ui:UXML>

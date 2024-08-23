@@ -1,0 +1,48 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; flex-direction: column;">
+        <ui:VisualElement picking-mode="Ignore" name="line_01" style="flex-grow: 0; justify-content: flex-start; flex-direction: column;">
+            <ui:VisualElement picking-mode="Ignore" name="ProgressLine" style="flex-grow: 1; background-color: rgb(255, 102, 0); display: flex; visibility: visible; overflow: visible; height: 5px;" />
+            <ui:ProgressBar value="50" picking-mode="Ignore" style="flex-grow: 1; height: 5px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; display: none; visibility: hidden; overflow: hidden;" />
+        </ui:VisualElement>
+        <ui:VisualElement picking-mode="Ignore" name="line_02" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; align-items: flex-start; justify-content: space-between;">
+            <ui:VisualElement name="line_02_left" picking-mode="Ignore" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: column; align-items: flex-start; display: flex; visibility: visible; overflow: visible;">
+                <ui:VisualElement name="pivot" style="flex-grow: 1; display: none; visibility: hidden; overflow: hidden;">
+                    <ui:VisualElement name="Money" picking-mode="Ignore" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
+                        <ui:Label tabindex="-1" text="13,154,121,452,452,245" display-tooltip-when-elided="true" name="ReputationValueLabel" style="color: rgb(255, 255, 255); font-size: 30px;" />
+                        <ui:Label tabindex="-1" text="R" display-tooltip-when-elided="true" name="MoneyTypeLabel" style="color: rgb(83, 255, 0); font-size: 30px; -unity-font-style: bold;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="DateElement" picking-mode="Ignore" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
+                        <ui:Label tabindex="-1" text="12 декабря 2022" display-tooltip-when-elided="true" name="DateLabel" style="color: rgb(255, 255, 255); font-size: 20px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="line_02_right" picking-mode="Ignore" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: column; align-items: flex-end;">
+                <ui:VisualElement name="pivot" style="flex-grow: 1; display: flex;">
+                    <ui:VisualElement name="ReputationElement" picking-mode="Ignore" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row-reverse;">
+                        <ui:Label tabindex="-1" text="R" display-tooltip-when-elided="true" name="MoneyTypeLabel" style="color: rgb(83, 255, 0); font-size: 30px; -unity-font-style: bold;" />
+                        <ui:Label tabindex="-1" text="35.321.321.31.321" display-tooltip-when-elided="true" name="ReputationValueLabel" style="color: rgb(255, 255, 255); font-size: 30px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="DateElement" picking-mode="Ignore" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row-reverse;">
+                        <ui:Label tabindex="-1" text="12 декабря 2022" display-tooltip-when-elided="true" name="DateLabel" style="color: rgb(255, 255, 255); font-size: 20px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement picking-mode="Ignore" name="line_03" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; align-items: flex-start; justify-content: space-between;">
+            <ui:VisualElement name="line_03_left" picking-mode="Ignore" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: column; align-items: flex-start; display: flex; visibility: visible; overflow: visible;">
+                <ui:VisualElement name="pivot" style="flex-grow: 1; display: none; visibility: hidden; overflow: hidden;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="line_03_right" picking-mode="Ignore" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: column; align-items: flex-end;">
+                <ui:VisualElement name="pivot" picking-mode="Ignore" style="flex-grow: 1; display: flex;">
+                    <ui:Button text="Стройка" parse-escape-sequences="true" display-tooltip-when-elided="true" name="button_command_center" />
+                </ui:VisualElement>
+                <ui:VisualElement name="pivot" picking-mode="Ignore" style="flex-grow: 1; display: flex;">
+                    <ui:Button text="Актеры" parse-escape-sequences="true" display-tooltip-when-elided="true" name="button_actor_selected" />
+                </ui:VisualElement>
+                <ui:VisualElement name="pivot" picking-mode="Ignore" style="flex-grow: 1; display: flex;">
+                    <ui:Button text="Подземелье" parse-escape-sequences="true" display-tooltip-when-elided="true" name="button_dungeon" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
