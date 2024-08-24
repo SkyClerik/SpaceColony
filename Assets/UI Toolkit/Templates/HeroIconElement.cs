@@ -5,7 +5,6 @@ namespace Gameplay
 {
     public class HeroIconElement : VisualElement
     {
-        private TemplateContainer _heroIconTemplate;
         private Action<HeroIconElement> _callback;
         public ActorData actorData;
 
@@ -13,9 +12,10 @@ namespace Gameplay
         {
             _callback = callback;
             actorData = actorDataLink;
-            _heroIconTemplate = UserInterfaceShare.Instance.HeroIconTemplete.Instantiate();
 
-            Add(_heroIconTemplate);
+            var heroIconTemplate = UserInterfaceShare.Instance.HeroIconTemplete.Instantiate();
+            Add(heroIconTemplate);
+
             rootElement.Add(this);
 
             //RegisterCallback<MouseDownEvent>(OnMouseDown);
@@ -43,7 +43,7 @@ namespace Gameplay
                 _callback?.Invoke(this);
             }
         }
-        //BUG: Нужно сохранять позицию курсора постоянно. Что бы нажатие не срабатывало после перемещения.
-        //HELP: А нужно ли? В win это крутится колесиком а в андроиде нужно.Точно нужно. Но там события другие вроде как.
+        //BUG: Отследи нажатие на карточку и держи в поле VisualElement.
+        //Когда поднимаем кнопку проверим тот же ли это VisualElement
     }
 }

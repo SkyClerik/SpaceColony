@@ -29,8 +29,21 @@
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement picking-mode="Ignore" name="line_03" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; align-items: flex-start; justify-content: space-between;">
-            <ui:VisualElement name="line_03_left" picking-mode="Ignore" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: column; align-items: flex-start; display: flex; visibility: visible; overflow: visible;">
-                <ui:VisualElement name="pivot" style="flex-grow: 1; display: none; visibility: hidden; overflow: hidden;" />
+            <ui:VisualElement name="line_03_left" picking-mode="Ignore" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: column; align-items: flex-start; display: flex; visibility: visible; overflow: visible; margin-left: 30px;">
+                <ui:VisualElement name="global_resources_root" style="flex-grow: 0;">
+                    <ui:VisualElement name="resource_template" style="flex-grow: 1; flex-direction: row; align-items: center;">
+                        <ui:VisualElement style="flex-grow: 0; background-image: url(&quot;project://database/Assets/UI%20Toolkit/3e00a35f25d60d878f9290a752c33927.jpg?fileID=-1033828316&amp;guid=a75ce5496864b1c4e939c6c6fe631713&amp;type=3#3e00a35f25d60d878f9290a752c33927_2&quot;); -unity-background-scale-mode: scale-to-fit; width: 48px; height: 48px;" />
+                        <ui:Label tabindex="-1" text="Название ресурса" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 30px; -unity-font-style: bold; color: rgb(124, 215, 233); -unity-text-outline-width: 1px; -unity-text-outline-color: rgb(149, 141, 221); -unity-text-align: middle-left;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="resource_template" style="flex-grow: 1; flex-direction: row; align-items: center;">
+                        <ui:VisualElement style="flex-grow: 0; background-image: url(&quot;project://database/Assets/Gameplay/UIPage/Images/icon_palette.png?fileID=2117708370&amp;guid=44b66327c30beb14aac3426c7a8a6607&amp;type=3#icon_palette_34&quot;); -unity-background-scale-mode: scale-to-fit; width: 48px; height: 48px;" />
+                        <ui:Label tabindex="-1" text="Название ресурса" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 30px; -unity-font-style: bold; color: rgb(124, 215, 233); -unity-text-outline-width: 1px; -unity-text-outline-color: rgb(149, 141, 221); -unity-text-align: middle-left;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="resource_template" style="flex-grow: 1; flex-direction: row; align-items: center;">
+                        <ui:VisualElement style="flex-grow: 0; background-image: url(&quot;project://database/Assets/Gameplay/UIPage/Images/icon_palette.png?fileID=-160090826&amp;guid=44b66327c30beb14aac3426c7a8a6607&amp;type=3#icon_palette_32&quot;); -unity-background-scale-mode: scale-to-fit; width: 48px; height: 48px;" />
+                        <ui:Label tabindex="-1" text="Название ресурса" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 30px; -unity-font-style: bold; color: rgb(124, 215, 233); -unity-text-outline-width: 1px; -unity-text-outline-color: rgb(149, 141, 221); -unity-text-align: middle-left;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="line_03_right" picking-mode="Ignore" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: column; align-items: flex-end;">
                 <ui:VisualElement name="pivot" picking-mode="Ignore" style="flex-grow: 1; display: flex;">

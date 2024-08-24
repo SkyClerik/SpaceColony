@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Assets.Inventory
+namespace Gameplay.Inventory
 {
     public class ItemVisual : VisualElement
     {
+        private PlayerInventoriesContainer _playerInventoriesContainer;
         private PlayerInventory _ownerInventory;
         private StoredItem _ownerStored;
         private Vector2 _originalPosition;
@@ -24,6 +25,7 @@ namespace Assets.Inventory
         {
             _ownerInventory = ownerInventory;
             _ownerStored = ownerStored;
+            _playerInventoriesContainer = PlayerInventoriesContainer.Instance;
 
             name = _ownerStored.Details.FriendlyName;
             style.visibility = Visibility.Hidden;
@@ -135,7 +137,7 @@ namespace Assets.Inventory
                 PlayerInventory.CurrentDraggedItem = null;
                 _ownerInventory.Document.sortingOrder = 0;
 
-                foreach (var inventory in InventoryContainer.Inventories)
+                foreach (var inventory in _playerInventoriesContainer.Inventories)
                 {
                     _placementResults = inventory.ShowPlacementTarget(this, out StoredItem overlapItem);
 
@@ -207,7 +209,7 @@ namespace Assets.Inventory
             if (!_isDragging)
                 return;
 
-            foreach (var inventory in InventoryContainer.Inventories)
+            foreach (var inventory in _playerInventoriesContainer.Inventories)
                 inventory.ShowPlacementTarget(this, out _);
         }
     }

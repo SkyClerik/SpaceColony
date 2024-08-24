@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace SkyClerikExt
 {
-    public static class ListExt
+    public static class List
     {
         public static void Add<T>(this List<T> list, params T[] values)
         {

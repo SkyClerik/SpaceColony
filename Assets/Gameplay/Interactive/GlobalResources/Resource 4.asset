@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e56d22bf0055944d88393faf632d290, type: 3}
+  m_Name: Resource 4
+  m_EditorClassIdentifier: 
+  ID: 37312991-b5ee-42aa-84c0-4b3714caef98
+  FriendlyName: "\u0414\u0435\u0440\u0435\u0432\u043E"
+  Description: 
+  SellPrice: 0
+  CurPCS: 0
+  MaxPCS: 0
+  Icon: {fileID: -1383421506, guid: a75ce5496864b1c4e939c6c6fe631713, type: 3}
+  SlotDimension:
+    DefaultHeight: 0
+    DefaultWidth: 0
+    DefaulAngle: 0

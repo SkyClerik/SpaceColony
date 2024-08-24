@@ -1,6 +1,7 @@
 using UnityEngine.UIElements;
-using SkyClerikExt;
 using UnityEngine;
+using System.Collections.Generic;
+using SkyClerikExt;
 
 namespace Gameplay.UI
 {
@@ -9,6 +10,10 @@ namespace Gameplay.UI
     {
         private Label _reputationValueElement;
         private const string _reputationValueElementName = "ReputationValueLabel";
+
+        private VisualElement _globalResourcesRoot;
+        private const string _globalResourcesRootName = "global_resources_root";
+        private List<GlobalResourceElement> globalResourceElements = new List<GlobalResourceElement>();
 
         private const string _line01 = "line_01";
 
@@ -52,7 +57,9 @@ namespace Gameplay.UI
             _reputationValueElement = line02Right.Q<Label>(_reputationValueElementName);
             LoadReputation();
 
+
             var line03 = rootElement.Q(_line03Name);
+            var line03Left = line03.Q(_line03LeftName);
             var line03Right = line03.Q(_line03RightName);
 
             _buttonCommandCenter = line03Right.Q<Button>(_buttonCommandCenterName);
@@ -63,6 +70,15 @@ namespace Gameplay.UI
 
             _buttonDungeon = line03Right.Q<Button>(_buttonDungeonName);
             _buttonDungeon.clicked += ClickedDungeon;
+
+            _globalResourcesRoot = line03Left.Q(_globalResourcesRootName);
+            _globalResourcesRoot.Clear();
+            globalResourceElements = new List<GlobalResourceElement>();
+            foreach (var resource in PlayerGlobalResourcesContainer.Instance.GetGlobalResources)
+            {
+                var newResource = new GlobalResourceElement(_globalResourcesRoot, resource);
+                globalResourceElements.Add(newResource);
+            }
 
         }
 

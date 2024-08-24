@@ -1,6 +1,7 @@
 using System;
+using Gameplay.Data;
 
-namespace Assets.Inventory
+namespace Gameplay.Inventory
 {
     [Serializable]
     public class StoredItem

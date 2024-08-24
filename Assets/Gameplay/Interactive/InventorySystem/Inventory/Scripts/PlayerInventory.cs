@@ -4,8 +4,9 @@ using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Gameplay.Data;
 
-namespace Assets.Inventory
+namespace Gameplay.Inventory
 {
     [RequireComponent(typeof(UIDocument))]
     public sealed class PlayerInventory : MonoBehaviour
@@ -55,7 +56,7 @@ namespace Assets.Inventory
             _inventoryGrid = _root.Q<VisualElement>(_gridName);
             _screen = _root.Q<VisualElement>(_screenName);
 
-            InventoryContainer.Inventories.Add(this);
+            PlayerInventoriesContainer.Instance.Inventories.Add(this);
 
             ConfigureInventoryTelegraph();
 

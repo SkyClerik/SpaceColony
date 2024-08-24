@@ -1,16 +1,31 @@
 using UnityEditor;
-using UnityEngine;
+using UnityEditor.UIElements;
+using UnityEngine.UIElements;
 
-[CustomEditor(typeof(ItemDefinition))]
-public class ItemDefinitionEditor : Editor
+namespace Gameplay.Data
 {
-    private ItemDefinition _itemDefinition;
-
-    public override void OnInspectorGUI()
+    [CustomEditor(typeof(ItemDefinition))]
+    public class ItemDefinitionEditor : Editor
     {
-        base.OnInspectorGUI();
+        private ItemDefinition _itemDefinition;
 
-        _itemDefinition = (ItemDefinition)target;
-        GUILayout.Box(_itemDefinition.Icon.texture);
+        private void OnEnable()
+        {
+            _itemDefinition = target as ItemDefinition;
+        }
+
+        public override VisualElement CreateInspectorGUI()
+        {
+            VisualElement root = new VisualElement();
+            InspectorElement.FillDefaultInspector(root, serializedObject, this);
+
+            VisualElement element = new VisualElement();
+            element.style.backgroundImage = new StyleBackground(_itemDefinition.Icon);
+            element.style.width = 100 * _itemDefinition.SlotDimension.DefaultWidth;
+            element.style.height = 100 * _itemDefinition.SlotDimension.DefaultHeight;
+            root.Add(element);
+
+            return root;
+        }
     }
 }

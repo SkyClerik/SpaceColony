@@ -18,7 +18,7 @@ namespace Gameplay.UI
             _cells = rootElement.Q<VisualElement>(_cellsName);
             _cells.Clear();
 
-            List<ActorData> actorDatas = GameDataContainer.Instance.ActorDatas;
+            List<ActorData> actorDatas = PlayerActorsContainer.Instance.GetActorsData;
             for (int i = 0; i < actorDatas.Count; i++)
             {
                 HeroIconElement heroIconElement = new HeroIconElement(_cells, actorDatas[i], OnMouseDownCallback);
@@ -52,11 +52,15 @@ namespace Gameplay.UI
 
         private void OnMouseDownCallback(HeroIconElement heroIconElement)
         {
-            Debug.Log($"HUDUserInterface OnMouseDownCallback ");
             if (heroIconElement.actorData.Busy)
                 return;
 
-            _callbackActorData.Invoke(_slotIndex, heroIconElement.actorData);
+            if (_callbackActorData != null)
+            {
+                heroIconElement.actorData.Busy = true;
+                _callbackActorData.Invoke(_slotIndex, heroIconElement.actorData);
+                Hide();
+            }
         }
 
         byte _slotIndex;

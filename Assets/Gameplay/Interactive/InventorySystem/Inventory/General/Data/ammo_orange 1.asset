@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e424c86533c60b4c9f4cbe4fbc0591c, type: 3}
+  m_Name: ammo_orange 1
+  m_EditorClassIdentifier: 
+  ID: 02c1fe64-863f-490e-88f5-80672539b8ba
+  FriendlyName: ammo_orange
+  Description: 
+  SellPrice: 0
+  CurPCS: 0
+  MaxPCS: 0
+  Icon: {fileID: -1499582244, guid: 44b66327c30beb14aac3426c7a8a6607, type: 3}
+  SlotDimension:
+    DefaultHeight: 1
+    DefaultWidth: 1
+    DefaulAngle: 0
