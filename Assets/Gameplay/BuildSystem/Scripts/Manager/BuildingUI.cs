@@ -10,7 +10,7 @@ public class BuildingUI : MonoBehaviour
     private float _shopButtonSize = 60;
 
     private Rect _shopArea;
-    private List<BuildingBehaviour> _buildingList;
+    private List<BuildingBehavior> _buildingList;
 
     public void Init(BuildingControl buildingControl, BuildingContainer buildingContainer)
     {
@@ -43,7 +43,7 @@ public class BuildingUI : MonoBehaviour
                 if (GUILayout.Button($"{_buildingList[i].GetBuildInfo.Title}"))
                 {
                     _isMain = !_isMain;
-                    _buildingControl.SelectShadowBilding(i);
+                    _buildingControl.SelectShadowBuilding(i);
                 }
             }
             GUILayout.EndArea();

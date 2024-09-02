@@ -1,12 +1,12 @@
 ﻿using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace SkyClerikExt
+namespace SkyClericExt
 {
     public static class StringExt
     {
         /// <summary>
-        /// Возвращает значение, указывающее, содержит ли данная строка какую-нибудь из переданных подстрок.
+        /// Возвращает значение, указывающее, содержит ли данная строка какую-ни будь из переданных подстрок.
         /// </summary>
         public static bool ContainsAny(this string str, params string[] values)
         {
@@ -14,7 +14,7 @@ namespace SkyClerikExt
         }
 
         /// <summary>
-        /// Делит число запятыми стаками по три
+        /// Делит число запятыми, стеками по три
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>

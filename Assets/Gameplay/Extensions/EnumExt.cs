@@ -1,6 +1,6 @@
 using System;
 
-namespace SkyClerikExt
+namespace SkyClericExt
 {
     public static class EnumExt
     {

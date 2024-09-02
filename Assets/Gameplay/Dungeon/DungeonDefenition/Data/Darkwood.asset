@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3639eb79726c2d74eb230a62a24087f1, type: 3}
+  m_Name: Darkwood
+  m_EditorClassIdentifier: 
+  Title: "\u0422\u0435\u043C\u043D\u044B\u0439 \u043B\u0435\u0441"
+  TitleSprite: {fileID: -3923887998752836849, guid: 2262f408278271248889a3ea3c7e75bf,
+    type: 3}
+  Icon: {fileID: -1033828316, guid: a75ce5496864b1c4e939c6c6fe631713, type: 3}
+  Description: "\u0414\u043B\u0438\u043D\u043D\u043E\u0435 \u043E\u043F\u0438\u0441\u0430\u043D\u0438\u0435
+    \u044D\u0442\u043E\u0433\u043E \u0442\u0435\u043C\u043D\u043E\u0433\u043E \u043C\u0435\u0441\u0442\u0430"
+  AddReputation: 0
+  RemoveReputation: 0
+  ExpFromWin: 0
+  HowMuchGSNeeded: 1
+  _waitingTime:
+    Min: 0
+    Sec: 3
+  Monsters:
+  - _monster: {fileID: 11400000, guid: f9d4b586826d3d64a91d1b8c1614f56d, type: 2}
+    PCS:
+      OnlyMinValue: 0
+      MinValue: 0
+      MaxValue: 0
+  _loot:
+    _resources: []
+    _items:
+    - _item: {fileID: 11400000, guid: 33ed5159614475547b0f1694d60f4353, type: 2}
+      _pcs:
+        OnlyMinValue: 1
+        MinValue: 3
+        MaxValue: 0
+      _chance: 0
+    - _item: {fileID: 11400000, guid: 5bee97dc4215d96428c54c8e518ca8b4, type: 2}
+      _pcs:
+        OnlyMinValue: 0
+        MinValue: 5
+        MaxValue: 50
+      _chance: 0
+    _actors: []
+    _pets: []
+    _drawings: []

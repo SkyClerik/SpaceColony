@@ -5,6 +5,6 @@ using UnityEngine;
 public class BuildingContainer : ScriptableObject
 {
     [SerializeField]
-    private List<BuildingBehaviour> _buildings = new List<BuildingBehaviour>();
-    public List<BuildingBehaviour> Buildings => _buildings;
+    private List<BuildingBehavior> _buildings = new List<BuildingBehavior>();
+    public List<BuildingBehavior> Buildings => _buildings;
 }

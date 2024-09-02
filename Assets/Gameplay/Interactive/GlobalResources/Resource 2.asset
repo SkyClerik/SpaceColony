@@ -9,17 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e56d22bf0055944d88393faf632d290, type: 3}
+  m_Script: {fileID: 11500000, guid: f58a5f79d650f0f4ea399d5c003c0d66, type: 3}
   m_Name: Resource 2
   m_EditorClassIdentifier: 
+  _frendlyName: 
+  _description: 
+  _icon: {fileID: 0}
+  _minPCS: 0
+  _maxPCS: 1000
   ID: 9aa691a6-3a75-449a-8bda-6cae0f5d2a2d
-  FriendlyName: "\u0417\u043E\u043B\u043E\u0442\u043E"
-  Description: 
-  SellPrice: 0
   CurPCS: 0
-  MaxPCS: 0
-  Icon: {fileID: -1654202371, guid: a75ce5496864b1c4e939c6c6fe631713, type: 3}
   SlotDimension:
     DefaultHeight: 0
     DefaultWidth: 0
     DefaulAngle: 0
+  _coast:
+    _price: 0

@@ -31,7 +31,7 @@ public class SelectedObjects : Singleton<SelectedObjects>
             {
                 if (TryFindObject(point, out GameObject obj))
                 {
-                    obj.AddComponent<BuildDruger>().Init(DrugerTypes.Move);
+                    obj.AddComponent<BuildDragger>().Init(DraggerTypes.Move);
                 }
             }
         }
@@ -39,7 +39,7 @@ public class SelectedObjects : Singleton<SelectedObjects>
 
     private bool TryFindObject(BoxCollider boxCollider, out GameObject obj)
     {
-        foreach (BuildingBehaviour item in _buildingControl.BuildingBehaviours)
+        foreach (BuildingBehavior item in _buildingControl.BuildingBehaviors)
         {
             if (item == null)
                 continue;

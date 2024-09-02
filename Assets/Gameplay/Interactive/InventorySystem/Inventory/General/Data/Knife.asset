@@ -12,12 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e424c86533c60b4c9f4cbe4fbc0591c, type: 3}
   m_Name: Knife
   m_EditorClassIdentifier: 
+  _frendlyName: 
+  _description: 
+  _icon: {fileID: 2117708370, guid: 44b66327c30beb14aac3426c7a8a6607, type: 3}
+  _minPCS: 0
+  _maxPCS: 0
   ID: efe2e1ee-02b4-45f1-903e-9959ca831198
-  FriendlyName: 
-  Description: 
-  SellPrice: 0
-  Icon: {fileID: 21300000, guid: c72d560cc44704b4e9340696bb2ef579, type: 3}
+  CurPCS: 0
   SlotDimension:
     DefaultHeight: 1
-    DefaultWidth: 2
+    DefaultWidth: 1
     DefaulAngle: 0
+  _coast:
+    _price: 0

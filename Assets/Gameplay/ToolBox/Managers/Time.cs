@@ -9,7 +9,6 @@ namespace ToolBoxSystem
         private System.TimeSpan _gameTime = new System.TimeSpan(0, 0, 0, 0);   //  https://www.youtube.com/watch?v=YNwHmbinus0
         private float _frame = 0f;
         public List<IRPS> IRPSObjects = new List<IRPS>();
-        private int _maxIdentificator = 0;
 
         public void OnAwake()
         {
@@ -30,9 +29,7 @@ namespace ToolBoxSystem
         void PerSecond()
         {
             for (int i = 0; i < IRPSObjects.Count; i++)
-            {
                 IRPSObjects[i].RPS();
-            }
         }
 
         //string TimeNormalize(float seconds)
@@ -52,28 +49,29 @@ namespace ToolBoxSystem
 
         public void AddIRPSObjects(IRPS extObj)
         {
-            if (extObj.Identificator != "")
+            if (!string.IsNullOrEmpty(extObj.Identificatory))
             {
                 foreach (var item in IRPSObjects)
                 {
-                    if (item.Identificator == extObj.Identificator)
+                    if (item.Identificatory.Equals(extObj.Identificatory))
                     {
-                        Debug.Log("Такой ID уже мспользуется", extObj as MonoBehaviour);
+                        Debug.Log("Такой ID уже используется", extObj as MonoBehaviour);
                         return;
                     }
                 }
             }
             else
             {
-                extObj.Identificator = GetID();
+                extObj.Identificatory = GetID();
             }
+
             IRPSObjects.Add(extObj);
         }
         public void RemoveIRPSObjects(IRPS extObj)
         {
             foreach (var item in IRPSObjects)
             {
-                if (item.Identificator == extObj.Identificator)
+                if (item.Identificatory == extObj.Identificatory)
                 {
                     IRPSObjects.Remove(item);
                     return;
@@ -84,9 +82,7 @@ namespace ToolBoxSystem
         string GetID()
         {
             Debug.Log("Выдаю новый ID для подписчика таймера");
-            _maxIdentificator++;
-            return (_maxIdentificator - 1).ToString();
+            return System.Guid.NewGuid().ToString();
         }
-
     }
 }

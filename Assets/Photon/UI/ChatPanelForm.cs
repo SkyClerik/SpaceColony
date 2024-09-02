@@ -2,8 +2,6 @@ using ExitGames.Client.Photon;
 using Photon.Chat;
 using Photon.Chat.Demo;
 using Photon.Pun;
-using QuestSystem;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -28,9 +26,6 @@ public class ChatPanelForm : MonoBehaviour, IChatClientListener
     private string _selectedChannelName = "GlobalChat";
 
     public string UserID { get; set; }
-
-    [SerializeField]
-    private QuestData _missionData;
 
     private void Start()
     {
@@ -86,8 +81,9 @@ public class ChatPanelForm : MonoBehaviour, IChatClientListener
         if (string.IsNullOrEmpty(inputLine))
             return;
 
-        string data = JsonUtility.ToJson(_missionData);
-        chatClient.PublishMessage(_selectedChannelName, data);
+        //string data = JsonUtility.ToJson(_missionData);
+        //chatClient.PublishMessage(_selectedChannelName, data);
+
         //chatClient.PublishMessage(_selectedChannelName, inputLine);
         //chatClient.SendPrivateMessage(_selectedChannelName, inputLine);
     }
@@ -139,9 +135,9 @@ public class ChatPanelForm : MonoBehaviour, IChatClientListener
 
                 try
                 {
-                    QuestData newMD = Instantiate(_missionData);
-                    JsonUtility.FromJsonOverwrite($"{messages[i]}", newMD);
-                    Debug.Log($"{newMD.Description}");
+                    //QuestData newMD = Instantiate(_missionData);
+                    //JsonUtility.FromJsonOverwrite($"{messages[i]}", newMD);
+                    //Debug.Log($"{newMD.Description}");
                 }
                 catch (System.Exception e)
                 {

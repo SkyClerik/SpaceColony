@@ -3,7 +3,7 @@ using UnityEngine;
 using System;
 using System.Reflection;
 
-namespace SkyClerikExt
+namespace SkyClericExt
 {
     public static partial class Other
     {
@@ -47,7 +47,7 @@ namespace SkyClerikExt
         }
 
         /// <summary>
-        /// Возвращает рандомный объект листа основываясь на указанном в типе значении шанса
+        /// Возвращает рандомно объект листа основываясь на указанном в типе значении шанса
         /// </summary>
         public static T RandomByChance<T>(this List<T> obj) where T : IChance
         {
@@ -95,7 +95,7 @@ namespace SkyClerikExt
         }
 
         /// <summary>
-        /// Возвращает растояние от объекта до объекта
+        /// Возвращает расстояние от объекта до объекта
         /// </summary>
         public static float GetDistance(Transform ATransform, Transform BTransform)
         {

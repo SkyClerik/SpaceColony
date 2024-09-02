@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SkyClerikExt
+namespace SkyClericExt
 {
     public static partial class ImageExt
     {

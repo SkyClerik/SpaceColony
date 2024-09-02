@@ -8,7 +8,7 @@ public class BuildInfo : ScriptableObject
     [SerializeField]
     private Material _defaultMaterial;
     [SerializeField]
-    private Material _drugedMaterial;
+    private Material _draggedMaterial;
     [SerializeField]
     public int _curPCS;
     [SerializeField]
@@ -16,7 +16,7 @@ public class BuildInfo : ScriptableObject
 
     public string Title => _title;
     public Material GetDefaultMaterial => _defaultMaterial;
-    public Material GetDrugedMaterial => _drugedMaterial;
+    public Material GetDraggedMaterial => _draggedMaterial;
     public int CurPCS { get => _curPCS; set => _curPCS = value; }
     public int MaxPCS { get => _maxPCS; set => _maxPCS = value; }
 }

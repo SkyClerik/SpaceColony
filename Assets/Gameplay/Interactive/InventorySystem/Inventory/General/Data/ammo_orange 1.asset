@@ -18,7 +18,7 @@ MonoBehaviour:
   SellPrice: 0
   CurPCS: 0
   MaxPCS: 0
-  Icon: {fileID: -1499582244, guid: 44b66327c30beb14aac3426c7a8a6607, type: 3}
+  Icon: {fileID: 2117708370, guid: 44b66327c30beb14aac3426c7a8a6607, type: 3}
   SlotDimension:
     DefaultHeight: 1
     DefaultWidth: 1

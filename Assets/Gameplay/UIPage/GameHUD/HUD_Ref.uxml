@@ -46,14 +46,32 @@
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="line_03_right" picking-mode="Ignore" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: column; align-items: flex-end;">
-                <ui:VisualElement name="pivot" picking-mode="Ignore" style="flex-grow: 1; display: flex;">
+                <ui:VisualElement name="pivot" picking-mode="Ignore" style="flex-grow: 1; display: flex; width: 100%;">
                     <ui:Button text="Стройка" parse-escape-sequences="true" display-tooltip-when-elided="true" name="button_command_center" />
                 </ui:VisualElement>
-                <ui:VisualElement name="pivot" picking-mode="Ignore" style="flex-grow: 1; display: flex;">
+                <ui:VisualElement name="pivot" picking-mode="Ignore" style="flex-grow: 1; display: flex; width: 100%;">
+                    <ui:Button text="Добытчик" parse-escape-sequences="true" display-tooltip-when-elided="true" name="button_mining" />
+                </ui:VisualElement>
+                <ui:VisualElement name="pivot" picking-mode="Ignore" style="flex-grow: 1; display: flex; width: 100%;">
                     <ui:Button text="Актеры" parse-escape-sequences="true" display-tooltip-when-elided="true" name="button_actor_selected" />
                 </ui:VisualElement>
-                <ui:VisualElement name="pivot" picking-mode="Ignore" style="flex-grow: 1; display: flex;">
+                <ui:VisualElement name="pivot" picking-mode="Ignore" style="flex-grow: 1; display: flex; width: 100%;">
                     <ui:Button text="Подземелье" parse-escape-sequences="true" display-tooltip-when-elided="true" name="button_dungeon" />
+                </ui:VisualElement>
+                <ui:VisualElement name="pivot" picking-mode="Ignore" style="flex-grow: 1; display: flex; width: 100%;">
+                    <ui:Button text="Подземелья" parse-escape-sequences="true" display-tooltip-when-elided="true" name="button_dungeons" />
+                </ui:VisualElement>
+                <ui:VisualElement name="pivot" picking-mode="Ignore" style="flex-grow: 1; display: flex; width: 100%;">
+                    <ui:Button text="Предметы" parse-escape-sequences="true" display-tooltip-when-elided="true" name="button_items" />
+                </ui:VisualElement>
+                <ui:VisualElement name="pivot" picking-mode="Ignore" style="flex-grow: 1; display: flex; width: 100%;">
+                    <ui:Button text="Питомцы" parse-escape-sequences="true" display-tooltip-when-elided="true" name="button_pets" />
+                </ui:VisualElement>
+                <ui:VisualElement name="pivot" picking-mode="Ignore" style="flex-grow: 1; display: flex; width: 100%;">
+                    <ui:Button text="Верстак" parse-escape-sequences="true" display-tooltip-when-elided="true" name="button_workbench" />
+                </ui:VisualElement>
+                <ui:VisualElement name="pivot" picking-mode="Ignore" style="flex-grow: 1; display: flex; width: 100%;">
+                    <ui:Button text="мастерская" parse-escape-sequences="true" display-tooltip-when-elided="true" name="button_production_table" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>

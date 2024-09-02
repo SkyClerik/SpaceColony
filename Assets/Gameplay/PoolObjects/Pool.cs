@@ -8,17 +8,17 @@ namespace PoolObjectSystem
     {
         [SerializeField]
         private List<ObjectInfo> _prefabs;
-        private Dictionary<PoolObjectID, BaseObjectPool> _objectPool = new();
+        private Dictionary<GameObject, BaseObjectPool> _objectPool = new();
 
         public List<ObjectInfo> GetPrefabs => _prefabs;
 
         private void Start()
         {
             foreach (var obj in _prefabs)
-                _objectPool.Add(obj.GetPoolID, new BaseObjectPool(obj.GetAmount, obj.GetPrefab));
+                _objectPool.Add(obj.GetPrefab, new BaseObjectPool(obj.GetAmount, obj.GetPrefab));
         }
 
-        public GameObject Get(PoolObjectID poolObjectID)
+        public GameObject Get(GameObject poolObjectID)
         {
             if (_objectPool.TryGetValue(poolObjectID, out BaseObjectPool carPool))
                 return carPool.Get();
@@ -32,7 +32,7 @@ namespace PoolObjectSystem
     {
         private GameObject _default;
         public List<GameObject> Objects = new List<GameObject>();
-        public int unicValue = 0;
+        public int uniqueValue = 0;
 
         public BaseObjectPool(int count, GameObject prefab)
         {
@@ -56,7 +56,7 @@ namespace PoolObjectSystem
             obj.SetActive(false);
 
             if (obj.TryGetComponent(out NavMeshAgent navMeshAgent))
-                navMeshAgent.avoidancePriority = unicValue++;
+                navMeshAgent.avoidancePriority = uniqueValue++;
 
             return obj;
         }
@@ -83,13 +83,9 @@ namespace PoolObjectSystem
         [SerializeField]
         private GameObject _prefab;
         [SerializeField]
-        private PoolObjectID _id;
-        [SerializeField]
         private int _amount;
 
         public GameObject GetPrefab => _prefab;
-        public PoolObjectID GetPoolID => _id;
         public int GetAmount => _amount;
-        public void SetPoolID(PoolObjectID i) => _id = i;
     }
 }

@@ -2,7 +2,6 @@
 
 namespace ToolBoxSystem
 {
-
     public class UpdateComponent : MonoBehaviour
     {
         private ToolBoxSystem.Update mng;

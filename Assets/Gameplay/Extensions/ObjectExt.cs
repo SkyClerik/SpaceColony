@@ -1,6 +1,6 @@
 using System.Linq;
 
-namespace SkyClerikExt
+namespace SkyClericExt
 {
     public static class ObjectExt
     {

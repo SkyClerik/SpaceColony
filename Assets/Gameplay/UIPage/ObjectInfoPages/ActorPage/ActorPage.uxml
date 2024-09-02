@@ -1,0 +1,23 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; flex-direction: row; position: absolute; width: 100%; height: 100%; display: flex;">
+        <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1;">
+            <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Models/Characters/test_character_image.png?fileID=2800000&amp;guid=4ea578646309f0842ae5df47bd710e83&amp;type=3#test_character_image&quot;); -unity-background-scale-mode: scale-to-fit;" />
+        </ui:VisualElement>
+        <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1;" />
+    </ui:VisualElement>
+    <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; position: absolute; width: 100%; height: 100%; flex-direction: row; display: flex;">
+        <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; width: 50%;">
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="slot_1" style="width: 100px; height: 100px; position: absolute; top: 209px; left: 420px;" />
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="slot_2" style="width: 100px; height: 100px; position: absolute; top: 455px; left: 423px;" />
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="slot_3" style="width: 100px; height: 100px; position: absolute; top: 718px; left: 426px;" />
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="slot_4" style="width: 100px; height: 100px; position: absolute; top: 347px; left: 235px;" />
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="slot_5" style="width: 100px; height: 100px; position: absolute; top: 342px; left: 610px;" />
+            <ui:Button text="Закрыть" parse-escape-sequences="true" display-tooltip-when-elided="true" name="button_exit" style="width: 100px; height: 100px; position: absolute; top: 907px; left: 804px;" />
+        </ui:VisualElement>
+        <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; width: 50%;">
+            <ui:VisualElement name="window" style="flex-grow: 1; width: 100%;">
+                <ui:Label tabindex="-1" text="Это пространство заполним статами" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 55px; white-space: normal; -unity-font-style: bold; color: rgb(255, 255, 255); -unity-text-align: middle-left; text-overflow: clip;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

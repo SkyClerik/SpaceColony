@@ -1,7 +1,7 @@
 ﻿using Firebase;
 using Firebase.Auth;
 using Firebase.Database;
-using SkyClerikExt;
+using SkyClericExt;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -30,9 +30,6 @@ public class LoginPage : MonoBehaviour
     private const string _passwordExeptionName = "password_exeption";
 
     private bool _isRegistration = false;
-
-    [SerializeField]
-    private QuestSystem.QuestData _questData;
 
     private DatabaseReference _databaseReference;
     private DependencyStatus _dependencyStatus;
@@ -175,8 +172,9 @@ public class LoginPage : MonoBehaviour
 
     private void SaveData()
     {
-        var data = JsonUtility.ToJson(_questData);
-        _databaseReference.Child("Main").SetRawJsonValueAsync(data);
+        //TODO заглушил логинку
+        //var data = JsonUtility.ToJson(_questData);
+        //_databaseReference.Child("Main").SetRawJsonValueAsync(data);
         Debug.Log("SaveData");
     }
 
@@ -197,9 +195,10 @@ public class LoginPage : MonoBehaviour
         {
             DataSnapshot snapshot = data.Result;
             string text = snapshot.Child("Main").GetRawJsonValue();
-            QuestSystem.QuestData result = Instantiate(_questData);
-            JsonUtility.FromJsonOverwrite(text, result);
-            Debug.Log($"result: {result.Description}");
+            //TODO заглушил логинку
+            //QuestSystem.QuestData result = Instantiate(_questData);
+            //JsonUtility.FromJsonOverwrite(text, result);
+            //Debug.Log($"result: {result.Description}");
         }
 
         Debug.Log("LoadData");

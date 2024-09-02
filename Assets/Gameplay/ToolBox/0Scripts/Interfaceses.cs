@@ -18,7 +18,7 @@
     }
     public interface IRPS
     {
-        string Identificator { get; set; }
+        string Identificatory { get; set; }
         void RPS();
     }
     public interface IUpdate

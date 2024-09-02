@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SkyClerikExt
+namespace SkyClericExt
 {
     public static class ComponentExt
     {
@@ -12,9 +12,9 @@ namespace SkyClerikExt
         public static I[] GetInterfaceComponents<I>(this Component comp) where I : class
         {
             var components = comp.GetComponents(typeof(I));
-            I[] Icomponents = new I[components.Length];
-            components.CopyTo(Icomponents, 0);
-            return Icomponents;
+            I[] iComponents = new I[components.Length];
+            components.CopyTo(iComponents, 0);
+            return iComponents;
         }
 
         public static T GetSafeComponent<T>(this Component comp) where T : Component

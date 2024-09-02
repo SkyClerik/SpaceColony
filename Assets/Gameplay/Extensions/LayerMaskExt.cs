@@ -1,8 +1,7 @@
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
-namespace SkyClerikExt
+namespace SkyClericExt
 {
     public static class LayerMaskExt
     {

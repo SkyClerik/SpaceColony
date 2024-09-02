@@ -19,6 +19,16 @@ namespace Gameplay.UI
             _closeButton.clicked += ClickedCloseButton;
         }
 
+        public override void Show()
+        {
+            base.Show();
+        }
+
+        public override void Hide()
+        {
+            base.Hide();
+        }
+
         private void ClickedCloseButton()
         {
             Hide();

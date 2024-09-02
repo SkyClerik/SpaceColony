@@ -38,7 +38,7 @@ namespace Gameplay.Inventory
                 {
                     width = _ownerStored.Details.SlotDimension.DefaultWidth * _ownerInventory.SlotDimension.Width,
                     height = _ownerStored.Details.SlotDimension.DefaultHeight * _ownerInventory.SlotDimension.Height,
-                    rotate = new Rotate(_ownerStored.Details.SlotDimension.DefaulAngle),
+                    rotate = new Rotate(_ownerStored.Details.SlotDimension.DefaultAngle),
                     paddingTop = 5,
                     paddingBottom = 5,
                     paddingLeft = 5,
@@ -46,7 +46,7 @@ namespace Gameplay.Inventory
                 },
                 name = _intermediateName
             };
-            _ownerStored.Details.SlotDimension.CurrentAngle = _ownerStored.Details.SlotDimension.DefaulAngle;
+            _ownerStored.Details.SlotDimension.CurrentAngle = _ownerStored.Details.SlotDimension.DefaultAngle;
 
             _icon = new VisualElement
             {

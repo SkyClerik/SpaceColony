@@ -105,16 +105,16 @@ namespace Gameplay.Inventory
 
         private void ConfigureInventorySize()
         {
-            var childrens = _inventoryGrid.Children().ToList();
+            var children = _inventoryGrid.Children().ToList();
 
             _inventoryDimensions.Width = 0;
             _inventoryDimensions.Height = 1;
 
-            if (childrens.Count > 0)
+            if (children.Count > 0)
             {
-                float tempY = childrens[0].worldBound.y;
+                float tempY = children[0].worldBound.y;
                 bool row = false;
-                foreach (VisualElement box in childrens)
+                foreach (VisualElement box in children)
                 {
                     if (box.worldBound.y > tempY)
                     {
@@ -188,10 +188,10 @@ namespace Gameplay.Inventory
 
                     await UniTask.Yield(PlayerLoopTiming.LastPostLateUpdate);
 
-                    bool parentOverlaping = GridRectOverlap(newItem);
+                    bool parentOverlapping = GridRectOverlap(newItem);
                     StoredItem overlappingItem = _storedItems.FirstOrDefault(s => s.RootVisual != null && s.RootVisual.worldBound.Overlaps(newItem.worldBound));
 
-                    if (overlappingItem == null && parentOverlaping)
+                    if (overlappingItem == null && parentOverlapping)
                         return true;
                 }
             }

@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; position: relative; width: 100%; height: 100%; flex-direction: row; display: flex;">
+        <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; width: 50%;">
+            <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Packages/Joystick%20Pack/Sprites/All%20Axis%20Backgrounds/AllAxis_Outline.png?fileID=21300000&amp;guid=5b56d9fa0e8bd6e409ed188db38a692c&amp;type=3#AllAxis_Outline&quot;); -unity-background-scale-mode: scale-to-fit; max-width: 256px; max-height: 256px; min-width: 128px; min-height: 128px;" />
+            <ui:Button text="Закрыть" parse-escape-sequences="true" display-tooltip-when-elided="true" name="button_exit" style="width: 100px; height: 100px; position: absolute; top: 907px; left: 804px;" />
+        </ui:VisualElement>
+        <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; width: 50%;">
+            <ui:VisualElement name="window" style="flex-grow: 1; width: 100%;">
+                <ui:Label tabindex="-1" text="Это пространство заполним описанием предмета" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 55px; white-space: normal; -unity-font-style: bold; color: rgb(255, 255, 255); -unity-text-align: middle-left; text-overflow: clip;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

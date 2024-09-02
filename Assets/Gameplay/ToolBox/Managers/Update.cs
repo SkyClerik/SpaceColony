@@ -10,32 +10,32 @@ namespace ToolBoxSystem
         private List<ITickFixed> ticksFixed = new List<ITickFixed>();
         private List<ITickLate> ticksLate = new List<ITickLate>();
 
-        public static void AddTo(object updateble)
+        public static void AddTo(object updatable)
         {
             var mngUpdate = ToolBox.Get<ToolBoxSystem.Update>();
 
-            if (updateble is ITick)
-                mngUpdate.ticks.Add(updateble as ITick);
+            if (updatable is ITick)
+                mngUpdate.ticks.Add(updatable as ITick);
 
-            if (updateble is ITickFixed)
-                mngUpdate.ticksFixed.Add(updateble as ITickFixed);
+            if (updatable is ITickFixed)
+                mngUpdate.ticksFixed.Add(updatable as ITickFixed);
 
-            if (updateble is ITickLate)
-                mngUpdate.ticksLate.Add(updateble as ITickLate);
+            if (updatable is ITickLate)
+                mngUpdate.ticksLate.Add(updatable as ITickLate);
         }
 
-        public static void RemoveFrom(object updateble)
+        public static void RemoveFrom(object updatable)
         {
             var mngUpdate = ToolBox.Get<ToolBoxSystem.Update>();
 
-            if (updateble is ITick)
-                mngUpdate.ticks.Remove(updateble as ITick);
+            if (updatable is ITick)
+                mngUpdate.ticks.Remove(updatable as ITick);
 
-            if (updateble is ITickFixed)
-                mngUpdate.ticksFixed.Remove(updateble as ITickFixed);
+            if (updatable is ITickFixed)
+                mngUpdate.ticksFixed.Remove(updatable as ITickFixed);
 
-            if (updateble is ITickLate)
-                mngUpdate.ticksLate.Remove(updateble as ITickLate);
+            if (updatable is ITickLate)
+                mngUpdate.ticksLate.Remove(updatable as ITickLate);
         }
 
         public void Tick()

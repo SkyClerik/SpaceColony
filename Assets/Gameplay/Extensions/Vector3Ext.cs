@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SkyClerikExt
+namespace SkyClericExt
 {
     public static class Vector3Ext
     {

@@ -1,98 +1,68 @@
+using Car.State;
 using Gameplay;
 using Gameplay.UI;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace AvatarLogic
+namespace Behavior
 {
     [RequireComponent(typeof(NavMeshAgent))]
-    public class CarBehaviour : MonoBehaviour
+    public class CarBehavior : MonoBehaviour
     {
-        [SerializeField]
-        private StateMashine _stateMashine = new StateMashine();
-        [SerializeField]
-        private Transform _destination;
-        [SerializeField]
-        private List<ActorData> _actors;
-
+        private CarStateMachine _stateMachine;
         private NavMeshAgent _navMeshAgent;
-        private bool _busy;
-        private Quest _questInProcess;
-        private HUDUserInterface _hud;
+        private DungeonEvents _dungeonEvents;
+        private Transform _destination;
 
         public NavMeshAgent NavMeshAgent { get => _navMeshAgent; set => _navMeshAgent = value; }
-        public Transform MoveDestination { get => _destination; set => _destination = value; }
+        public Transform GetDestination=> _destination;
 
         private void Awake()
         {
             gameObject.transform.parent = null;
-
             _navMeshAgent = GetComponent<NavMeshAgent>();
             _navMeshAgent.updateRotation = false;
-        }
-
-        private void Start()
-        {
-            _stateMashine.Start(gameObject);
+            _stateMachine = new CarStateMachine(carBehavior: this);
+            _dungeonEvents = DungeonEvents.Instance;
         }
 
         private void Update()
         {
-            _stateMashine.Update();
+            _stateMachine.Update();
         }
 
-        private void MoveToPoint(Transform targetPosition)
+        public void MoveToPoint(Vector3 startingPosition, Transform destination, DungeonBehavior dungeonBehavior)
         {
-            _busy = true;
-            _destination = targetPosition;
-            _stateMashine.Start(gameObject);
-            _stateMashine.SetState(stateID: AvatarStateID.MoveToPoint);
-        }
-
-        public void MoveToQuest(Quest quest, Transform targetPosition, List<ActorData> actors)
-        {
-            _actors = actors;
-            ResetCar(Guild.Instance.ParkingPosition);
-            _questInProcess = quest;
-            MoveToPoint(targetPosition);
-        }
-
-        public void MoveToGuild()
-        {
-            ResetCar(_questInProcess.ParkingPosition);
-            _questInProcess.MissionFinished();
-            _questInProcess = null;
-            MoveToPoint(Guild.Instance.ParkingPosition);
-        }
-
-        public void EndMoveToPoin()
-        {
-            if (_questInProcess)
-                MoveToGuild();
-            else
-                Finished();
-        }
-
-        public void Finished()
-        {
-            Debug.Log($"Машина вернулась на базу", gameObject);
-            //_busy = false;
-            //_hud = HUDUserInterface.Instance;
-
-            //foreach (var actor in _actors)
-            //{
-            //    actor.Busy = false;
-            //    _hud.SetShadow(actor);
-            //}
-
-            //gameObject.SetActive(false);
-        }
-
-        private void ResetCar(Transform startingPoint)
-        {
-            gameObject.transform.position = startingPoint.position;
+            gameObject.transform.position = startingPosition;
+            _destination = destination;
             gameObject.SetActive(true);
+
+            _navMeshAgent.SetDestination(_destination.position);
+            _stateMachine.SetState(_stateMachine.StateCarMoveToPoint);
+
+            WorldBillboardsPage.Instance.CarBillboardsShow(dungeonBehavior: dungeonBehavior, timerTime: GetPathTime());
+        }
+
+        private System.TimeSpan GetPathTime()
+        {
+            var gpl = GetPathLength();
+            double x = (gpl / _navMeshAgent.speed);
+            return System.TimeSpan.FromSeconds(x);
+        }
+
+        private float GetPathLength()
+        {
+            float pathLength = 0;
+            var path = new NavMeshPath();
+            if (_navMeshAgent.CalculatePath(_navMeshAgent.destination, path))
+            {
+                for (int i = 0; i < path.corners.Length - 1; i++)
+                    pathLength += Vector3.Distance(path.corners[i], path.corners[i + 1]);
+            }
+            else
+                Invoke(nameof(GetPathLength), 1);
+
+            return pathLength;
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Gameplay
 {
-    public class CameraBehaviour : MonoBehaviour
+    public class CameraBehavior : MonoBehaviour
     {
         [SerializeField]
         private float _speed = 1;

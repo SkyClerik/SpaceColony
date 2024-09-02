@@ -9,11 +9,11 @@ public class BuildingControl : Singleton<BuildingControl>
     [SerializeField]
     private LayerMask _floorLayerMask;
     [SerializeField]
-    private List<BuildingBehaviour> _buildingBehaviours = new();
+    private List<BuildingBehavior> _buildingBehaviors = new();
 
     public LayerMask FloorLayerMask => _floorLayerMask;
     public int GreedSize = 1;
-    public List<BuildingBehaviour> BuildingBehaviours => _buildingBehaviours;
+    public List<BuildingBehavior> BuildingBehaviors => _buildingBehaviors;
 
     private void Start()
     {
@@ -27,33 +27,33 @@ public class BuildingControl : Singleton<BuildingControl>
         buildingUI.Init(this, _buildingContainer);
     }
 
-    public void SelectShadowBilding(int i)
+    public void SelectShadowBuilding(int i)
     {
         GameObject shadowBuild = Instantiate(_buildingContainer.Buildings[i].gameObject);
 
         Rigidbody rigidbody = shadowBuild.AddComponent<Rigidbody>();
         rigidbody.isKinematic = true;
 
-        BuildDruger buildDruger = shadowBuild.AddComponent<BuildDruger>();
-        buildDruger.Init(DrugerTypes.Create);
+        BuildDragger buildDruger = shadowBuild.AddComponent<BuildDragger>();
+        buildDruger.Init(DraggerTypes.Create);
     }
 
-    public void TryAddBuildingBehaviour(BuildingBehaviour buildingBehaviour)
+    public void TryAddBuildingBehavior(BuildingBehavior buildingBehavior)
     {
-        foreach (BuildingBehaviour item in _buildingBehaviours)
+        foreach (BuildingBehavior item in _buildingBehaviors)
         {
-            if (item.Equals(buildingBehaviour))
+            if (item.Equals(buildingBehavior))
                 return;
         }
 
-        for (int i = 0; i < _buildingBehaviours.Count; i++)
+        for (int i = 0; i < _buildingBehaviors.Count; i++)
         {
-            if (_buildingBehaviours[i] == null)
+            if (_buildingBehaviors[i] == null)
             {
-                _buildingBehaviours[i] = buildingBehaviour;
+                _buildingBehaviors[i] = buildingBehavior;
                 return;
             }
         }
-        _buildingBehaviours.Add(buildingBehaviour);
+        _buildingBehaviors.Add(buildingBehavior);
     }
 }

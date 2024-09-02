@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SkyClerikExt
+namespace SkyClericExt
 {
     public static class GameObjectExt
     {

@@ -1,16 +1,16 @@
-using Gameplay;
+using Gameplay.Data;
 using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine.UIElements;
 
-[CustomEditor(typeof(ActorData))]
+[CustomEditor(typeof(ActorDefinition))]
 public class ActorDataEditor : Editor
 {
-    private ActorData _target;
+    private ActorDefinition _target;
 
     private void OnEnable()
     {
-        _target = target as ActorData;
+        _target = target as ActorDefinition;
     }
 
     public override VisualElement CreateInspectorGUI()

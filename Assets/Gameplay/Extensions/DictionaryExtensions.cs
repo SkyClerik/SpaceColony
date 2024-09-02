@@ -1,11 +1,10 @@
 using System.Collections.Generic;
 
-namespace SkyClerikExt
+namespace SkyClericExt
 {
     public static class DictionaryExtensions
     {
-        public static TKey[] Shuffle<TKey, TValue>(
-           this Dictionary<TKey, TValue> source)
+        public static TKey[] Shuffle<TKey, TValue>(this Dictionary<TKey, TValue> source)
         {
             System.Random r = new System.Random();
             TKey[] wviTKey = new TKey[source.Count];
