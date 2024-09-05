@@ -22,7 +22,6 @@ namespace Gameplay
         [SerializeField]
         private DungeonDefinition _dungeonDefinition;
 
-        private bool _inProgress = false;
         private CarBehavior _carInMission;
         private Billboard _billboard;
 
@@ -42,6 +41,9 @@ namespace Gameplay
 
         private void OnMouseDown()
         {
+            if (UserInterfaceRaycaster.Instance.IsPickingMode)
+                return;
+
             if (_dungeonDefinition.Equals(null))
                 return;
 
@@ -58,11 +60,7 @@ namespace Gameplay
                 PlayerBuildsContainer playerBuildsContainer = PlayerBuildsContainer.Instance;
                 BuildInfo commandCenterInfo = playerBuildsContainer.GetCommandCenterInfo;
                 var commandCenter = playerBuildsContainer.GetBuildingBehavior(commandCenterInfo);
-
-                if (commandCenter.Equals(null))
-                    Debug.Log($"¬ playerBuildsContainer не назначена ссылка на основное здание", gameObject);
-                else
-                    _carInMission.MoveToPoint(startingPosition: commandCenter.GetParking.position, destination: _parking, dungeonBehavior: this);
+                _carInMission.MoveToPoint(startingPosition: commandCenter.GetParking.position, destination: _parking, dungeonBehavior: this);
 
                 DungeonEvents dungeonEvents = DungeonEvents.Instance;
                 dungeonEvents.OnQuestStarting(dungeonBehavior: this);
@@ -103,11 +101,7 @@ namespace Gameplay
                 PlayerBuildsContainer playerBuildsContainer = PlayerBuildsContainer.Instance;
                 BuildInfo commandCenterInfo = playerBuildsContainer.GetCommandCenterInfo;
                 var commandCenter = playerBuildsContainer.GetBuildingBehavior(commandCenterInfo);
-
-                if (commandCenter.Equals(null))
-                    Debug.Log($"¬ playerBuildsContainer не назначена ссылка на основное здание", gameObject);
-                else
-                    _carInMission.MoveToPoint(startingPosition: _parking.position, destination: commandCenter.GetParking, dungeonBehavior: this);
+                _carInMission.MoveToPoint(startingPosition: _parking.position, destination: commandCenter.GetParking, dungeonBehavior: this);
 
                 DungeonEvents dungeonEvents = DungeonEvents.Instance;
                 dungeonEvents.CarTaskComplete += OnCarTaskComplete;

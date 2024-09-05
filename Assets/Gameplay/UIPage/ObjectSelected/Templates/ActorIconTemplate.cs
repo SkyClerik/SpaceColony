@@ -15,7 +15,7 @@ namespace Gameplay
             _callback = callback;
             actorData = actorDataLink;
 
-            var heroIconTemplate = UserInterfaceShare.Instance.HeroIconTemplete.Instantiate();
+            var heroIconTemplate = UserInterfaceShare.Instance.HeroIconTemplate.Instantiate();
             Add(heroIconTemplate);
 
             VisualElement icon = this.Q(_iconName);

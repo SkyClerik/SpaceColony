@@ -54,6 +54,9 @@ namespace Gameplay
         {
             for (int i = 0; i < _actors.Length; i++)
             {
+                if (_actors[i] == null)
+                    continue;
+
                 _actors[i].Busy = false;
                 _actors[i] = null;
             }
@@ -110,7 +113,6 @@ namespace Gameplay
 
         public ActorDefinition GetActorByIndex(byte index)
         {
-            Debug.Log($"GetActorByIndex: {index}");
             return _actors[index];
         }
 

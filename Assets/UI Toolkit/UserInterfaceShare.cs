@@ -6,18 +6,16 @@ namespace Gameplay
     public class UserInterfaceShare : Singleton<UserInterfaceShare>
     {
         [SerializeField]
-        private VisualTreeAsset _heroIconTemplete;
+        private VisualTreeAsset _heroIconTemplate;
         [SerializeField]
-        private VisualTreeAsset _itemIconTemplete;
-
+        private VisualTreeAsset _itemIconTemplate;
         [SerializeField]
         private VisualTreeAsset _globalResourceTemplate;
 
-        public VisualTreeAsset HeroIconTemplete => _heroIconTemplete;
-        public VisualTreeAsset ItemIconTemplete => _itemIconTemplete;
+        public VisualTreeAsset HeroIconTemplate => _heroIconTemplate;
+        public VisualTreeAsset ItemIconTemplate => _itemIconTemplate;
         public VisualTreeAsset GlobalResourceTemplate => _globalResourceTemplate;
 
-        public UIDocument CurrentDocument { get; set; }
 
         public Color TransparentColor = new Color(1, 1, 1, 0);
     }

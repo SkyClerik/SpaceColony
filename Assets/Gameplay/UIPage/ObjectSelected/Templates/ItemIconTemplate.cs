@@ -16,7 +16,7 @@ namespace Gameplay
             _callback = callback;
             ItemDefinition = itemDefenition;
 
-            var itemIconTemplate = UserInterfaceShare.Instance.ItemIconTemplete.Instantiate();
+            var itemIconTemplate = UserInterfaceShare.Instance.ItemIconTemplate.Instantiate();
             Add(itemIconTemplate);
 
             VisualElement icon = this.Q(_iconName);

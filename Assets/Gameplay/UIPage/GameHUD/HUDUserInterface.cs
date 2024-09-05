@@ -104,6 +104,7 @@ namespace Gameplay.UI
 
         private void ClickedCommandCenter()
         {
+            Debug.Log($"ClickedCommandCenter");
             CommandCenter.Instance.Show();
         }
 

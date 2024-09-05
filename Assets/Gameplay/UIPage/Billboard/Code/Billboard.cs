@@ -20,7 +20,7 @@ namespace Gameplay
         public GameObject GetSceneObject => _sceneObject;
         public Vector2 CanvasPosition;
 
-        System.Action _onTimeUp;
+        private Action _onTimeUp;
 
         public virtual void Init(VisualTreeAsset template, VisualElement root)
         {
@@ -37,7 +37,7 @@ namespace Gameplay
             _image.style.backgroundImage = new StyleBackground(sprite);
         }
 
-        public void Reset(GameObject sceneObject, System.TimeSpan timeout, System.Action onTimeUp)
+        public void Reset(GameObject sceneObject, TimeSpan timeout, Action onTimeUp)
         {
             _sceneObject = sceneObject;
             _onTimeUp = onTimeUp;
