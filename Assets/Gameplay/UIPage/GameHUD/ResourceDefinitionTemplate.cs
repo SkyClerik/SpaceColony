@@ -1,7 +1,7 @@
 using Gameplay.Data;
 using UnityEngine.UIElements;
 
-namespace Gameplay
+namespace Gameplay.UI
 {
     public class ResourceDefinitionTemplate : VisualElement
     {

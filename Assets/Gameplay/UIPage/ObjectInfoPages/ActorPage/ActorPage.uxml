@@ -12,11 +12,12 @@
             <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="slot_3" style="width: 100px; height: 100px; position: absolute; top: 718px; left: 426px;" />
             <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="slot_4" style="width: 100px; height: 100px; position: absolute; top: 347px; left: 235px;" />
             <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="slot_5" style="width: 100px; height: 100px; position: absolute; top: 342px; left: 610px;" />
-            <ui:Button text="Закрыть" parse-escape-sequences="true" display-tooltip-when-elided="true" name="button_exit" style="width: 100px; height: 100px; position: absolute; top: 907px; left: 804px;" />
+            <ui:Button text="Закрыть" parse-escape-sequences="true" display-tooltip-when-elided="true" name="button_close" style="width: 100px; height: 100px; position: absolute; top: 907px; left: 804px;" />
         </ui:VisualElement>
         <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; width: 50%;">
             <ui:VisualElement name="window" style="flex-grow: 1; width: 100%;">
-                <ui:Label tabindex="-1" text="Это пространство заполним статами" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 55px; white-space: normal; -unity-font-style: bold; color: rgb(255, 255, 255); -unity-text-align: middle-left; text-overflow: clip;" />
+                <ui:Label tabindex="-1" text="Actor Name Title" parse-escape-sequences="true" display-tooltip-when-elided="true" name="label_name_title" style="font-size: 55px; white-space: normal; -unity-font-style: bold; color: rgb(255, 255, 255); -unity-text-align: middle-left; text-overflow: clip;" />
+                <ui:Label tabindex="-1" text="Это пространство заполним статами" parse-escape-sequences="true" display-tooltip-when-elided="true" name="label_actor_stats" style="font-size: 55px; white-space: normal; -unity-font-style: bold; color: rgb(255, 255, 255); -unity-text-align: middle-left; text-overflow: clip;" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

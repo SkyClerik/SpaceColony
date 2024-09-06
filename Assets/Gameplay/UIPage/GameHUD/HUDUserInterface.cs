@@ -28,6 +28,9 @@ namespace Gameplay.UI
         private Button _buttonCommandCenter;
         private const string _buttonCommandCenterName = "button_command_center";
 
+        private Button _buttonMining;
+        private const string _buttonMiningName = "button_mining";
+
         private Button _buttonActorSelected;
         private const string _buttonActorSelectedName = "button_actor_selected";
 
@@ -67,6 +70,9 @@ namespace Gameplay.UI
             _buttonCommandCenter = line03Right.Q<Button>(_buttonCommandCenterName);
             _buttonCommandCenter.clicked += ClickedCommandCenter;
 
+            _buttonMining = line03Right.Q<Button>(_buttonMiningName);
+            _buttonMining.clicked += ClickedButtonMining;
+
             _buttonActorSelected = line03Right.Q<Button>(_buttonActorSelectedName);
             _buttonActorSelected.clicked += ClickedActorSelected;
 
@@ -86,6 +92,11 @@ namespace Gameplay.UI
             }
         }
 
+        private void ClickedButtonMining()
+        {
+            Mining.Instance.Show();
+        }
+
         private void ClickedButtonItems()
         {
             ItemSelected.Instance.Show();
@@ -93,18 +104,17 @@ namespace Gameplay.UI
 
         private void ClickedDungeon()
         {
-            //TODO: Вызываю первый попавшийся данж
-            DungeonPage.Instance.Show(PlayerDungeonContainer.Instance.Dungeons[0]);
+            //TODO: Вызываю первый попавшийся данж для тестов
+            PlayerDungeonContainer.Instance.Dungeons[0].SystemClicked();
         }
 
         private void ClickedActorSelected()
         {
-            ActorSelected.Instance.Show();
+            ActorPage.Instance.Show();
         }
 
         private void ClickedCommandCenter()
         {
-            Debug.Log($"ClickedCommandCenter");
             CommandCenter.Instance.Show();
         }
 

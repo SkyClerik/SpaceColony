@@ -1,4 +1,4 @@
-namespace Gameplay
+namespace Gameplay.Data
 {
     [System.Serializable]
     public class CharacterStats
@@ -7,7 +7,13 @@ namespace Gameplay
         public int CurrentHP;
         public int MaxHP;
         public int Damage;
-        public int Speed;
+        public int AttackSpeed;
+        public int MoveSpeed;
         public int Stamina;
+
+        public override string ToString()
+        {
+            return $"ГИР (GS): {GS} \nТекущее здоровье: {CurrentHP} \nМаксимальное здоровье: {MaxHP}\nУрон: {Damage} \nСкорость атаки: {AttackSpeed} \nСкорость передвижения: {MoveSpeed}\nВыносливость: {Stamina}\n";
+        }
     }
 }

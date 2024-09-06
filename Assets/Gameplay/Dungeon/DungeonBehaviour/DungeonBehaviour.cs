@@ -9,8 +9,6 @@ namespace Gameplay
     [RequireComponent(typeof(BoxCollider))]
     public class DungeonBehavior : MonoBehaviour
     {
-        public static DungeonBehavior CurrentQuestSelected;
-
         [SerializeField]
         private Transform _parking;
         [SerializeField]
@@ -25,8 +23,6 @@ namespace Gameplay
         private CarBehavior _carInMission;
         private Billboard _billboard;
 
-        public DungeonDefinition GetDungeonDefinition => _dungeonDefinition;
-        public CarBehavior GetCarInMission => _carInMission;
         public ActorParty GetActorParty => _actorParty;
 
         private void Awake()
@@ -34,9 +30,9 @@ namespace Gameplay
             PlayerDungeonContainer.Instance.AddDungeon(this);
         }
 
-        public void AddDungeonDefinition(DungeonDefinition dungeonDefinition)
+        public void SystemClicked()
         {
-            _dungeonDefinition = dungeonDefinition;
+            ShowPage();
         }
 
         private void OnMouseDown()
@@ -44,11 +40,15 @@ namespace Gameplay
             if (UserInterfaceRaycaster.Instance.IsPickingMode)
                 return;
 
+            ShowPage();
+        }
+
+        private void ShowPage()
+        {
             if (_dungeonDefinition.Equals(null))
                 return;
 
-            CurrentQuestSelected = this;
-            DungeonPage.Instance.Show(dungeonBehavior: this);
+            DungeonPage.Instance.Show(dungeonBehavior: this, dungeonDefinition: _dungeonDefinition);
         }
 
         public void SendOnMission(ActorParty actorParty)
@@ -77,8 +77,8 @@ namespace Gameplay
 
                 if (destination.Equals(_parking.transform))
                 {
-                    Debug.Log($"Машина достигла данж: {destination.name}", carBehavior.gameObject);
-                    WorldBillboardsPage.Instance.DungeonBillboardShow(dungeonBehavior: this, timerTime: _dungeonDefinition.GetWaitingTime, OnBillboardTimeUp);
+                    Debug.Log($"[Car] Машина достигла данж: {destination.name}", carBehavior.gameObject);
+                    WorldBillboardsPage.Instance.BillboardShow(target: gameObject, _dungeonDefinition.Icon, timerTime: _dungeonDefinition.GetWaitingTime, OnBillboardTimeUp);
                 }
 
                 PlayerBuildsContainer playerBuildsContainer = PlayerBuildsContainer.Instance;
@@ -86,7 +86,7 @@ namespace Gameplay
                 var commandCenter = playerBuildsContainer.GetBuildingBehavior(commandCenterInfo);
                 if (destination.Equals(commandCenter.GetParking))
                 {
-                    Debug.Log($"Машина вернулась в: {destination.name}", carBehavior.gameObject);
+                    Debug.Log($"[Car] Машина вернулась в: {destination.name}", carBehavior.gameObject);
                     MissionFinished();
                 }
             }
@@ -94,7 +94,7 @@ namespace Gameplay
 
         private void OnBillboardTimeUp()
         {
-            Debug.Log($"Время вышло. {gameObject.name} готов отправить машину обратно", gameObject);
+            Debug.Log($"[Dungeon] Время вышло. {gameObject.name} готов отправить машину обратно", gameObject);
             var car = Pool.Instance.Get(_transportPoolObjectID);
             if (car.TryGetComponent(out _carInMission))
             {

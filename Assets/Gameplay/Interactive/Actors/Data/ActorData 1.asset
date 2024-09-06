@@ -12,10 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a55f06474eed04894f83b157edad35, type: 3}
   m_Name: ActorData 1
   m_EditorClassIdentifier: 
-  _frendlyName: 
+  _friendlyName: "\u0424\u0438\u043A\u0442\u0438\u0432\u043D\u043E\u0435 \u0438\u043C\u044F"
+  _description: "\u041F\u0435\u0440\u0432\u044B\u0439 \u0441\u0440\u0435\u0434\u0438
+    \u0440\u0430\u0432\u043D\u044B\u0445"
   _icon: {fileID: 1997087561, guid: 10351fdc8d687194a92b25586b4f35b2, type: 3}
+  _minPCS: 0
+  _maxPCS: 0
+  _level: 1
+  _stats:
+    GS: 0
+    CurrentHP: 2
+    MaxHP: 3
+    Damage: 2
+    AttackSpeed: 2
+    MoveSpeed: 1
+    Stamina: 8
+  _coast:
+    _price: 12000000
   _class: 3
   _busy: 0
   _experience: 2
-  _level: 1
-  _fatigue: 0

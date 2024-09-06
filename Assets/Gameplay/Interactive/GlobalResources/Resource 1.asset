@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f58a5f79d650f0f4ea399d5c003c0d66, type: 3}
   m_Name: Resource 1
   m_EditorClassIdentifier: 
+  _friendlyName: 
+  _description: 
+  _icon: {fileID: 41993945, guid: a75ce5496864b1c4e939c6c6fe631713, type: 3}
+  _minPCS: 0
+  _maxPCS: 0
   ID: 771fc4a5-2b70-4189-92cf-9093df13f50f
-  FriendlyName: "\u041C\u0438\u0444\u0440\u0438\u043B"
-  Description: 
-  SellPrice: 0
   CurPCS: 0
-  MaxPCS: 0
-  Icon: {fileID: 1894903116, guid: 44b66327c30beb14aac3426c7a8a6607, type: 3}
   SlotDimension:
     DefaultHeight: 0
     DefaultWidth: 0
-    DefaulAngle: 0
+    DefaultAngle: 0
+  _coast:
+    _price: 0

@@ -2,7 +2,7 @@ using System;
 using UnityEngine.UIElements;
 using Gameplay.Data;
 
-namespace Gameplay
+namespace Gameplay.UI
 {
     public class ActorIconTemplate : VisualElement
     {

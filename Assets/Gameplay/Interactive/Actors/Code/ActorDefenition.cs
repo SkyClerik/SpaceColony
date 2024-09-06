@@ -15,6 +15,20 @@ namespace Gameplay.Data
         public ActorClass Type => _class;
         public bool Busy { get => _busy; set => _busy = value; }
         public int Experience { get => _experience; set => _experience = value; }
+
+        public string GetInfo()
+        {
+            var stats = this.ToString();
+            var characterBase = base.ToString();
+            var characterStats = Stats.ToString();
+
+            return $"{stats}\n{characterBase}\n{characterStats}";
+        }
+
+        public override string ToString()
+        {
+            return $"Класс: {_class}\nНа задании: {_busy}\nОпыт: {_experience}\n";
+        }
     }
 
     [System.Serializable]

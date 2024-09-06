@@ -29,6 +29,7 @@ namespace Gameplay.UI
 
         public virtual void Show()
         {
+            UserInterfaceShare.Instance.OnPageOpen(document);
             rootElement.style.display = DisplayStyle.Flex;
         }
 

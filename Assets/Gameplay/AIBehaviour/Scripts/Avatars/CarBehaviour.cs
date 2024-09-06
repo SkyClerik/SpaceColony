@@ -1,5 +1,6 @@
 using Car.State;
 using Gameplay;
+using Gameplay.Data;
 using Gameplay.UI;
 using UnityEngine;
 using UnityEngine.AI;
@@ -15,7 +16,7 @@ namespace Behavior
         private Transform _destination;
 
         public NavMeshAgent NavMeshAgent { get => _navMeshAgent; set => _navMeshAgent = value; }
-        public Transform GetDestination=> _destination;
+        public Transform GetDestination => _destination;
 
         private void Awake()
         {
@@ -40,7 +41,8 @@ namespace Behavior
             _navMeshAgent.SetDestination(_destination.position);
             _stateMachine.SetState(_stateMachine.StateCarMoveToPoint);
 
-            WorldBillboardsPage.Instance.CarBillboardsShow(dungeonBehavior: dungeonBehavior, timerTime: GetPathTime());
+            dungeonBehavior.GetActorParty.GetFirstActor(out ActorDefinition actorDefinition);
+            WorldBillboardsPage.Instance.BillboardShow(target: gameObject, actorDefinition.Icon, timerTime: GetPathTime(), billboardTimeUp: null);
         }
 
         private System.TimeSpan GetPathTime()

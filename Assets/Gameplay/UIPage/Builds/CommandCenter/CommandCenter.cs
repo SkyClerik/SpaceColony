@@ -4,8 +4,8 @@ namespace Gameplay.UI
 {
     public class CommandCenter : UIPage<CommandCenter>
     {
-        private Button _closeButton;
-        private const string _closeButtonName = "close_button";
+        private Button _buttonClose;
+        private const string _buttonCloseName = "button_close";
 
         protected override void Awake()
         {
@@ -15,8 +15,24 @@ namespace Gameplay.UI
 
         private void Init()
         {
-            _closeButton = rootElement.Q<Button>(_closeButtonName);
-            _closeButton.clicked += ClickedCloseButton;
+            _buttonClose = rootElement.Q<Button>(_buttonCloseName);
+            _buttonClose.clicked += ClickedButtonClose;
+        }
+
+        private void OnEnable()
+        {
+            UserInterfaceShare.Instance.OpenNewPage += IsOpenNewPage;
+        }
+
+        private void OnDisable()
+        {
+            UserInterfaceShare.Instance.OpenNewPage -= IsOpenNewPage;
+        }
+
+        private void IsOpenNewPage(UIDocument uIDocument)
+        {
+            if (uIDocument != document)
+                Hide();
         }
 
         public override void Show()
@@ -29,7 +45,7 @@ namespace Gameplay.UI
             base.Hide();
         }
 
-        private void ClickedCloseButton()
+        private void ClickedButtonClose()
         {
             Hide();
         }

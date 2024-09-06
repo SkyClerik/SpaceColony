@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f58a5f79d650f0f4ea399d5c003c0d66, type: 3}
   m_Name: Resource 2
   m_EditorClassIdentifier: 
-  _frendlyName: 
+  _friendlyName: 
   _description: 
-  _icon: {fileID: 0}
+  _icon: {fileID: -1654202371, guid: a75ce5496864b1c4e939c6c6fe631713, type: 3}
   _minPCS: 0
   _maxPCS: 1000
   ID: 9aa691a6-3a75-449a-8bda-6cae0f5d2a2d
@@ -22,6 +22,6 @@ MonoBehaviour:
   SlotDimension:
     DefaultHeight: 0
     DefaultWidth: 0
-    DefaulAngle: 0
+    DefaultAngle: 0
   _coast:
     _price: 0

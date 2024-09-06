@@ -1,5 +1,3 @@
-using Behavior;
-using Gameplay.Data;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -53,23 +51,12 @@ namespace Gameplay.UI
             }
         }
 
-        public void CarBillboardsShow(DungeonBehavior dungeonBehavior, TimeSpan timerTime)
-        {
-            CarBehavior carBehavior = dungeonBehavior.GetCarInMission;
-            Billboard freeBillboard = GetFreeBillboardFrom();
-            freeBillboard.Reset(carBehavior.gameObject, timerTime, null);
-            Relocation(freeBillboard);
-
-            if (dungeonBehavior.GetActorParty.GetFirstActor(out ActorDefinition actorDefinition))
-                freeBillboard.SetImage(actorDefinition.Icon);
-        }
-
-        public void DungeonBillboardShow(DungeonBehavior dungeonBehavior, TimeSpan timerTime, Action billboardTimeUp)
+        public void BillboardShow(GameObject target, Sprite icon, TimeSpan timerTime, Action billboardTimeUp)
         {
             Billboard freeBillboard = GetFreeBillboardFrom();
-            freeBillboard.Reset(dungeonBehavior.gameObject, timerTime, billboardTimeUp);
+            freeBillboard.Reset(target, timerTime, billboardTimeUp);
             Relocation(freeBillboard);
-            freeBillboard.SetImage(dungeonBehavior.GetDungeonDefinition.Icon);
+            freeBillboard.SetImage(icon);
         }
 
         public void Relocation(Billboard billboard)

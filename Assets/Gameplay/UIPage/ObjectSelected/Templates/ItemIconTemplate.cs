@@ -3,7 +3,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Gameplay
+namespace Gameplay.UI
 {
     public class ItemIconTemplate : VisualElement
     {

@@ -15,6 +15,9 @@ namespace Gameplay
         private Button _buttonClose;
         private const string buttonCloseName = "button_close";
 
+        private byte _slotIndex;
+        private Action<byte, ItemIconTemplate> _callbackItemDefinition;
+
         protected override void Awake()
         {
             base.Awake();
@@ -22,6 +25,22 @@ namespace Gameplay
             _bottomPanel = rootElement.Q(_bottomPanelName);
             _buttonClose = _bottomPanel.Q<Button>(buttonCloseName);
             _buttonClose.clicked += ClickedButtonClose;
+        }
+
+        private void OnEnable()
+        {
+            UserInterfaceShare.Instance.OpenNewPage += IsOpenNewPage;
+        }
+
+        private void OnDisable()
+        {
+            UserInterfaceShare.Instance.OpenNewPage -= IsOpenNewPage;
+        }
+
+        private void IsOpenNewPage(UIDocument uIDocument)
+        {
+            if (uIDocument != document)
+                Hide();
         }
 
         private void ClickedButtonClose()
@@ -50,9 +69,7 @@ namespace Gameplay
             }
         }
 
-        byte _slotIndex;
 
-        Action<byte, ItemIconTemplate> _callbackItemDefinition;
         public void Show(byte slotIndex, Action<byte, ItemIconTemplate> callback)
         {
             base.Show();

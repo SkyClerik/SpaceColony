@@ -1,9 +1,11 @@
-using UnityEngine.UIElements;
+﻿using UnityEngine.UIElements;
 using UnityEngine;
+using System;
+using OmlUtility;
 
-namespace Gameplay
+namespace Gameplay.UI
 {
-    public class UserInterfaceShare : Singleton<UserInterfaceShare>
+    public class UserInterfaceShare : Singleton<UserInterfaceShare>, ITagObject
     {
         [SerializeField]
         private VisualTreeAsset _heroIconTemplate;
@@ -16,7 +18,14 @@ namespace Gameplay
         public VisualTreeAsset ItemIconTemplate => _itemIconTemplate;
         public VisualTreeAsset GlobalResourceTemplate => _globalResourceTemplate;
 
-
         public Color TransparentColor = new Color(1, 1, 1, 0);
+
+
+        public Action<UIDocument> OpenNewPage;
+        public void OnPageOpen(UIDocument uIDocument)
+        {
+            Debug.Log($"[Event] Пользователь открывает новую вкладку");
+            OpenNewPage?.Invoke(uIDocument);
+        }
     }
 }

@@ -40,6 +40,22 @@ namespace Gameplay.UI
             InitFields();
         }
 
+        private void OnEnable()
+        {
+            UserInterfaceShare.Instance.OpenNewPage += IsOpenNewPage;
+        }
+
+        private void OnDisable()
+        {
+            UserInterfaceShare.Instance.OpenNewPage -= IsOpenNewPage;
+        }
+
+        private void IsOpenNewPage(UIDocument uIDocument)
+        {
+            if (uIDocument != document)
+                Hide();
+        }
+
         private void InitFields()
         {
             _mainWindowTitle = rootElement.Q<Label>(_mainWindowTitleName);
@@ -59,13 +75,30 @@ namespace Gameplay.UI
 
         private void ClickedButton(byte index)
         {
-            ActorSelected.Instance.Show(index, callbackActorData: ActorSelectedCallback);
+            ActorSelected.Instance.Show(index, callbackActorData: ActorSelectedCallback, OnCallbackClose);
         }
 
-        public void Show(DungeonBehavior dungeonBehavior)
+        private void ActorSelectedCallback(byte index, ActorDefinition actorData)
+        {
+            var currentActor = _party.GetActorByIndex(index);
+            if (currentActor != null)
+                currentActor.Busy = false;
+
+            _party.AddActor(ref actorData, index: index);
+            _actorClickedTemplates[index].Icon.style.backgroundImage = new StyleBackground(actorData.Icon);
+
+            Show();
+        }
+
+        private void OnCallbackClose()
+        {
+            Show();
+        }
+
+        public void Show(DungeonBehavior dungeonBehavior, DungeonDefinition dungeonDefinition)
         {
             _dungeonBehavior = dungeonBehavior;
-            _dungeonDefinition = _dungeonBehavior.GetDungeonDefinition;
+            _dungeonDefinition = dungeonDefinition;
 
             FillingOutTheFields();
             base.Show();
@@ -94,16 +127,5 @@ namespace Gameplay.UI
                 Hide();
             }
         }
-
-        private void ActorSelectedCallback(byte index, ActorDefinition actorData)
-        {
-            var currentActor = _party.GetActorByIndex(index);
-            if (currentActor != null)
-                currentActor.Busy = false;
-
-            _party.AddActor(ref actorData, index: index);
-            _actorClickedTemplates[index].Icon.style.backgroundImage = new StyleBackground(actorData.Icon);
-        }
     }
-
 }

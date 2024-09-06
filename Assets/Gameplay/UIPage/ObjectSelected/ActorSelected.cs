@@ -15,6 +15,10 @@ namespace Gameplay.UI
         private Button _buttonClose;
         private const string buttonCloseName = "button_close";
 
+        private byte _slotIndex;
+        private Action<byte, ActorDefinition> _callbackActorData;
+        private Action _onCloseCallback;
+
         protected override void Awake()
         {
             base.Awake();
@@ -24,9 +28,26 @@ namespace Gameplay.UI
             _buttonClose.clicked += ClickedButtonClose;
         }
 
+        private void OnEnable()
+        {
+            UserInterfaceShare.Instance.OpenNewPage += IsOpenNewPage;
+        }
+
+        private void OnDisable()
+        {
+            UserInterfaceShare.Instance.OpenNewPage -= IsOpenNewPage;
+        }
+
+        private void IsOpenNewPage(UIDocument uIDocument)
+        {
+            if (uIDocument != document)
+                Hide();
+        }
+
         private void ClickedButtonClose()
         {
             Hide();
+            _onCloseCallback?.Invoke();
         }
 
         public void RepaintCalls()
@@ -54,14 +75,13 @@ namespace Gameplay.UI
             }
         }
 
-        byte _slotIndex;
-        Action<byte, ActorDefinition> _callbackActorData;
-        public void Show(byte slotIndex, Action<byte, ActorDefinition> callbackActorData)
+        public void Show(byte slotIndex, Action<byte, ActorDefinition> callbackActorData, Action onCloseCallback = null)
         {
             base.Show();
             RepaintCalls();
             _slotIndex = slotIndex;
             _callbackActorData = callbackActorData;
+            _onCloseCallback = onCloseCallback;
         }
 
         public override void Show()
