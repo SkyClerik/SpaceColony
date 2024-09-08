@@ -9,11 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cd26737e10c4b24f94f8b4542b07451, type: 3}
+  m_Script: {fileID: 11500000, guid: 096d42b3e0d65ca4faeb4f3379837747, type: 3}
   m_Name: Box
   m_EditorClassIdentifier: 
-  _title: Box
-  _defaultMaterial: {fileID: 2100000, guid: 84059764af770c048a17ae7d5c33f21a, type: 2}
-  _draggedMaterial: {fileID: 2100000, guid: c0ad3f97351b71741b6f533b6ffd1a6e, type: 2}
-  _curPCS: 0
-  _maxPCS: 0
+  _isMainBuild: 0
+  _title: "\u041F\u0435\u0440\u0432\u043E\u0435 \u0437\u0434\u0430\u043D\u0438\u0435"
+  _description: "\u042D\u0442\u043E \u0437\u0434\u0430\u043D\u0438\u0435 \u043D\u0438\u0447\u0435\u0433\u043E
+    \u043D\u0435 \u0434\u0435\u043B\u0430\u0435\u0442 \u0438 \u043D\u0438\u0447\u0435\u0433\u043E
+    \u043D\u0435 \u0441\u0442\u043E\u0438\u0442"
+  _materialDefinition: {fileID: 11400000, guid: 83384d537a68d6a41bb1a65a41bfde49,
+    type: 2}
+  _hideFromPlayer: 0
+  _icon: {fileID: 21300000, guid: 772f522a9c782904e9d220a7f8690c6c, type: 3}

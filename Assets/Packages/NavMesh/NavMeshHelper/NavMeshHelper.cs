@@ -1,16 +1,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NavMeshHelper : MonoBehaviour
+namespace Helper
 {
-    [SerializeField]
-    private List<GameObject> gameObjects = new List<GameObject>();
-
-    public void SetActiveObjects(bool active)
+    public class NavMeshHelper : MonoBehaviour
     {
-        foreach (GameObject obj in gameObjects)
+        [Header("Помогает включать и выключать объекты сцены для запекания пути.")]
+        [SerializeField]
+        private List<GameObject> gameObjects = new List<GameObject>();
+
+        public void SetActiveObjects(bool active)
         {
-            obj?.SetActive(active);
+            foreach (GameObject obj in gameObjects)
+            {
+                obj?.SetActive(active);
+            }
         }
     }
 }

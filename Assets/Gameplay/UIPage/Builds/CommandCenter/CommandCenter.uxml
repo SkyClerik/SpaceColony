@@ -3,7 +3,7 @@
     <ui:VisualElement name="reference" picking-mode="Ignore" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Gameplay/UIPage/Images/reference.png?fileID=2800000&amp;guid=8f0c1157ee61c36458814a9c1476ed8a&amp;type=3#reference&quot;); position: absolute; width: 100%; height: 100%; opacity: 1; display: none;" />
     <ui:VisualElement picking-mode="Ignore" name="VisualElement" style="flex-grow: 1; flex-direction: column; flex-shrink: 1; width: 100%; height: 100%; justify-content: center; align-items: center; align-self: center; display: flex;">
         <ui:VisualElement name="wind" picking-mode="Ignore" style="flex-grow: 0; display: flex; visibility: visible; overflow: visible; width: 700px; position: relative; justify-content: flex-start; align-items: stretch; height: 700px;">
-            <ui:VisualElement name="body" picking-mode="Ignore" style="flex-grow: 0; width: 700px; justify-content: space-around; background-color: rgb(100, 97, 100); border-bottom-left-radius: 32px;">
+            <ui:VisualElement name="body" picking-mode="Ignore" style="flex-grow: 0; width: 700px; justify-content: space-around; background-color: rgb(100, 97, 100); border-bottom-left-radius: 32px; min-height: 680px;">
                 <ui:VisualElement picking-mode="Ignore" style="flex-grow: 0; position: relative; flex-direction: row-reverse; width: 100%;">
                     <ui:Button text="X" parse-escape-sequences="true" display-tooltip-when-elided="true" name="button_close" style="padding-top: 2px; padding-right: 20px; padding-bottom: 2px; padding-left: 20px; background-color: rgb(255, 0, 0); border-top-left-radius: 0; border-top-right-radius: 10px; border-bottom-right-radius: 0; border-bottom-left-radius: 10px; border-left-color: rgb(120, 0, 0); border-right-color: rgb(120, 0, 0); border-top-color: rgb(120, 0, 0); border-bottom-color: rgb(120, 0, 0); border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; opacity: 1; -unity-font-style: bold; color: rgb(255, 255, 255); flex-grow: 0; height: 26px;" />
                 </ui:VisualElement>
@@ -65,20 +65,10 @@
                         </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
-                <ui:ScrollView mode="Vertical" vertical-scroller-visibility="Hidden" horizontal-scroller-visibility="Hidden" nested-interaction-kind="Default" touch-scroll-type="Elastic" mouse-wheel-scroll-size="100" elasticity="0.2" elastic-animation-interval-ms="15" scroll-deceleration-rate="1" style="flex-direction: column; flex-grow: 1; align-items: auto; justify-content: flex-start; align-self: auto; flex-shrink: 1; margin-right: 15px; margin-left: 15px; flex-wrap: nowrap;">
-                    <ui:VisualElement picking-mode="Ignore" name="row" style="flex-grow: 0; flex-shrink: 1; align-self: auto; flex-wrap: nowrap; flex-direction: column; justify-content: flex-start; align-items: center;">
-                        <ui:VisualElement name="row_line" style="flex-grow: 1; flex-direction: row; flex-wrap: nowrap; flex-shrink: 1; align-items: center; justify-content: space-between; align-self: stretch; margin-top: 5px; margin-right: 5px; margin-bottom: 5px; margin-left: 5px;">
-                            <ui:Instance template="BuildImageTemplate" name="BuildImageTemplate" style="flex-grow: 0; flex-shrink: 1;" />
-                            <ui:Instance template="BuildImageTemplate" name="BuildImageTemplate" style="flex-grow: 0; flex-shrink: 1; opacity: 1; display: flex;" />
-                        </ui:VisualElement>
-                        <ui:VisualElement name="row_line" style="flex-grow: 1; flex-direction: row; flex-wrap: nowrap; flex-shrink: 1; align-items: center; justify-content: space-between; align-self: stretch; margin-top: 5px; margin-right: 5px; margin-bottom: 5px; margin-left: 5px;">
-                            <ui:Instance template="BuildImageTemplate" name="BuildImageTemplate" style="flex-grow: 0; flex-shrink: 1;" />
-                            <ui:Instance template="BuildImageTemplate" name="BuildImageTemplate" style="flex-grow: 0; flex-shrink: 1;" />
-                        </ui:VisualElement>
-                        <ui:VisualElement name="row_line" style="flex-grow: 1; flex-direction: row; flex-wrap: nowrap; flex-shrink: 1; align-items: center; justify-content: space-between; align-self: stretch; margin-top: 5px; margin-right: 5px; margin-bottom: 5px; margin-left: 5px;">
-                            <ui:Instance template="BuildImageTemplate" name="BuildImageTemplate" style="flex-grow: 0; flex-shrink: 1;" />
-                            <ui:Instance template="BuildImageTemplate" name="BuildImageTemplate" style="flex-grow: 0; flex-shrink: 1;" />
-                        </ui:VisualElement>
+                <ui:ScrollView mode="Vertical" vertical-scroller-visibility="Hidden" horizontal-scroller-visibility="Hidden" nested-interaction-kind="Default" touch-scroll-type="Elastic" mouse-wheel-scroll-size="100" elasticity="0.2" elastic-animation-interval-ms="15" scroll-deceleration-rate="1" name="scroll_view" style="flex-direction: column; flex-grow: 1; align-items: auto; justify-content: flex-start; align-self: auto; flex-shrink: 1; margin-right: 15px; margin-left: 15px; flex-wrap: nowrap;">
+                    <ui:VisualElement picking-mode="Ignore" name="row" style="flex-grow: 0; flex-shrink: 1; align-self: auto; flex-wrap: wrap; flex-direction: row; justify-content: flex-start; align-items: center; margin-top: 5px; margin-right: 20px; margin-bottom: 5px; margin-left: 20px;">
+                        <ui:Instance template="BuildImageTemplate" name="BuildImageTemplate" style="flex-grow: 0; flex-shrink: 1;" />
+                        <ui:Instance template="BuildImageTemplate" name="BuildImageTemplate" style="flex-grow: 0; flex-shrink: 1; align-self: auto;" />
                     </ui:VisualElement>
                 </ui:ScrollView>
                 <ui:VisualElement picking-mode="Ignore" style="flex-grow: 0; flex-direction: row; align-items: center; justify-content: center; margin-top: 10px; margin-bottom: 5px;">

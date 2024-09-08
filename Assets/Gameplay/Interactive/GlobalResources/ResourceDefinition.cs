@@ -12,6 +12,6 @@ namespace Gameplay.Data
     public class TrophyResource
     {
         public ResourceDefinition Resource;
-        public MinMaxValues PCS;
+        public IntMM PCS;
     }
 }

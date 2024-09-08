@@ -12,12 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e424c86533c60b4c9f4cbe4fbc0591c, type: 3}
   m_Name: pistol_orange
   m_EditorClassIdentifier: 
+  _friendlyName: 
+  _description: 
+  _icon: {fileID: 21300000, guid: 9b9cffbd3c0de66419120e228a62391e, type: 3}
+  _minPCS: 0
+  _maxPCS: 0
   ID: a1b2f5b7-1e23-4966-8f59-1f21ecff23d1
-  FriendlyName: pistol_orange
-  Description: 
-  SellPrice: 0
-  Icon: {fileID: 21300000, guid: 9b9cffbd3c0de66419120e228a62391e, type: 3}
+  CurPCS: 0
   SlotDimension:
     DefaultHeight: 1
-    DefaultWidth: 2
-    DefaulAngle: 0
+    DefaultWidth: 1
+    DefaultAngle: 0
+  _coast:
+    _price: 0

@@ -12,12 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e424c86533c60b4c9f4cbe4fbc0591c, type: 3}
   m_Name: blaster
   m_EditorClassIdentifier: 
+  _friendlyName: 
+  _description: 
+  _icon: {fileID: 21300000, guid: 34c4647151bcea749aedb5e47f75dde9, type: 3}
+  _minPCS: 0
+  _maxPCS: 0
   ID: 28bf636f-0ce2-4648-b44a-de5d6045ad25
-  FriendlyName: blaster
-  Description: 
-  SellPrice: 0
-  Icon: {fileID: 21300000, guid: 5b7ba0d9d2234364a96c9db530596d61, type: 3}
+  CurPCS: 0
   SlotDimension:
     DefaultHeight: 1
-    DefaultWidth: 3
-    DefaulAngle: 0
+    DefaultWidth: 1
+    DefaultAngle: 0
+  _coast:
+    _price: 0

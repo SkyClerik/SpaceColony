@@ -29,5 +29,10 @@ namespace Gameplay
         {
             _callback?.Invoke(_index);
         }
+
+        ~ActorClickedTemplate()
+        {
+            _callback = null;
+        }
     }
 }

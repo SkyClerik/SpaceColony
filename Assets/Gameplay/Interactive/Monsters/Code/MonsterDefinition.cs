@@ -14,6 +14,6 @@ namespace Gameplay.Data
         [SerializeField]
         private MonsterDefinition _monster;
         public MonsterDefinition GetMonster => _monster;
-        public MinMaxValues PCS;
+        public IntMM PCS;
     }
 }

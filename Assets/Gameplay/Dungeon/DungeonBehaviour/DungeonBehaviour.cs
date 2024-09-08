@@ -20,6 +20,7 @@ namespace Gameplay
         [SerializeField]
         private DungeonDefinition _dungeonDefinition;
 
+        private BuildingBehavior _mainBuild;
         private CarBehavior _carInMission;
         private Billboard _billboard;
 
@@ -40,6 +41,9 @@ namespace Gameplay
             if (UserInterfaceRaycaster.Instance.IsPickingMode)
                 return;
 
+            if (SelectedDruggedObjects.Instance.Active)
+                return;
+
             ShowPage();
         }
 
@@ -47,6 +51,8 @@ namespace Gameplay
         {
             if (_dungeonDefinition.Equals(null))
                 return;
+
+            _mainBuild = PlayerBuildsContainer.Instance.GetMainBuild;
 
             DungeonPage.Instance.Show(dungeonBehavior: this, dungeonDefinition: _dungeonDefinition);
         }
@@ -57,10 +63,7 @@ namespace Gameplay
             var car = Pool.Instance.Get(_transportPoolObjectID);
             if (car.TryGetComponent(out _carInMission))
             {
-                PlayerBuildsContainer playerBuildsContainer = PlayerBuildsContainer.Instance;
-                BuildInfo commandCenterInfo = playerBuildsContainer.GetCommandCenterInfo;
-                var commandCenter = playerBuildsContainer.GetBuildingBehavior(commandCenterInfo);
-                _carInMission.MoveToPoint(startingPosition: commandCenter.GetParking.position, destination: _parking, dungeonBehavior: this);
+                _carInMission.MoveToPoint(startingPosition: _mainBuild.GetParking.position, destination: _parking, dungeonBehavior: this);
 
                 DungeonEvents dungeonEvents = DungeonEvents.Instance;
                 dungeonEvents.OnQuestStarting(dungeonBehavior: this);
@@ -81,10 +84,7 @@ namespace Gameplay
                     WorldBillboardsPage.Instance.BillboardShow(target: gameObject, _dungeonDefinition.Icon, timerTime: _dungeonDefinition.GetWaitingTime, OnBillboardTimeUp);
                 }
 
-                PlayerBuildsContainer playerBuildsContainer = PlayerBuildsContainer.Instance;
-                BuildInfo commandCenterInfo = playerBuildsContainer.GetCommandCenterInfo;
-                var commandCenter = playerBuildsContainer.GetBuildingBehavior(commandCenterInfo);
-                if (destination.Equals(commandCenter.GetParking))
+                if (destination.Equals(_mainBuild.GetParking))
                 {
                     Debug.Log($"[Car] Машина вернулась в: {destination.name}", carBehavior.gameObject);
                     MissionFinished();
@@ -98,10 +98,7 @@ namespace Gameplay
             var car = Pool.Instance.Get(_transportPoolObjectID);
             if (car.TryGetComponent(out _carInMission))
             {
-                PlayerBuildsContainer playerBuildsContainer = PlayerBuildsContainer.Instance;
-                BuildInfo commandCenterInfo = playerBuildsContainer.GetCommandCenterInfo;
-                var commandCenter = playerBuildsContainer.GetBuildingBehavior(commandCenterInfo);
-                _carInMission.MoveToPoint(startingPosition: _parking.position, destination: commandCenter.GetParking, dungeonBehavior: this);
+                _carInMission.MoveToPoint(startingPosition: _parking.position, destination: _mainBuild.GetParking, dungeonBehavior: this);
 
                 DungeonEvents dungeonEvents = DungeonEvents.Instance;
                 dungeonEvents.CarTaskComplete += OnCarTaskComplete;

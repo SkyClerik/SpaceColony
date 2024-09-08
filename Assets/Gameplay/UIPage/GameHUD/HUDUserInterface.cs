@@ -2,6 +2,7 @@ using UnityEngine.UIElements;
 using UnityEngine;
 using System.Collections.Generic;
 using SkyClericExt;
+using System;
 
 namespace Gameplay.UI
 {
@@ -39,6 +40,10 @@ namespace Gameplay.UI
 
         private Button _buttonDungeon;
         private const string _buttonDungeonName = "button_dungeon";
+
+        private Button _buttonBuildType;
+        private const string _buttonBuildTypeName = "button_build_type";
+        private string _buttonBuildTypeText;
 
         private void OnEnable()
         {
@@ -82,6 +87,10 @@ namespace Gameplay.UI
             _buttonDungeon = line03Right.Q<Button>(_buttonDungeonName);
             _buttonDungeon.clicked += ClickedDungeon;
 
+            _buttonBuildType = line03Right.Q<Button>(_buttonBuildTypeName);
+            _buttonBuildTypeText = _buttonBuildType.text;
+            _buttonBuildType.clicked += ClickedBuildType;
+
             _globalResourcesRoot = line03Left.Q(_globalResourcesRootName);
             _globalResourcesRoot.Clear();
             globalResourceElements = new List<ResourceDefinitionTemplate>();
@@ -92,9 +101,16 @@ namespace Gameplay.UI
             }
         }
 
+        private void ClickedBuildType()
+        {
+            SelectedDruggedObjects selectedDruggedObjects = SelectedDruggedObjects.Instance;
+            selectedDruggedObjects.Active = !selectedDruggedObjects.Active;
+            _buttonBuildType.text = $"{_buttonBuildTypeText}:\n{selectedDruggedObjects.Active}";
+        }
+
         private void ClickedButtonMining()
         {
-            Mining.Instance.Show();
+            MiningPage.Instance.Show();
         }
 
         private void ClickedButtonItems()
@@ -115,7 +131,7 @@ namespace Gameplay.UI
 
         private void ClickedCommandCenter()
         {
-            CommandCenter.Instance.Show();
+            CommandCenterPage.Instance.Show();
         }
 
         public void UpdateReputation(int value)

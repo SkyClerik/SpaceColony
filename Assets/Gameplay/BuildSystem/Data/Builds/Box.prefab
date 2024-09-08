@@ -112,11 +112,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65a0eca616e347d499f3686096cf7499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildInfo: {fileID: 11400000, guid: 3b51671c9e55b44409adb4e007f0f69b, type: 2}
+  _buildDefinition: {fileID: 11400000, guid: 3b51671c9e55b44409adb4e007f0f69b, type: 2}
   _useSelector: 1
   _selector: {fileID: 6513647283063786443}
   _parkingPosition: {fileID: 7585253901851006988}
-  _updateToObject: {fileID: 0}
   _meshRenderers:
   - {fileID: 2761899122668719156}
   - {fileID: 3189159314830032264}
@@ -149,7 +148,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 19.5, y: 7, z: 19.5}
   m_Center: {x: 0, y: 4, z: 0}

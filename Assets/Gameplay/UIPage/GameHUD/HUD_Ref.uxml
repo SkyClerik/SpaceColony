@@ -73,6 +73,9 @@
                 <ui:VisualElement name="pivot" picking-mode="Ignore" style="flex-grow: 1; display: flex; width: 100%;">
                     <ui:Button text="мастерская" parse-escape-sequences="true" display-tooltip-when-elided="true" name="button_production_table" />
                 </ui:VisualElement>
+                <ui:VisualElement name="pivot" picking-mode="Ignore" style="flex-grow: 1; display: flex; width: 100%;">
+                    <ui:Button text="Режим строительства" parse-escape-sequences="true" display-tooltip-when-elided="true" name="button_build_type" />
+                </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

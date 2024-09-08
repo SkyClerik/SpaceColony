@@ -64,7 +64,7 @@ namespace Car.State
 
         private void MoveEnd()
         {
-            Debug.Log($"MoveEnd", _carBehavior);
+            Debug.Log($"[Car] MoveEnd", _carBehavior);
             _isMoving = false;
             _machine.SetState(_machine.StateIdle);
             DungeonEvents.Instance.OnCarTaskComplete(_carBehavior, _carBehavior.GetDestination);

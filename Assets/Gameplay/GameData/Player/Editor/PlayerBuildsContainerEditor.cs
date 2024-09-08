@@ -19,13 +19,13 @@ public class PlayerBuildsContainerEditor : Editor
         InspectorElement.FillDefaultInspector(root, serializedObject, this);
 
 
-        foreach (var obj in _container.GetBuildBehavior)
-        {
-            Label element = new Label();
+        //foreach (BuildInfo info in _container.Info)
+        //{
+        //    Label element = new Label();
 
-            element.text = $"{obj.Value.GetBuildInfo.Title}";
-            root.Add(element);
-        }
+        //    element.text = $"{info.definition.Title}";
+        //    root.Add(element);
+        //}
 
         return root;
     }

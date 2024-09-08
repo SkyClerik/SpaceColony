@@ -19,12 +19,65 @@ MonoBehaviour:
     width: 2560
     height: 1349
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Game
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: "OmlConsole.\u6390"
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 926
+    y: 0
+    width: 910
+    height: 522
+  m_MinSize: {x: 482, y: 181}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 14}
+  m_Panes:
+  - {fileID: 19}
+  - {fileID: 14}
+  m_Selected: 1
+  m_LastSelected: 0
+--- !u!114 &3
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 4}
+  - {fileID: 2}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 777
+    width: 1836
+    height: 522
+  m_MinSize: {x: 200, y: 50}
+  m_MaxSize: {x: 16192, y: 8096}
+  vertical: 0
+  controlID: 91
+  draggingID: 0
+--- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,70 +93,18 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 634
-    width: 413
-    height: 665
-  m_MinSize: {x: 232, y: 271}
-  m_MaxSize: {x: 10002, y: 10021}
+    y: 0
+    width: 926
+    height: 522
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 15}
   m_Panes:
-  - {fileID: 19}
   - {fileID: 15}
-  m_Selected: 1
-  m_LastSelected: 1
---- !u!114 &3
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 12}
-  - {fileID: 2}
-  m_Position:
-    serializedVersion: 2
-    x: 1675
-    y: 0
-    width: 413
-    height: 1299
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 8096, y: 16192}
-  vertical: 1
-  controlID: 97
-  draggingID: 0
---- !u!114 &4
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: "OmlConsole.\u6390"
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 936
-    width: 1675
-    height: 363
-  m_MinSize: {x: 481, y: 181}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 14}
-  m_Panes:
-  - {fileID: 17}
-  - {fileID: 14}
   - {fileID: 13}
-  m_Selected: 1
+  - {fileID: 21}
+  - {fileID: 17}
+  m_Selected: 0
   m_LastSelected: 2
 --- !u!114 &5
 MonoBehaviour:
@@ -119,17 +120,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 10}
-  - {fileID: 4}
+  - {fileID: 3}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1675
+    width: 1836
     height: 1299
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 8096, y: 16192}
+  m_MinSize: {x: 200, y: 100}
+  m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 16
+  controlID: 51
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -195,7 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 5}
-  - {fileID: 3}
+  - {fileID: 12}
   - {fileID: 11}
   m_Position:
     serializedVersion: 2
@@ -203,10 +204,10 @@ MonoBehaviour:
     y: 30
     width: 2560
     height: 1299
-  m_MinSize: {x: 300, y: 100}
-  m_MaxSize: {x: 24288, y: 16192}
+  m_MinSize: {x: 400, y: 100}
+  m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 15
+  controlID: 50
   draggingID: 0
 --- !u!114 &9
 MonoBehaviour:
@@ -246,17 +247,16 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1675
-    height: 936
+    width: 1836
+    height: 777
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 20}
   m_Panes:
-  - {fileID: 21}
   - {fileID: 20}
   - {fileID: 16}
-  m_Selected: 1
-  m_LastSelected: 2
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -272,12 +272,12 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 2088
+    x: 2150
     y: 0
-    width: 472
+    width: 410
     height: 1299
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -298,10 +298,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 0
+    x: 1836
     y: 0
-    width: 413
-    height: 634
+    width: 314
+    height: 1299
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 22}
@@ -331,9 +331,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 1009
-    width: 1674
-    height: 342
+    y: 850
+    width: 925
+    height: 501
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -346,8 +346,8 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_MixersTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 1e850000
-    m_LastClickedID: 34078
+    m_SelectedIDs: 24850000
+    m_LastClickedID: 34084
     m_ExpandedIDs: 12eb343c
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -463,12 +463,12 @@ MonoBehaviour:
       oldMaxSizes: 
       oldSplitSize: 0
     m_HorizontalSplitter:
-      ID: 54
+      ID: 866
       splitterInitialOffset: 0
       currentActiveSplitter: -1
       realSizes:
-      - 502
-      - 1172
+      - 277
+      - 648
       relativeSizes:
       - 0.3
       - 0.7
@@ -478,7 +478,7 @@ MonoBehaviour:
       maxSizes:
       - 0
       - 0
-      lastTotalSize: 1674
+      lastTotalSize: 925
       splitSize: 6
       xOffset: 0
       m_Version: 1
@@ -512,10 +512,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 1009
-    width: 1674
-    height: 342
+    x: 926
+    y: 850
+    width: 908
+    height: 501
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -530,79 +530,219 @@ MonoBehaviour:
   "\u5AE9": 0
   "\u5AEB": 0
   mCoreData:
-    mStartTime: 638612708697048172
+    mStartTime: 638614104465442937
     mItemList:
-    - seqNum: 0
+    - seqNum: 1
+      mRawMessage: "[Event] \u0417\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u043E
+        \u0441\u0442\u0440\u043E\u0438\u0442\u0435\u043B\u044C\u0441\u0442\u0432\u043E
+        \u0437\u0434\u0430\u043D\u0438\u044F"
+      mStackTrace: "  at Gameplay.BuildingBehaviorEvents.BuildCreateComplete (Gameplay.BuildingBehavior
+        buildingBehavior) [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\Object\\BuildingBehaviorEvents.cs:18
+        \r\n  at Gameplay.HardAddToPlayerOnHandList.Start () [0x00008] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\Object\\HardAddToPlayerOnHandList.cs:11 "
+      mLogType: 3
+      mTime: 638614103395221832
+      mInstID: -1
+      mLocalRepeatCount: 0
+    - seqNum: 2
       mRawMessage: "[Event] \u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C
         \u043E\u0442\u043A\u0440\u044B\u0432\u0430\u0435\u0442 \u043D\u043E\u0432\u0443\u044E
         \u0432\u043A\u043B\u0430\u0434\u043A\u0443"
       mStackTrace: "  at Gameplay.UI.UserInterfaceShare.OnPageOpen (UnityEngine.UIElements.UIDocument
         uIDocument) [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\UI
-        Toolkit\\UserInterfaceShare.cs:27 \r\n  at Gameplay.UI.UIPage`1[T].Show ()
+        Toolkit\\UserInterfaceShare.cs:33 \r\n  at Gameplay.UI.UIPage`1[T].Show ()
         [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\UIPage\\Base\\UIPage.cs:32
-        \r\n  at Gameplay.UI.ActorSelected.Show (System.Byte slotIndex, System.Action`2[T1,T2]
-        callbackActorData, System.Action onCloseCallback) [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\UIPage\\ObjectSelected\\ActorSelected.cs:80
-        \r\n  at Gameplay.UI.ActorPage.Show () [0x00012] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\UIPage\\ObjectInfoPages\\ActorPage\\ActorPage.cs:39
-        \r\n  at Gameplay.UI.HUDUserInterface.ClickedActorSelected () [0x00001] in
-        D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\UIPage\\GameHUD\\HUDUserInterface.cs:113
-        \r\n  at UnityEngine.UIElements.Clickable.Invoke (UnityEngine.UIElements.EventBase
-        evt) [0x00000] in <7ec34a9fe0b043f08800d3612cbf36c3>:0 \r\n  at UnityEngine.UIElements.Clickable.ProcessUpEvent
-        (UnityEngine.UIElements.EventBase evt, UnityEngine.Vector2 localPosition,
-        System.Int32 pointerId) [0x00000] in <7ec34a9fe0b043f08800d3612cbf36c3>:0
-        \r\n  at UnityEngine.UIElements.Clickable.OnMouseUp (UnityEngine.UIElements.MouseUpEvent
-        evt) [0x00000] in <7ec34a9fe0b043f08800d3612cbf36c3>:0 \r\n  at UnityEngine.UIElements.EventCallbackFunctor`1[TEventType].Invoke
-        (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.PropagationPhase
-        propagationPhase) [0x00000] in <7ec34a9fe0b043f08800d3612cbf36c3>:0 \r\n 
-        at UnityEngine.UIElements.EventCallbackRegistry.InvokeCallbacks (UnityEngine.UIElements.EventBase
-        evt, UnityEngine.UIElements.PropagationPhase propagationPhase) [0x00000]
-        in <7ec34a9fe0b043f08800d3612cbf36c3>:0 \r\n  at UnityEngine.UIElements.CallbackEventHandler.HandleEvent
-        (UnityEngine.UIElements.EventBase evt) [0x00000] in <7ec34a9fe0b043f08800d3612cbf36c3>:0
-        \r\n  at UnityEngine.UIElements.CallbackEventHandler.HandleEventAtCurrentTargetAndPhase
-        (UnityEngine.UIElements.EventBase evt) [0x00000] in <7ec34a9fe0b043f08800d3612cbf36c3>:0
-        \r\n  at UnityEngine.UIElements.CallbackEventHandler.HandleEventAtTargetPhase
-        (UnityEngine.UIElements.EventBase evt) [0x00000] in <7ec34a9fe0b043f08800d3612cbf36c3>:0
-        \r\n  at UnityEngine.UIElements.MouseCaptureDispatchingStrategy.DispatchEvent
-        (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel)
-        [0x00000] in <7ec34a9fe0b043f08800d3612cbf36c3>:0 \r\n  at UnityEngine.UIElements.EventDispatcher.ApplyDispatchingStrategies
-        (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel,
-        System.Boolean imguiEventIsInitiallyUsed) [0x00000] in <7ec34a9fe0b043f08800d3612cbf36c3>:0
-        \r\n  at UnityEngine.UIElements.EventDispatcher.ProcessEvent (UnityEngine.UIElements.EventBase
-        evt, UnityEngine.UIElements.IPanel panel) [0x00000] in <7ec34a9fe0b043f08800d3612cbf36c3>:0
-        \r\n  at UnityEngine.UIElements.EventDispatcher.ProcessEventQueue () [0x00000]
-        in <7ec34a9fe0b043f08800d3612cbf36c3>:0 \r\n  at UnityEngine.UIElements.EventDispatcher.OpenGate
-        () [0x00000] in <7ec34a9fe0b043f08800d3612cbf36c3>:0 \r\n  at UnityEngine.UIElements.EventDispatcherGate.Dispose
-        () [0x00000] in <7ec34a9fe0b043f08800d3612cbf36c3>:0 \r\n  at UnityEngine.UIElements.EventDispatcher.ProcessEvent
-        (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel)
-        [0x00000] in <7ec34a9fe0b043f08800d3612cbf36c3>:0 \r\n  at UnityEngine.UIElements.EventDispatcher.Dispatch
-        (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel,
-        UnityEngine.UIElements.DispatchMode dispatchMode) [0x00000] in <7ec34a9fe0b043f08800d3612cbf36c3>:0
-        \r\n  at UnityEngine.UIElements.BaseVisualElementPanel.SendEvent (UnityEngine.UIElements.EventBase
-        e, UnityEngine.UIElements.DispatchMode dispatchMode) [0x00000] in <7ec34a9fe0b043f08800d3612cbf36c3>:0
-        \r\n  at UnityEngine.UIElements.PanelEventHandler.SendEvent (UnityEngine.UIElements.EventBase
-        e, UnityEngine.EventSystems.BaseEventData sourceEventData) [0x00001] in .\\Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\EventSystem\\UIElements\\PanelEventHandler.cs:271
-        \r\n  at UnityEngine.UIElements.PanelEventHandler.OnPointerUp (UnityEngine.EventSystems.PointerEventData
-        eventData) [0x00030] in .\\Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\EventSystem\\UIElements\\PanelEventHandler.cs:138
-        \r\n  at UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerUpHandler
-        handler, UnityEngine.EventSystems.BaseEventData eventData) [0x00001] in .\\Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\EventSystem\\ExecuteEvents.cs:50
-        \r\n  at UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject
-        target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1]
-        functor) [0x0006f] in .\\Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\EventSystem\\ExecuteEvents.cs:272
-        \r\n  at UnityEngine.EventSystems.StandaloneInputModule.ReleaseMouse (UnityEngine.EventSystems.PointerEventData
-        pointerEvent, UnityEngine.GameObject currentOverGo) [0x00001] in .\\Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\EventSystem\\InputModules\\StandaloneInputModule.cs:185
-        \r\n  at UnityEngine.EventSystems.StandaloneInputModule.ProcessMousePress
-        (UnityEngine.EventSystems.PointerInputModule+MouseButtonEventData data) [0x0018f]
-        in .\\Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\EventSystem\\InputModules\\StandaloneInputModule.cs:654
-        \r\n  at UnityEngine.EventSystems.StandaloneInputModule.ProcessMouseEvent
-        (System.Int32 id) [0x0002f] in .\\Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\EventSystem\\InputModules\\StandaloneInputModule.cs:554
-        \r\n  at UnityEngine.EventSystems.StandaloneInputModule.ProcessMouseEvent
-        () [0x00001] in .\\Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\EventSystem\\InputModules\\StandaloneInputModule.cs:534
-        \r\n  at UnityEngine.EventSystems.StandaloneInputModule.Process () [0x0003e]
-        in .\\Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\EventSystem\\InputModules\\StandaloneInputModule.cs:282
-        \r\n  at UnityEngine.EventSystems.EventSystem.Update () [0x000f6] in .\\Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\EventSystem\\EventSystem.cs:530 "
+        \r\n  at Gameplay.UI.CommandCenterPage.Show () [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\UIPage\\Builds\\CommandCenter\\CommandCenterPage.cs:85
+        \r\n  at Gameplay.CommandCenterBehavior.ShowPage () [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\Behavior\\CommandCenterBehavior.cs:9
+        \r\n  at Gameplay.BuildingBehavior.OnMouseDown () [0x00021] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\Object\\BuildingBehavior.cs:38
+        \r\n  at UnityEngine.GameObject.SendMessage (UnityEngine.GameObject , System.String
+        , System.Object , UnityEngine.SendMessageOptions ) [0x00000] in <011ccacb58784a80ac4b48b4c50ee0b7>:0
+        \r\n  at UnityEngine.SendMouseEvents+HitInfo.SendMessage (System.String name)
+        [0x00000] in <fabcb357c2d64f318e98aa2e2387a364>:0 \r\n  at UnityEngine.SendMouseEvents.SendEvents
+        (System.Int32 i, UnityEngine.SendMouseEvents+HitInfo hit) [0x00000] in <fabcb357c2d64f318e98aa2e2387a364>:0
+        \r\n  at UnityEngine.SendMouseEvents.DoSendMouseEvents (System.Int32 skipRTCameras)
+        [0x00000] in <fabcb357c2d64f318e98aa2e2387a364>:0 "
       mLogType: 3
-      mTime: 638612708807999967
+      mTime: 638614103430675505
       mInstID: -1
-      mLocalRepeatCount: 7
+      mLocalRepeatCount: 1
+    - seqNum: 3
+      mRawMessage: "[Event] \u041D\u0430\u0447\u0430\u043B\u043E\u0441\u044C \u0441\u0442\u0440\u043E\u0438\u0442\u0435\u043B\u044C\u0441\u0442\u0432\u043E
+        \u0437\u0434\u0430\u043D\u0438\u044F"
+      mStackTrace: "  at Gameplay.BuildingBehaviorEvents.BuildCreateStart (Gameplay.BuildingBehavior
+        buildingBehavior) [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\Object\\BuildingBehaviorEvents.cs:11
+        \r\n  at Gameplay.BuildingBehavior.StartBuilding () [0x00015] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\Object\\BuildingBehavior.cs:47
+        \r\n  at Gameplay.BuildDragger.ApplyBuilding () [0x0001b] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\BuildDruger\\BuildDruger.cs:111
+        \r\n  at Gameplay.BuildDragger.Update () [0x00077] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\BuildDruger\\BuildDruger.cs:57 "
+      mLogType: 3
+      mTime: 638614103503160607
+      mInstID: -1
+      mLocalRepeatCount: 0
+    - seqNum: 4
+      mRawMessage: "[Event] \u0417\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u043E
+        \u0441\u0442\u0440\u043E\u0438\u0442\u0435\u043B\u044C\u0441\u0442\u0432\u043E
+        \u0437\u0434\u0430\u043D\u0438\u044F"
+      mStackTrace: "  at Gameplay.BuildingBehaviorEvents.BuildCreateComplete (Gameplay.BuildingBehavior
+        buildingBehavior) [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\Object\\BuildingBehaviorEvents.cs:18
+        \r\n  at Gameplay.BuildingBehavior.BuildingComplete () [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\Object\\BuildingBehavior.cs:68
+        \r\n  at Gameplay.BuildingBehavior.StartBuilding () [0x00021] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\Object\\BuildingBehavior.cs:50
+        \r\n  at Gameplay.BuildDragger.ApplyBuilding () [0x0001b] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\BuildDruger\\BuildDruger.cs:111
+        \r\n  at Gameplay.BuildDragger.Update () [0x00077] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\BuildDruger\\BuildDruger.cs:57 "
+      mLogType: 3
+      mTime: 638614103503160607
+      mInstID: -1
+      mLocalRepeatCount: 0
+    - seqNum: 5
+      mRawMessage: "[Event] \u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C
+        \u043E\u0442\u043A\u0440\u044B\u0432\u0430\u0435\u0442 \u043D\u043E\u0432\u0443\u044E
+        \u0432\u043A\u043B\u0430\u0434\u043A\u0443"
+      mStackTrace: "  at Gameplay.UI.UserInterfaceShare.OnPageOpen (UnityEngine.UIElements.UIDocument
+        uIDocument) [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\UI
+        Toolkit\\UserInterfaceShare.cs:33 \r\n  at Gameplay.UI.UIPage`1[T].Show ()
+        [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\UIPage\\Base\\UIPage.cs:32
+        \r\n  at Gameplay.UI.CommandCenterPage.Show () [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\UIPage\\Builds\\CommandCenter\\CommandCenterPage.cs:85
+        \r\n  at Gameplay.CommandCenterBehavior.ShowPage () [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\Behavior\\CommandCenterBehavior.cs:9
+        \r\n  at Gameplay.BuildingBehavior.OnMouseDown () [0x00021] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\Object\\BuildingBehavior.cs:38
+        \r\n  at UnityEngine.GameObject.SendMessage (UnityEngine.GameObject , System.String
+        , System.Object , UnityEngine.SendMessageOptions ) [0x00000] in <011ccacb58784a80ac4b48b4c50ee0b7>:0
+        \r\n  at UnityEngine.SendMouseEvents+HitInfo.SendMessage (System.String name)
+        [0x00000] in <fabcb357c2d64f318e98aa2e2387a364>:0 \r\n  at UnityEngine.SendMouseEvents.SendEvents
+        (System.Int32 i, UnityEngine.SendMouseEvents+HitInfo hit) [0x00000] in <fabcb357c2d64f318e98aa2e2387a364>:0
+        \r\n  at UnityEngine.SendMouseEvents.DoSendMouseEvents (System.Int32 skipRTCameras)
+        [0x00000] in <fabcb357c2d64f318e98aa2e2387a364>:0 "
+      mLogType: 3
+      mTime: 638614103775225823
+      mInstID: -1
+      mLocalRepeatCount: 0
+    - seqNum: 6
+      mRawMessage: "[Event] \u0417\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u043E
+        \u0441\u0442\u0440\u043E\u0438\u0442\u0435\u043B\u044C\u0441\u0442\u0432\u043E
+        \u0437\u0434\u0430\u043D\u0438\u044F"
+      mStackTrace: "  at Gameplay.BuildingBehaviorEvents.BuildCreateComplete (Gameplay.BuildingBehavior
+        buildingBehavior) [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\Object\\BuildingBehaviorEvents.cs:18
+        \r\n  at Gameplay.HardAddToPlayerOnHandList.Start () [0x00008] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\Object\\HardAddToPlayerOnHandList.cs:11 "
+      mLogType: 3
+      mTime: 638614104525399881
+      mInstID: -1
+      mLocalRepeatCount: 0
+    - seqNum: 7
+      mRawMessage: "[Event] \u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C
+        \u043E\u0442\u043A\u0440\u044B\u0432\u0430\u0435\u0442 \u043D\u043E\u0432\u0443\u044E
+        \u0432\u043A\u043B\u0430\u0434\u043A\u0443"
+      mStackTrace: "  at Gameplay.UI.UserInterfaceShare.OnPageOpen (UnityEngine.UIElements.UIDocument
+        uIDocument) [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\UI
+        Toolkit\\UserInterfaceShare.cs:33 \r\n  at Gameplay.UI.UIPage`1[T].Show ()
+        [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\UIPage\\Base\\UIPage.cs:32
+        \r\n  at Gameplay.UI.CommandCenterPage.Show () [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\UIPage\\Builds\\CommandCenter\\CommandCenterPage.cs:85
+        \r\n  at Gameplay.CommandCenterBehavior.ShowPage () [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\Behavior\\CommandCenterBehavior.cs:9
+        \r\n  at Gameplay.BuildingBehavior.OnMouseDown () [0x00021] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\Object\\BuildingBehavior.cs:38
+        \r\n  at UnityEngine.GameObject.SendMessage (UnityEngine.GameObject , System.String
+        , System.Object , UnityEngine.SendMessageOptions ) [0x00000] in <011ccacb58784a80ac4b48b4c50ee0b7>:0
+        \r\n  at UnityEngine.SendMouseEvents+HitInfo.SendMessage (System.String name)
+        [0x00000] in <fabcb357c2d64f318e98aa2e2387a364>:0 \r\n  at UnityEngine.SendMouseEvents.SendEvents
+        (System.Int32 i, UnityEngine.SendMouseEvents+HitInfo hit) [0x00000] in <fabcb357c2d64f318e98aa2e2387a364>:0
+        \r\n  at UnityEngine.SendMouseEvents.DoSendMouseEvents (System.Int32 skipRTCameras)
+        [0x00000] in <fabcb357c2d64f318e98aa2e2387a364>:0 "
+      mLogType: 3
+      mTime: 638614104543286736
+      mInstID: -1
+      mLocalRepeatCount: 0
+    - seqNum: 8
+      mRawMessage: "[Event] \u041D\u0430\u0447\u0430\u043B\u043E\u0441\u044C \u0441\u0442\u0440\u043E\u0438\u0442\u0435\u043B\u044C\u0441\u0442\u0432\u043E
+        \u0437\u0434\u0430\u043D\u0438\u044F"
+      mStackTrace: "  at Gameplay.BuildingBehaviorEvents.BuildCreateStart (Gameplay.BuildingBehavior
+        buildingBehavior) [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\Object\\BuildingBehaviorEvents.cs:11
+        \r\n  at Gameplay.BuildingBehavior.StartBuilding () [0x00015] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\Object\\BuildingBehavior.cs:47
+        \r\n  at Gameplay.BuildDragger.ApplyBuilding () [0x0001b] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\BuildDruger\\BuildDruger.cs:111
+        \r\n  at Gameplay.BuildDragger.Update () [0x00077] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\BuildDruger\\BuildDruger.cs:57 "
+      mLogType: 3
+      mTime: 638614104570401556
+      mInstID: -1
+      mLocalRepeatCount: 0
+    - seqNum: 9
+      mRawMessage: "[Event] \u0417\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u043E
+        \u0441\u0442\u0440\u043E\u0438\u0442\u0435\u043B\u044C\u0441\u0442\u0432\u043E
+        \u0437\u0434\u0430\u043D\u0438\u044F"
+      mStackTrace: "  at Gameplay.BuildingBehaviorEvents.BuildCreateComplete (Gameplay.BuildingBehavior
+        buildingBehavior) [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\Object\\BuildingBehaviorEvents.cs:18
+        \r\n  at Gameplay.BuildingBehavior.BuildingComplete () [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\Object\\BuildingBehavior.cs:68
+        \r\n  at Gameplay.BuildingBehavior.StartBuilding () [0x00021] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\Object\\BuildingBehavior.cs:50
+        \r\n  at Gameplay.BuildDragger.ApplyBuilding () [0x0001b] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\BuildDruger\\BuildDruger.cs:111
+        \r\n  at Gameplay.BuildDragger.Update () [0x00077] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\BuildDruger\\BuildDruger.cs:57 "
+      mLogType: 3
+      mTime: 638614104570401556
+      mInstID: -1
+      mLocalRepeatCount: 0
+    - seqNum: 10
+      mRawMessage: "[Event] \u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C
+        \u043E\u0442\u043A\u0440\u044B\u0432\u0430\u0435\u0442 \u043D\u043E\u0432\u0443\u044E
+        \u0432\u043A\u043B\u0430\u0434\u043A\u0443"
+      mStackTrace: "  at Gameplay.UI.UserInterfaceShare.OnPageOpen (UnityEngine.UIElements.UIDocument
+        uIDocument) [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\UI
+        Toolkit\\UserInterfaceShare.cs:33 \r\n  at Gameplay.UI.UIPage`1[T].Show ()
+        [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\UIPage\\Base\\UIPage.cs:32
+        \r\n  at Gameplay.UI.CommandCenterPage.Show () [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\UIPage\\Builds\\CommandCenter\\CommandCenterPage.cs:85
+        \r\n  at Gameplay.CommandCenterBehavior.ShowPage () [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\Behavior\\CommandCenterBehavior.cs:9
+        \r\n  at Gameplay.BuildingBehavior.OnMouseDown () [0x00021] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\Object\\BuildingBehavior.cs:38
+        \r\n  at UnityEngine.GameObject.SendMessage (UnityEngine.GameObject , System.String
+        , System.Object , UnityEngine.SendMessageOptions ) [0x00000] in <011ccacb58784a80ac4b48b4c50ee0b7>:0
+        \r\n  at UnityEngine.SendMouseEvents+HitInfo.SendMessage (System.String name)
+        [0x00000] in <fabcb357c2d64f318e98aa2e2387a364>:0 \r\n  at UnityEngine.SendMouseEvents.SendEvents
+        (System.Int32 i, UnityEngine.SendMouseEvents+HitInfo hit) [0x00000] in <fabcb357c2d64f318e98aa2e2387a364>:0
+        \r\n  at UnityEngine.SendMouseEvents.DoSendMouseEvents (System.Int32 skipRTCameras)
+        [0x00000] in <fabcb357c2d64f318e98aa2e2387a364>:0 "
+      mLogType: 3
+      mTime: 638614104575356884
+      mInstID: -1
+      mLocalRepeatCount: 0
+    - seqNum: 11
+      mRawMessage: "[Event] \u041D\u0430\u0447\u0430\u043B\u043E\u0441\u044C \u0441\u0442\u0440\u043E\u0438\u0442\u0435\u043B\u044C\u0441\u0442\u0432\u043E
+        \u0437\u0434\u0430\u043D\u0438\u044F"
+      mStackTrace: "  at Gameplay.BuildingBehaviorEvents.BuildCreateStart (Gameplay.BuildingBehavior
+        buildingBehavior) [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\Object\\BuildingBehaviorEvents.cs:11
+        \r\n  at Gameplay.BuildingBehavior.StartBuilding () [0x00015] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\Object\\BuildingBehavior.cs:47
+        \r\n  at Gameplay.BuildDragger.ApplyBuilding () [0x0001b] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\BuildDruger\\BuildDruger.cs:111
+        \r\n  at Gameplay.BuildDragger.Update () [0x00077] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\BuildDruger\\BuildDruger.cs:57 "
+      mLogType: 3
+      mTime: 638614104600582629
+      mInstID: -1
+      mLocalRepeatCount: 0
+    - seqNum: 12
+      mRawMessage: "[Event] \u0417\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u043E
+        \u0441\u0442\u0440\u043E\u0438\u0442\u0435\u043B\u044C\u0441\u0442\u0432\u043E
+        \u0437\u0434\u0430\u043D\u0438\u044F"
+      mStackTrace: "  at Gameplay.BuildingBehaviorEvents.BuildCreateComplete (Gameplay.BuildingBehavior
+        buildingBehavior) [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\Object\\BuildingBehaviorEvents.cs:18
+        \r\n  at Gameplay.BuildingBehavior.BuildingComplete () [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\Object\\BuildingBehavior.cs:68
+        \r\n  at Gameplay.BuildingBehavior.StartBuilding () [0x00021] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\Object\\BuildingBehavior.cs:50
+        \r\n  at Gameplay.BuildDragger.ApplyBuilding () [0x0001b] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\BuildDruger\\BuildDruger.cs:111
+        \r\n  at Gameplay.BuildDragger.Update () [0x00077] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\BuildSystem\\Scripts\\Build\\BuildDruger\\BuildDruger.cs:57 "
+      mLogType: 3
+      mTime: 638614104600582629
+      mInstID: -1
+      mLocalRepeatCount: 0
+    - seqNum: 13
+      mRawMessage: "[Event] \u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C
+        \u043E\u0442\u043A\u0440\u044B\u0432\u0430\u0435\u0442 \u043D\u043E\u0432\u0443\u044E
+        \u0432\u043A\u043B\u0430\u0434\u043A\u0443"
+      mStackTrace: "  at Gameplay.UI.UserInterfaceShare.OnPageOpen (UnityEngine.UIElements.UIDocument
+        uIDocument) [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\UI
+        Toolkit\\UserInterfaceShare.cs:33 \r\n  at Gameplay.UI.UIPage`1[T].Show ()
+        [0x00001] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\UIPage\\Base\\UIPage.cs:32
+        \r\n  at Gameplay.UI.DungeonPage.Show (Gameplay.DungeonBehavior dungeonBehavior,
+        Gameplay.Data.DungeonDefinition dungeonDefinition) [0x00016] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\UIPage\\DungeonPage\\DungeonPage.cs:92
+        \r\n  at Gameplay.DungeonBehavior.ShowPage () [0x00023] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\Dungeon\\DungeonBehaviour\\DungeonBehaviour.cs:57
+        \r\n  at Gameplay.DungeonBehavior.OnMouseDown () [0x00021] in D:\\Developing\\ProjectManager\\Data\\Projects\\SpaceColony\\Assets\\Gameplay\\Dungeon\\DungeonBehaviour\\DungeonBehaviour.cs:47
+        \r\n  at UnityEngine.GameObject.SendMessage (UnityEngine.GameObject , System.String
+        , System.Object , UnityEngine.SendMessageOptions ) [0x00000] in <011ccacb58784a80ac4b48b4c50ee0b7>:0
+        \r\n  at UnityEngine.SendMouseEvents+HitInfo.SendMessage (System.String name)
+        [0x00000] in <fabcb357c2d64f318e98aa2e2387a364>:0 \r\n  at UnityEngine.SendMouseEvents.SendEvents
+        (System.Int32 i, UnityEngine.SendMouseEvents+HitInfo hit) [0x00000] in <fabcb357c2d64f318e98aa2e2387a364>:0
+        \r\n  at UnityEngine.SendMouseEvents.DoSendMouseEvents (System.Int32 skipRTCameras)
+        [0x00000] in <fabcb357c2d64f318e98aa2e2387a364>:0 "
+      mLogType: 3
+      mTime: 638614104624726637
+      mInstID: -1
+      mLocalRepeatCount: 5
     mCustomLogStyles:
     - mEnabled: 1
       mDefaultStyle: 1
@@ -642,7 +782,7 @@ MonoBehaviour:
       mFinderSearchMode: 1
       mShowLogs_Normal: 1
       mShowLogs_Warning: 1
-      mShowLogs_Error: 0
+      mShowLogs_Error: 1
       mShowFloatingErrorButton: 1
       mTagGroupName: default
       mSearchPattern: 
@@ -663,8 +803,8 @@ MonoBehaviour:
         items: []
       - name: Events
         items: []
-      mSelections: 
-      mLastSelection: -1
+      mSelections: 0b000000
+      mLastSelection: 3
     - mDisabled: 0
       mNoLogDisplayOption: 0
       mSessionListView: 0
@@ -759,11 +899,11 @@ MonoBehaviour:
       mLastSelection: -1
     mTags: AQAAABRCVVYyWlc1MC8vLy8veElBQUFBPQ==
     mTagGroups: AgAAAAdkZWZhdWx0AQAAAAVFdmVudAZFdmVudHMBAAAABUV2ZW50
-    mNextTagID: 147
+    mNextTagID: 598
     mClassTags_K: []
     mClassTags_V: []
     mFoldedSessions: 
-    mViewSelections: 0000000000000000000000000000000000000000
+    mViewSelections: 0b00000000000000000000000000000000000000
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -785,10 +925,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1675
-    y: 707
-    width: 411
-    height: 644
+    x: 0
+    y: 850
+    width: 925
+    height: 501
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -810,7 +950,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Gameplay/Interactive/Actors/Data
+    - Assets/Gameplay/BuildSystem/Data/Builds
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -827,7 +967,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 92a90000
     m_LastClickedID: 43410
-    m_ExpandedIDs: 000000001c9c00001e9c0000209c0000229c0000249c0000269c0000289c00002a9c00002c9c00002e9c0000309c0000329c0000349c0000369c0000389c00003a9c00003c9c00003e9c0000409c0000429c0000449c0000469c0000489c00004a9c00004c9c00004e9c0000509c0000529c0000549c0000569c0000589c00005a9c00005c9c00005e9c0000609c0000629c0000649c0000669c0000689c00006a9c00006c9c00006e9c0000709c0000729c0000749c0000769c0000789c00007a9c00007c9c00007e9c0000809c0000829c0000849c0000869c0000889c00008a9c00008c9c00008e9c0000909c0000929c0000949c0000969c0000989c00009a9c00009c9c00009e9c0000a09c0000a29c0000a49c0000a69c0000a89c0000aa9c0000ac9c0000ae9c0000b09c0000b29c0000b49c0000b69c0000b89c0000ba9c0000bc9c0000be9c0000c09c0000c29c0000c49c0000c69c0000c89c0000ca9c0000cc9c0000ce9c0000d09c0000d29c0000d49c0000d69c0000d89c0000da9c0000dc9c0000de9c0000e09c0000e29c0000e49c0000
+    m_ExpandedIDs: 0000000024850000fc9d0000fe9d0000009e0000029e0000049e0000069e0000089e00000a9e00000c9e00000e9e0000109e0000129e0000149e0000169e0000189e00001a9e00001c9e00001e9e0000209e0000229e0000249e0000269e0000289e00002a9e00002c9e00002e9e0000309e0000329e0000349e0000369e0000389e00003a9e00003c9e00003e9e0000409e0000429e0000449e0000469e0000489e00004a9e00004c9e00004e9e0000509e0000529e0000549e0000569e0000589e00005a9e00005c9e00005e9e0000609e0000629e0000649e0000669e0000689e00006a9e00006c9e00006e9e0000709e0000729e0000749e0000769e0000789e00007a9e00007c9e00007e9e0000809e0000829e0000849e0000869e0000889e00008a9e00008c9e00008e9e0000909e0000929e0000949e0000969e0000989e00009a9e00009c9e00009e9e0000a09e0000a29e0000a49e0000a69e0000a89e0000aa9e0000ac9e0000ae9e0000b09e0000b29e0000b49e0000b69e0000b89e0000ba9e0000bc9e0000be9e0000c09e0000c29e0000c49e0000c69e0000c89e0000ca9e0000cc9e0000ce9e0000d09e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -852,26 +992,26 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 1524}
+    scrollPos: {x: 0, y: 25}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff000000001e8500001c9c00001e9c0000209c0000229c0000249c0000269c0000289c00002a9c00002c9c00002e9c0000309c0000349c0000369c0000389c00003a9c00003c9c00003e9c0000409c0000429c0000469c0000489c00004a9c00004c9c0000609c0000629c0000649c0000669c0000689c00006c9c00006e9c0000709c0000729c0000749c0000769c0000789c00007a9c00007c9c00007e9c0000809c0000829c0000849c0000869c0000889c00008a9c00008e9c0000909c0000929c0000949c0000969c0000989c00009a9c00009c9c00009e9c0000a09c0000a29c0000a49c0000a69c0000a89c0000aa9c0000ac9c0000ae9c0000b09c0000b29c0000b49c0000b69c0000b89c0000ba9c0000bc9c0000be9c0000c29c0000c49c0000c69c0000c89c0000ca9c0000cc9c0000ce9c0000d09c0000d29c0000d49c0000d69c0000d89c0000da9c0000dc9c0000de9c0000e09c0000e49c00008e9f0000909f0000989f0000a29f0000b09f000034f1000038f100003cf100008a110100
+    m_ExpandedIDs: ffffffff0000000024850000fc9d0000fe9d0000009e0000029e0000049e0000069e0000089e00000a9e00000c9e00000e9e0000109e0000129e0000149e0000169e0000189e00001a9e00001c9e00001e9e0000209e0000229e0000249e0000269e0000289e00002a9e00002c9e00002e9e0000309e0000329e0000349e0000369e0000389e00003a9e00003c9e00003e9e0000409e0000429e0000449e0000469e0000489e00004a9e00004c9e00004e9e0000509e0000529e0000549e0000569e0000589e00005a9e00005c9e00005e9e0000609e0000629e0000649e0000669e0000689e00006a9e00006c9e00006e9e0000709e0000729e0000749e0000769e0000789e00007a9e00007c9e00007e9e0000809e0000849e0000869e0000889e00008a9e00008c9e00008e9e0000909e0000929e0000949e0000969e0000989e00009a9e00009c9e00009e9e0000a09e0000a29e0000a49e0000a69e0000a89e0000aa9e0000ac9e0000ae9e0000b09e0000b29e0000b49e0000b69e0000b89e0000ba9e0000bc9e0000be9e0000c09e0000c29e0000c49e0000c69e0000c89e0000ca9e0000cc9e0000ce9e0000d09e000086a1000088a100008aa1000090a100009ca10000f2c60000c4630100b86c0100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: DungeonResult
-      m_OriginalName: DungeonResult
+      m_Name: Box
+      m_OriginalName: Box
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 40224
+      m_UserData: 38956
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 2}
+      m_ClientGUIView: {fileID: 4}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -934,8 +1074,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 73
-    width: 1674
-    height: 915
+    width: 1835
+    height: 756
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -968,9 +1108,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 1009
-    width: 1674
-    height: 342
+    y: 850
+    width: 925
+    height: 501
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1002,9 +1142,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 2088
+    x: 2150
     y: 73
-    width: 471
+    width: 409
     height: 1278
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1050,10 +1190,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1
-    y: 458
-    width: 343
-    height: 479
+    x: 926
+    y: 850
+    width: 908
+    height: 501
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1074,7 +1214,8 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 0
     m_SearchArea: 1
-    m_Folders: []
+    m_Folders:
+    - Assets/Gameplay/BuildSystem/Scripts/Manager
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1090,7 +1231,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 7a3a0000
     m_LastClickedID: 14970
-    m_ExpandedIDs: 000000001c9c00001e9c0000209c0000229c0000249c0000269c0000289c00002a9c00002c9c00002e9c0000309c0000329c0000349c0000369c0000389c00003a9c00003c9c00003e9c0000409c0000429c0000449c0000469c0000489c00004a9c00004c9c00004e9c0000509c0000529c0000549c0000569c0000589c00005a9c00005c9c00005e9c0000609c0000629c0000649c0000669c0000689c00006a9c00006c9c00006e9c0000709c0000729c0000749c0000769c0000789c00007a9c00007c9c00007e9c0000809c0000829c0000849c0000869c0000889c00008a9c00008c9c00008e9c0000909c0000929c0000949c0000969c0000989c00009a9c00009c9c00009e9c0000a09c0000a29c0000a49c0000a69c0000a89c0000aa9c0000ac9c0000ae9c0000b09c0000b29c0000b49c0000b69c0000b89c0000ba9c0000bc9c0000be9c0000c09c0000c29c0000c49c0000c69c0000c89c0000ca9c0000cc9c0000ce9c0000d09c0000d29c0000d49c0000d69c0000d89c0000da9c0000dc9c0000de9c0000e09c0000e29c0000e49c0000
+    m_ExpandedIDs: 0000000024850000fc9d0000fe9d0000009e0000029e0000049e0000069e0000089e00000a9e00000c9e00000e9e0000109e0000129e0000149e0000169e0000189e00001a9e00001c9e00001e9e0000209e0000229e0000249e0000269e0000289e00002a9e00002c9e00002e9e0000309e0000329e0000349e0000369e0000389e00003a9e00003c9e00003e9e0000409e0000429e0000449e0000469e0000489e00004a9e00004c9e00004e9e0000509e0000529e0000549e0000569e0000589e00005a9e00005c9e00005e9e0000609e0000629e0000649e0000669e0000689e00006a9e00006c9e00006e9e0000709e0000729e0000749e0000769e0000789e00007a9e00007c9e00007e9e0000809e0000829e0000849e0000869e0000889e00008a9e00008c9e00008e9e0000909e0000929e0000949e0000969e0000989e00009a9e00009c9e00009e9e0000a09e0000a29e0000a49e0000a69e0000a89e0000aa9e0000ac9e0000ae9e0000b09e0000b29e0000b49e0000b69e0000b89e0000ba9e0000bc9e0000be9e0000c09e0000c29e0000c49e0000c69e0000c89e0000ca9e0000cc9e0000ce9e0000d09e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1115,10 +1256,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ec910000
+    scrollPos: {x: 0, y: 13}
+    m_SelectedIDs: de8f0000
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001c9c00001e9c0000209c0000229c0000249c0000269c0000289c00002a9c00002c9c00002e9c0000309c0000329c0000349c0000369c0000389c00003a9c00003c9c00003e9c0000409c0000429c0000449c0000469c0000489c00004a9c00004c9c00004e9c0000509c0000529c0000549c0000569c0000589c00005a9c00005c9c00005e9c0000609c0000629c0000649c0000669c0000689c00006a9c00006c9c00006e9c0000709c0000729c0000749c0000769c0000789c00007a9c00007c9c00007e9c0000809c0000829c0000849c0000869c0000889c00008a9c00008c9c00008e9c0000909c0000929c0000949c0000969c0000989c00009a9c00009c9c00009e9c0000a09c0000a29c0000a49c0000a69c0000a89c0000aa9c0000ac9c0000ae9c0000b09c0000b29c0000b49c0000b69c0000b89c0000ba9c0000bc9c0000be9c0000c09c0000c29c0000c49c0000c69c0000c89c0000ca9c0000cc9c0000ce9c0000d09c0000d29c0000d49c0000d69c0000d89c0000da9c0000dc9c0000de9c0000e09c0000e29c0000e49c0000
+    m_ExpandedIDs: ffffffff0000000024850000fc9d0000fe9d0000009e0000029e0000049e0000069e0000089e00000a9e00000c9e00000e9e0000109e0000129e0000149e0000169e0000189e00001a9e00001c9e00001e9e0000209e0000229e0000249e0000269e0000289e00002a9e00002c9e00002e9e0000309e0000329e0000349e0000369e0000389e00003a9e00003c9e00003e9e0000409e0000429e0000449e0000469e0000489e00004a9e00004c9e00004e9e0000509e0000529e0000549e0000569e0000589e00005a9e00005c9e00005e9e0000609e0000629e0000649e0000669e0000689e00006a9e00006c9e00006e9e0000709e0000729e0000749e0000769e0000789e00007a9e00007c9e00007e9e0000809e0000829e0000849e0000869e0000889e00008a9e00008c9e00008e9e0000909e0000929e0000949e0000969e0000989e00009a9e00009c9e00009e9e0000a09e0000a29e0000a49e0000a69e0000a89e0000aa9e0000ac9e0000ae9e0000b09e0000b29e0000b49e0000b69e0000b89e0000ba9e0000bc9e0000be9e0000c09e0000c29e0000c49e0000c69e0000c89e0000ca9e0000cc9e0000ce9e0000d09e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1134,7 +1275,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 2}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -1143,8 +1284,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: ec910000
-    m_LastClickedInstanceID: 37356
+    m_SelectedInstanceIDs: de8f0000
+    m_LastClickedInstanceID: 36830
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
@@ -1197,8 +1338,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 73
-    width: 1674
-    height: 915
+    width: 1835
+    height: 756
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1251,23 +1392,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 1674
-      height: 894
-    m_Scale: {x: 0.8277778, y: 0.8277778}
-    m_Translation: {x: 837, y: 447}
+      width: 1835
+      height: 735
+    m_Scale: {x: 0.6805556, y: 0.6805556}
+    m_Translation: {x: 917.5, y: 367.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -1011.1409
+      x: -1348.1632
       y: -540
-      width: 2022.2819
+      width: 2696.3264
       height: 1080
     m_MinimalGUI: 1
-  m_defaultScale: 0.8277778
-  m_LastWindowPixelSize: {x: 1674, y: 915}
+  m_defaultScale: 0.6805556
+  m_LastWindowPixelSize: {x: 1835, y: 756}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -1295,9 +1436,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 73
-    width: 1674
-    height: 1035
+    y: 850
+    width: 925
+    height: 501
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1352,7 +1493,7 @@ MonoBehaviour:
       collapsed: 0
       displayed: 0
       snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 0, y: 25}
+      snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 1
       id: unity-search-toolbar
       index: 1
@@ -1404,7 +1545,7 @@ MonoBehaviour:
       collapsed: 0
       displayed: 0
       snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 0, y: 25}
+      snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Light Settings
       index: 2
@@ -1430,7 +1571,7 @@ MonoBehaviour:
       collapsed: 0
       displayed: 0
       snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 0, y: 25}
+      snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Cloth Constraints
       index: 3
@@ -1443,7 +1584,7 @@ MonoBehaviour:
       collapsed: 0
       displayed: 0
       snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 0, y: 25}
+      snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Cloth Collisions
       index: 4
@@ -1495,7 +1636,7 @@ MonoBehaviour:
       collapsed: 0
       displayed: 0
       snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 0, y: 25}
+      snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Occlusion Culling
       index: 5
@@ -1508,7 +1649,7 @@ MonoBehaviour:
       collapsed: 0
       displayed: 0
       snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 0, y: 25}
+      snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Physics Debugger
       index: 6
@@ -1521,7 +1662,7 @@ MonoBehaviour:
       collapsed: 0
       displayed: 0
       snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 0, y: 25}
+      snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Scene Visibility
       index: 7
@@ -1534,7 +1675,7 @@ MonoBehaviour:
       collapsed: 0
       displayed: 0
       snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 0, y: 25}
+      snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Particles
       index: 8
@@ -1702,7 +1843,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 48, y: 48}
+      snapOffset: {x: 48, y: 10}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: UnityEditor.SceneViewCameraOverlay
@@ -1721,9 +1862,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 299.4872, y: 117.736275, z: 94.83932}
+    m_Target: {x: 105.072716, y: 29.735497, z: 153.33545}
     speed: 2
-    m_Value: {x: 299.4872, y: 117.736275, z: 94.83932}
+    m_Value: {x: 105.072716, y: 29.735497, z: 153.33545}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1769,13 +1910,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.483727, y: -0.14186274, z: 0.07980219, w: 0.8599451}
+    m_Target: {x: 0.3194437, y: 0.1928918, z: -0.06658407, w: 0.9253725}
     speed: 2
-    m_Value: {x: 0.4837292, y: -0.14186339, z: 0.07980256, w: 0.85994905}
+    m_Value: {x: 0.31944382, y: 0.19289188, z: -0.0665841, w: 0.92537284}
   m_Size:
-    m_Target: 707.8265
+    m_Target: 53.737762
     speed: 2
-    m_Value: 707.8265
+    m_Value: 53.737762
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1821,10 +1962,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1675
+    x: 1836
     y: 73
-    width: 411
-    height: 613
+    width: 312
+    height: 1278
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1838,9 +1979,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 48900000
-      m_LastClickedID: 36936
-      m_ExpandedIDs: befaffff128e00005a8e00005e8e0000e48e000024900000
+      m_SelectedIDs: b2e8fcff
+      m_LastClickedID: 0
+      m_ExpandedIDs: 1cf7ffff20f7ffffbefaffff9e8e0000a48e0000009100000e910000ce910000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1856,7 +1997,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 12}
+        m_ClientGUIView: {fileID: 10}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0

@@ -2,34 +2,37 @@ using Unity.AI.Navigation;
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(NavMeshHelper))]
-public class NavMeshHelperEditor : Editor
+namespace Helper
 {
-    private NavMeshHelper _navMeshHelper;
-
-    private void OnEnable()
+    [CustomEditor(typeof(NavMeshHelper))]
+    public class NavMeshHelperEditor : Editor
     {
-        _navMeshHelper = (NavMeshHelper)target;
-    }
+        private NavMeshHelper _navMeshHelper;
 
-    public override void OnInspectorGUI()
-    {
-        base.OnInspectorGUI();
-
-        if (GUILayout.Button("Update"))
+        private void OnEnable()
         {
-            var meshSurface = _navMeshHelper.GetComponent<NavMeshSurface>();
-            meshSurface.BuildNavMesh();
+            _navMeshHelper = (NavMeshHelper)target;
         }
 
-        if (GUILayout.Button("Active"))
+        public override void OnInspectorGUI()
         {
-            _navMeshHelper.SetActiveObjects(true);
-        }
+            base.OnInspectorGUI();
 
-        if (GUILayout.Button("DeActive"))
-        {
-            _navMeshHelper.SetActiveObjects(false);
+            if (GUILayout.Button("Update"))
+            {
+                var meshSurface = _navMeshHelper.GetComponent<NavMeshSurface>();
+                meshSurface.BuildNavMesh();
+            }
+
+            if (GUILayout.Button("Active"))
+            {
+                _navMeshHelper.SetActiveObjects(true);
+            }
+
+            if (GUILayout.Button("DeActive"))
+            {
+                _navMeshHelper.SetActiveObjects(false);
+            }
         }
     }
 }

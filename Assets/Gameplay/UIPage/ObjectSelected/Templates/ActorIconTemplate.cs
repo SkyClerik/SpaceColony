@@ -15,7 +15,7 @@ namespace Gameplay.UI
             _callback = callback;
             actorData = actorDataLink;
 
-            var heroIconTemplate = UserInterfaceShare.Instance.HeroIconTemplate.Instantiate();
+            var heroIconTemplate = UserInterfaceShare.Instance.GetActorIconTemplate.Instantiate();
             Add(heroIconTemplate);
 
             VisualElement icon = this.Q(_iconName);
@@ -25,12 +25,6 @@ namespace Gameplay.UI
 
             //RegisterCallback<MouseDownEvent>(OnMouseDown);
             RegisterCallback<MouseUpEvent>(OnMouseUp);
-        }
-
-        ~ActorIconTemplate()
-        {
-            //UnregisterCallback<MouseDownEvent>(OnMouseDown);
-            UnregisterCallback<MouseUpEvent>(OnMouseUp);
         }
 
         //private void OnMouseDown(MouseDownEvent mouseEvent)
@@ -50,5 +44,12 @@ namespace Gameplay.UI
         }
         //BUG: Отследи нажатие на карточку и держи в поле VisualElement.
         //Когда поднимаем кнопку проверим тот же ли это VisualElement
+
+        ~ActorIconTemplate()
+        {
+            //UnregisterCallback<MouseDownEvent>(OnMouseDown);
+            UnregisterCallback<MouseUpEvent>(OnMouseUp);
+            _callback = null;
+        }
     }
 }

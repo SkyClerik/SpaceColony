@@ -17,9 +17,12 @@ namespace Gameplay
             _volume = GetComponent<Volume>();
         }
 
-        public bool TryGetDepthOfField(out DepthOfField depthOfField)
+        public void SetActiveDepthOfField(bool active)
         {
-            return _volume.profile.TryGet(out depthOfField);
+            if (_depthOfField == null)
+                _volume.profile.TryGet(out _depthOfField);
+
+            _depthOfField.active = active;
         }
     }
 }

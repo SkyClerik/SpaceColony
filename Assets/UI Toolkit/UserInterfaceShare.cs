@@ -8,15 +8,21 @@ namespace Gameplay.UI
     public class UserInterfaceShare : Singleton<UserInterfaceShare>, ITagObject
     {
         [SerializeField]
-        private VisualTreeAsset _heroIconTemplate;
+        private VisualTreeAsset _actorIconTemplate;
+        [SerializeField]
+        private VisualTreeAsset _actorClickedTemplate;
         [SerializeField]
         private VisualTreeAsset _itemIconTemplate;
         [SerializeField]
         private VisualTreeAsset _globalResourceTemplate;
+        [SerializeField]
+        private VisualTreeAsset _buildDrawingTemplate;
 
-        public VisualTreeAsset HeroIconTemplate => _heroIconTemplate;
-        public VisualTreeAsset ItemIconTemplate => _itemIconTemplate;
-        public VisualTreeAsset GlobalResourceTemplate => _globalResourceTemplate;
+        public VisualTreeAsset GetActorIconTemplate => _actorIconTemplate;
+        public VisualTreeAsset GetActorClickedTemplate => _actorClickedTemplate;
+        public VisualTreeAsset GetItemIconTemplate => _itemIconTemplate;
+        public VisualTreeAsset GetGlobalResourceTemplate => _globalResourceTemplate;
+        public VisualTreeAsset GetBuildDrawingTemplate => _buildDrawingTemplate;
 
         public Color TransparentColor = new Color(1, 1, 1, 0);
 

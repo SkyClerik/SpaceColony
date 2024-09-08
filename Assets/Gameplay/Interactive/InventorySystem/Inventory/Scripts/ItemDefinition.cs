@@ -80,7 +80,7 @@ namespace Gameplay.Data
         private ItemDefinition _item;
 
         [SerializeField]
-        private MinMaxValues _pcs;
+        private IntMM _pcs;
         private int _resultPCS;
 
         [Range(0f, 100f), SerializeField]

@@ -12,12 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e424c86533c60b4c9f4cbe4fbc0591c, type: 3}
   m_Name: ammo_orange
   m_EditorClassIdentifier: 
+  _friendlyName: 
+  _description: 
+  _icon: {fileID: 2493308356698108729, guid: 3ad56d0daa98d8a41b2846a87a936e73, type: 3}
+  _minPCS: 0
+  _maxPCS: 0
   ID: 02c1fe64-863f-490e-88f5-80672539b8ba
-  FriendlyName: ammo_orange
-  Description: 
-  SellPrice: 0
-  Icon: {fileID: 21300000, guid: 133efc8b88eda0f4ca9914b312de2520, type: 3}
+  CurPCS: 0
   SlotDimension:
     DefaultHeight: 1
     DefaultWidth: 1
-    DefaulAngle: 0
+    DefaultAngle: 0
+  _coast:
+    _price: 0

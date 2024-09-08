@@ -6,32 +6,19 @@ namespace Gameplay.UI
 {
     public class DungeonPage : UIPage<DungeonPage>
     {
-        [SerializeField]
-        private GlobalVolumeManager volumeManager;
-        public GlobalVolumeManager GetVolumeManager => volumeManager;
-
         private Label _mainWindowTitle;
         private const string _mainWindowTitleName = "main_window_title";
-
         private VisualElement _actorsArea;
         private const string _actorsAreaName = "actors_area";
-
         private Button _buttonGo;
         private const string _buttonGoName = "button_go";
-
         private Button _closeButton;
         private const string _closeButtonName = "close_button";
 
-        [Header("DEBUG")]
-        [SerializeField]
         private VisualTreeAsset _actorClickedTemplate;
-        [SerializeField]
         private ActorClickedTemplate[] _actorClickedTemplates = new ActorClickedTemplate[3];
-        [SerializeField]
         private ActorParty _party = new ActorParty(partyLimit: 3);
-        [SerializeField]
         private DungeonDefinition _dungeonDefinition;
-        [SerializeField]
         private DungeonBehavior _dungeonBehavior;
 
         protected override void Awake()
@@ -63,6 +50,7 @@ namespace Gameplay.UI
             _actorsArea = rootElement.Q(_actorsAreaName);
             _actorsArea.Clear();
 
+            _actorClickedTemplate = UserInterfaceShare.Instance.GetActorClickedTemplate;
             for (byte i = 0; i < _actorClickedTemplates.Length; i++)
                 _actorClickedTemplates[i] = new ActorClickedTemplate(i, _actorClickedTemplate, _actorsArea, ClickedButton);
 
@@ -123,6 +111,7 @@ namespace Gameplay.UI
             }
             else
             {
+                Debug.Log($"Отправка партии на задание");
                 _dungeonBehavior.SendOnMission(_party);
                 Hide();
             }

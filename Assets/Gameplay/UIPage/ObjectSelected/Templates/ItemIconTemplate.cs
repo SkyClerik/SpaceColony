@@ -11,16 +11,16 @@ namespace Gameplay.UI
         private const string _iconName = "icon";
         public ItemDefinition ItemDefinition;
 
-        public ItemIconTemplate(VisualElement rootElement, ItemDefinition itemDefenition, Action<ItemIconTemplate> callback)
+        public ItemIconTemplate(VisualElement rootElement, ItemDefinition itemDefinition, Action<ItemIconTemplate> callback)
         {
             _callback = callback;
-            ItemDefinition = itemDefenition;
+            ItemDefinition = itemDefinition;
 
-            var itemIconTemplate = UserInterfaceShare.Instance.ItemIconTemplate.Instantiate();
+            var itemIconTemplate = UserInterfaceShare.Instance.GetItemIconTemplate.Instantiate();
             Add(itemIconTemplate);
 
             VisualElement icon = this.Q(_iconName);
-            icon.style.backgroundImage = new StyleBackground(itemDefenition.Icon);
+            icon.style.backgroundImage = new StyleBackground(itemDefinition.Icon);
 
             rootElement.Add(this);
 

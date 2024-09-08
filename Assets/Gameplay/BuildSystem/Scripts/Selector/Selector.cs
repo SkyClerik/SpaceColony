@@ -1,3 +1,4 @@
+using Gameplay.Data;
 using UnityEngine;
 
 [RequireComponent(typeof(MeshRenderer))]

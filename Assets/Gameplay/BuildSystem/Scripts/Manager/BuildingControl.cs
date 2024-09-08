@@ -1,59 +1,46 @@
+using Gameplay.Data;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(BuildingUI))]
-public class BuildingControl : Singleton<BuildingControl>
+namespace Gameplay
 {
-    [SerializeField]
-    private BuildingContainer _buildingContainer;
-    [SerializeField]
-    private LayerMask _floorLayerMask;
-    [SerializeField]
-    private List<BuildingBehavior> _buildingBehaviors = new();
-
-    public LayerMask FloorLayerMask => _floorLayerMask;
-    public int GreedSize = 1;
-    public List<BuildingBehavior> BuildingBehaviors => _buildingBehaviors;
-
-    private void Start()
+    public class BuildingControl : Singleton<BuildingControl>
     {
-        if (_buildingContainer == null)
+        [SerializeField]
+        private BuildDrawingContainer _buildDrawingContainer;
+        [SerializeField]
+        private LayerMask _floorLayerMask;
+        [SerializeField]
+        private int _greedSize = 1;
+
+        public LayerMask FloorLayerMask => _floorLayerMask;
+        public int GreedSize => _greedSize;
+
+        private void Start()
         {
-            Debug.LogError("Не назначена база данных с объектами строительства", gameObject);
-            return;
-        }
-
-        BuildingUI buildingUI = GetComponent<BuildingUI>();
-        buildingUI.Init(this, _buildingContainer);
-    }
-
-    public void SelectShadowBuilding(int i)
-    {
-        GameObject shadowBuild = Instantiate(_buildingContainer.Buildings[i].gameObject);
-
-        Rigidbody rigidbody = shadowBuild.AddComponent<Rigidbody>();
-        rigidbody.isKinematic = true;
-
-        BuildDragger buildDruger = shadowBuild.AddComponent<BuildDragger>();
-        buildDruger.Init(DraggerTypes.Create);
-    }
-
-    public void TryAddBuildingBehavior(BuildingBehavior buildingBehavior)
-    {
-        foreach (BuildingBehavior item in _buildingBehaviors)
-        {
-            if (item.Equals(buildingBehavior))
-                return;
-        }
-
-        for (int i = 0; i < _buildingBehaviors.Count; i++)
-        {
-            if (_buildingBehaviors[i] == null)
+            if (_buildDrawingContainer == null)
             {
-                _buildingBehaviors[i] = buildingBehavior;
+                Debug.LogError("Не назначена база данных с объектами строительства", gameObject);
                 return;
             }
+
+            _buildDrawingContainer = Instantiate(_buildDrawingContainer);
         }
-        _buildingBehaviors.Add(buildingBehavior);
+
+        public void SelectShadowBuilding(BuildingBehavior buildingBehavior)
+        {
+            GameObject shadowBuild = Instantiate(buildingBehavior.gameObject);
+
+            Rigidbody rigidbody = shadowBuild.AddComponent<Rigidbody>();
+            rigidbody.isKinematic = true;
+
+            BuildDragger buildDragger = shadowBuild.AddComponent<BuildDragger>();
+            buildDragger.Init(DraggerTypes.Create);
+        }
+
+        public List<BuildDrawing> GetDrawingList()
+        {
+            return _buildDrawingContainer.Buildings;
+        }
     }
 }

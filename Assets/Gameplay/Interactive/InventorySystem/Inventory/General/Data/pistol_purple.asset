@@ -12,12 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e424c86533c60b4c9f4cbe4fbc0591c, type: 3}
   m_Name: pistol_purple
   m_EditorClassIdentifier: 
+  _friendlyName: 
+  _description: 
+  _icon: {fileID: -7192585884581913262, guid: 393021b790fe7bd4484e9f84c76ad03e, type: 3}
+  _minPCS: 0
+  _maxPCS: 0
   ID: cbf3ff97-ee28-4558-bcf3-fa196d60da33
-  FriendlyName: pistol_purple
-  Description: 
-  SellPrice: 0
-  Icon: {fileID: 21300000, guid: 2bd08b6ea704d7648839fa1f65c5e636, type: 3}
+  CurPCS: 0
   SlotDimension:
     DefaultHeight: 1
-    DefaultWidth: 2
-    DefaulAngle: 0
+    DefaultWidth: 1
+    DefaultAngle: 0
+  _coast:
+    _price: 0

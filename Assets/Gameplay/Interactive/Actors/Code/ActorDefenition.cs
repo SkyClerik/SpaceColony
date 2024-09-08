@@ -38,4 +38,12 @@ namespace Gameplay.Data
         [Range(0f, 100f)]
         public byte Chance;
     }
+
+    public enum ActorClass : byte
+    {
+        Default,
+        Worker,
+        Scientist,
+        Soldier
+    }
 }

@@ -30,11 +30,13 @@ namespace Gameplay.UI
         public virtual void Show()
         {
             UserInterfaceShare.Instance.OnPageOpen(document);
+            GlobalVolumeManager.Instance.SetActiveDepthOfField(true);
             rootElement.style.display = DisplayStyle.Flex;
         }
 
         public virtual void Hide()
         {
+            GlobalVolumeManager.Instance.SetActiveDepthOfField(false);
             rootElement.style.display = DisplayStyle.None;
         }
     }

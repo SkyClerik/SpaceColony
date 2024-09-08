@@ -13,7 +13,7 @@ namespace Gameplay.UI
 
         public ResourceDefinitionTemplate(VisualElement rootElement, ResourceDefinition resource)
         {
-            TemplateContainer globalResource = UserInterfaceShare.Instance.GlobalResourceTemplate.Instantiate();
+            TemplateContainer globalResource = UserInterfaceShare.Instance.GetGlobalResourceTemplate.Instantiate();
             _icon = globalResource.Q(_iconName);
             _icon.style.backgroundImage = new StyleBackground(resource.Icon);
             _title = globalResource.Q<Label>(_titleName);
