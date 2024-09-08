@@ -80,5 +80,15 @@ namespace Gameplay
         {
             _buildBoxOnCreating.Remove(buildingBehavior);
         }
+
+        internal T Find<T>() where T : BuildingBehavior
+        {
+            foreach (var item in _buildBoxOnHand)
+            {
+                if (item.GetType() == typeof(T))
+                    return item as T;
+            }
+            return null;
+        }
     }
 }

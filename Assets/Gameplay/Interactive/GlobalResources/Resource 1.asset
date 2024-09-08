@@ -16,7 +16,7 @@ MonoBehaviour:
   _description: 
   _icon: {fileID: 41993945, guid: a75ce5496864b1c4e939c6c6fe631713, type: 3}
   _minPCS: 0
-  _maxPCS: 0
+  _maxPCS: 67
   ID: 771fc4a5-2b70-4189-92cf-9093df13f50f
   CurPCS: 0
   SlotDimension:

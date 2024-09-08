@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <ui:VisualElement name="resource_template" style="flex-grow: 1; flex-direction: row; align-items: center;">
-        <ui:VisualElement name="icon" style="flex-grow: 0; background-image: url(&quot;project://database/Assets/UI%20Toolkit/3e00a35f25d60d878f9290a752c33927.jpg?fileID=-1033828316&amp;guid=a75ce5496864b1c4e939c6c6fe631713&amp;type=3#3e00a35f25d60d878f9290a752c33927_2&quot;); -unity-background-scale-mode: scale-to-fit; width: 48px; height: 48px;" />
+        <ui:VisualElement name="icon" style="flex-grow: 0; background-image: url(&quot;project://database/Assets/Plugins/OML/Demo_Tutorial/Images/16x16.png?fileID=21300000&amp;guid=a6e4690f6ca09684ab0cf20e874e8a02&amp;type=3#16x16&quot;); -unity-background-scale-mode: scale-to-fit; width: 48px; height: 48px;" />
         <ui:Label tabindex="-1" text="Название ресурса" parse-escape-sequences="true" display-tooltip-when-elided="true" name="title" style="font-size: 30px; -unity-font-style: bold; color: rgb(124, 215, 233); -unity-text-outline-width: 1px; -unity-text-outline-color: rgb(149, 141, 221); -unity-text-align: middle-left;" />
     </ui:VisualElement>
 </ui:UXML>

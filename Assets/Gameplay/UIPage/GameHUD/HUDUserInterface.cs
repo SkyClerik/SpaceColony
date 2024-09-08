@@ -2,7 +2,7 @@ using UnityEngine.UIElements;
 using UnityEngine;
 using System.Collections.Generic;
 using SkyClericExt;
-using System;
+using Gameplay.Data;
 
 namespace Gameplay.UI
 {
@@ -14,7 +14,7 @@ namespace Gameplay.UI
 
         private VisualElement _globalResourcesRoot;
         private const string _globalResourcesRootName = "global_resources_root";
-        private List<ResourceDefinitionTemplate> globalResourceElements = new List<ResourceDefinitionTemplate>();
+        private List<ResourceDefinitionTemplate> _resourceDefinitionTemplates = new List<ResourceDefinitionTemplate>();
 
         private const string _line01 = "line_01";
 
@@ -48,11 +48,13 @@ namespace Gameplay.UI
         private void OnEnable()
         {
             PlayerReputation.ReputationChange += UpdateReputation;
+            PlayerGlobalResourcesContainer.Instance.OnResourcesChange += RepaintResource;
         }
 
         private void OnDestroy()
         {
             PlayerReputation.ReputationChange -= UpdateReputation;
+            PlayerGlobalResourcesContainer.Instance.OnResourcesChange -= RepaintResource;
         }
 
         protected override void Awake()
@@ -89,19 +91,19 @@ namespace Gameplay.UI
 
             _buttonBuildType = line03Right.Q<Button>(_buttonBuildTypeName);
             _buttonBuildTypeText = _buttonBuildType.text;
-            _buttonBuildType.clicked += ClickedBuildType;
+            _buttonBuildType.clicked += ClickedBuildingMode;
 
             _globalResourcesRoot = line03Left.Q(_globalResourcesRootName);
             _globalResourcesRoot.Clear();
-            globalResourceElements = new List<ResourceDefinitionTemplate>();
+            _resourceDefinitionTemplates = new List<ResourceDefinitionTemplate>();
             foreach (var resource in PlayerGlobalResourcesContainer.Instance.GetGlobalResources)
             {
                 var newResource = new ResourceDefinitionTemplate(_globalResourcesRoot, resource);
-                globalResourceElements.Add(newResource);
+                _resourceDefinitionTemplates.Add(newResource);
             }
         }
 
-        private void ClickedBuildType()
+        private void ClickedBuildingMode()
         {
             SelectedDruggedObjects selectedDruggedObjects = SelectedDruggedObjects.Instance;
             selectedDruggedObjects.Active = !selectedDruggedObjects.Active;
@@ -110,7 +112,9 @@ namespace Gameplay.UI
 
         private void ClickedButtonMining()
         {
-            MiningPage.Instance.Show();
+            //TODO: Вызываю первый попавшийся добытчик для тестов
+            MiningBehavior miningBehavior = PlayerBuildsContainer.Instance.Find<MiningBehavior>();
+            MiningPage.Instance.Show(miningBehavior);
         }
 
         private void ClickedButtonItems()
@@ -142,6 +146,15 @@ namespace Gameplay.UI
         public void LoadReputation()
         {
             UpdateReputation(PlayerReputation.GetReputation);
+        }
+
+        public void RepaintResource(ResourceDefinition resourceDefinition)
+        {
+            foreach (var item in _resourceDefinitionTemplates)
+            {
+                if (resourceDefinition.ID == item.GetResourceID)
+                    item.SetText(resourceDefinition);
+            }
         }
     }
 }

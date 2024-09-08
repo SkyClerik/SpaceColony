@@ -26,10 +26,11 @@ namespace Gameplay.Data
 
         public void GiveOutLoot()
         {
+            foreach (var item in _loot.Resources)
+                PlayerGlobalResourcesContainer.Instance.PlusOrAdd(item);
+
             foreach (var item in _loot.Items)
-            {
                 PlayerItemsContainer.Instance.Add(item);
-            }
         }
     }
 

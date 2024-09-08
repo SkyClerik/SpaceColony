@@ -5,7 +5,7 @@
                 <ui:VisualElement picking-mode="Ignore" style="flex-grow: 0; height: 20px; justify-content: flex-start; align-items: center;">
                     <ui:Label tabindex="-1" text="Депо поддержки" parse-escape-sequences="true" display-tooltip-when-elided="true" picking-mode="Ignore" name="label_main_title" style="color: rgb(255, 255, 255); -unity-font-style: bold; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; opacity: 1;" />
                 </ui:VisualElement>
-                <ui:VisualElement picking-mode="Ignore" name="main_image" style="flex-grow: 0; height: 110px; background-image: url(&quot;project://database/Assets/Gameplay/UIPage/Images/Screenshot_1.png?fileID=2800000&amp;guid=a484d6e62113de545adc74b45974d346&amp;type=3#Screenshot_1&quot;); -unity-background-scale-mode: scale-to-fit;" />
+                <ui:VisualElement picking-mode="Ignore" name="main_image" style="flex-grow: 0; height: 110px; background-image: url(&quot;project://database/Assets/Plugins/OML/Demo_Tutorial/Images/16x16.png?fileID=21300000&amp;guid=a6e4690f6ca09684ab0cf20e874e8a02&amp;type=3#16x16&quot;); -unity-background-scale-mode: scale-to-fit;" />
                 <ui:VisualElement picking-mode="Ignore" style="flex-grow: 0; flex-direction: row; width: 100%; height: 50px;">
                     <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" style="margin-top: 2px; margin-right: 4px; margin-bottom: 2px; margin-left: 4px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; opacity: 1;" />
                     <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" style="margin-top: 2px; margin-right: 4px; margin-bottom: 2px; margin-left: 4px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; opacity: 1;" />
@@ -18,15 +18,15 @@
         </ui:VisualElement>
         <ui:VisualElement picking-mode="Ignore" style="flex-grow: 0; height: 32px; flex-direction: row; align-items: center; align-self: auto; margin-right: 15px; margin-left: 15px;">
             <ui:VisualElement picking-mode="Ignore" style="flex-grow: 0; flex-direction: row; align-items: center;">
-                <ui:VisualElement picking-mode="Ignore" style="flex-grow: 0; background-image: url(&quot;project://database/Assets/Gameplay/UIPage/Images/icon_palette.png?fileID=-1695424860&amp;guid=44b66327c30beb14aac3426c7a8a6607&amp;type=3#icon_palette_1&quot;); -unity-background-scale-mode: scale-to-fit; flex-shrink: 1; width: 16px; height: 16px;" />
+                <ui:VisualElement picking-mode="Ignore" style="flex-grow: 0; background-image: url(&quot;project://database/Assets/Plugins/OML/Demo_Tutorial/Images/16x16.png?fileID=21300000&amp;guid=a6e4690f6ca09684ab0cf20e874e8a02&amp;type=3#16x16&quot;); -unity-background-scale-mode: scale-to-fit; flex-shrink: 1; width: 16px; height: 16px;" />
                 <ui:Label tabindex="-1" text="12211221" parse-escape-sequences="true" display-tooltip-when-elided="true" picking-mode="Ignore" style="color: rgb(87, 255, 0); font-size: 10px; -unity-font-style: normal; -unity-text-align: middle-left;" />
             </ui:VisualElement>
             <ui:VisualElement picking-mode="Ignore" style="flex-grow: 0; flex-direction: row; align-items: center;">
-                <ui:VisualElement picking-mode="Ignore" style="flex-grow: 0; background-image: url(&quot;project://database/Assets/Gameplay/UIPage/Images/icon_palette.png?fileID=855672821&amp;guid=44b66327c30beb14aac3426c7a8a6607&amp;type=3#icon_palette_2&quot;); -unity-background-scale-mode: scale-to-fit; flex-shrink: 1; width: 16px; height: 16px;" />
+                <ui:VisualElement picking-mode="Ignore" style="flex-grow: 0; background-image: url(&quot;project://database/Assets/Plugins/OML/Demo_Tutorial/Images/16x16.png?fileID=21300000&amp;guid=a6e4690f6ca09684ab0cf20e874e8a02&amp;type=3#16x16&quot;); -unity-background-scale-mode: scale-to-fit; flex-shrink: 1; width: 16px; height: 16px;" />
                 <ui:Label tabindex="-1" text="1568" parse-escape-sequences="true" display-tooltip-when-elided="true" picking-mode="Ignore" style="color: rgb(255, 93, 0); font-size: 10px; -unity-font-style: normal; -unity-text-align: middle-left;" />
             </ui:VisualElement>
             <ui:VisualElement picking-mode="Ignore" style="flex-grow: 0; flex-direction: row; align-items: center;">
-                <ui:VisualElement picking-mode="Ignore" style="flex-grow: 0; background-image: url(&quot;project://database/Assets/Gameplay/UIPage/Images/icon_palette.png?fileID=-2050433652&amp;guid=44b66327c30beb14aac3426c7a8a6607&amp;type=3#icon_palette_3&quot;); -unity-background-scale-mode: scale-to-fit; flex-shrink: 1; width: 16px; height: 16px;" />
+                <ui:VisualElement picking-mode="Ignore" style="flex-grow: 0; background-image: url(&quot;project://database/Assets/Plugins/OML/Demo_Tutorial/Images/16x16.png?fileID=21300000&amp;guid=a6e4690f6ca09684ab0cf20e874e8a02&amp;type=3#16x16&quot;); -unity-background-scale-mode: scale-to-fit; flex-shrink: 1; width: 16px; height: 16px;" />
                 <ui:Label tabindex="-1" text="2000000" parse-escape-sequences="true" display-tooltip-when-elided="true" picking-mode="Ignore" style="color: rgb(0, 115, 197); font-size: 10px; -unity-font-style: normal; -unity-text-align: middle-left;" />
             </ui:VisualElement>
         </ui:VisualElement>

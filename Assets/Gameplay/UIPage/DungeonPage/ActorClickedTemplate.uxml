@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:VisualElement name="root" style="flex-grow: 1;">
-        <ui:VisualElement name="icon" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Gameplay/Interactive/InventorySystem/Inventory/General/Images/Clean%20Vector%20Icons/Update/Bonus_PokerFace.png?fileID=2800000&amp;guid=037da781f89f23f4b8f3702a4b2d4ce0&amp;type=3#Bonus_PokerFace&quot;); -unity-background-scale-mode: scale-to-fit;" />
+        <ui:VisualElement name="icon" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Plugins/OML/Demo_Tutorial/Images/16x16.png?fileID=2800000&amp;guid=a6e4690f6ca09684ab0cf20e874e8a02&amp;type=3#16x16&quot;); -unity-background-scale-mode: scale-to-fit;" />
         <ui:Button text="+" parse-escape-sequences="true" display-tooltip-when-elided="true" name="button" />
     </ui:VisualElement>
 </ui:UXML>
