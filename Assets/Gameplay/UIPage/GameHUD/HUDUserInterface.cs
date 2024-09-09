@@ -7,43 +7,9 @@ using Gameplay.Data;
 namespace Gameplay.UI
 {
     [RequireComponent(typeof(UIDocument))]
-    public class HUDUserInterface : UIPage<HUDUserInterface>
+    public class HUDUserInterface : HUDUserInterfaceFields
     {
-        private Label _reputationValueElement;
-        private const string _reputationValueElementName = "ReputationValueLabel";
-
-        private VisualElement _globalResourcesRoot;
-        private const string _globalResourcesRootName = "global_resources_root";
         private List<ResourceDefinitionTemplate> _resourceDefinitionTemplates = new List<ResourceDefinitionTemplate>();
-
-        private const string _line01 = "line_01";
-
-        private const string _line02Name = "line_02";
-        private const string _line02LeftName = "line_02_left";
-        private const string _line02RightName = "line_02_right";
-
-        private const string _line03Name = "line_03";
-        private const string _line03LeftName = "line_03_left";
-        private const string _line03RightName = "line_03_right";
-
-        private Button _buttonCommandCenter;
-        private const string _buttonCommandCenterName = "button_command_center";
-
-        private Button _buttonMining;
-        private const string _buttonMiningName = "button_mining";
-
-        private Button _buttonActorSelected;
-        private const string _buttonActorSelectedName = "button_actor_selected";
-
-        private Button _buttonItems;
-        private const string _buttonItemsName = "button_items";
-
-        private Button _buttonDungeon;
-        private const string _buttonDungeonName = "button_dungeon";
-
-        private Button _buttonBuildType;
-        private const string _buttonBuildTypeName = "button_build_type";
-        private string _buttonBuildTypeText;
 
         private void OnEnable()
         {
@@ -60,54 +26,30 @@ namespace Gameplay.UI
         protected override void Awake()
         {
             base.Awake();
-            Init();
-        }
+            base.Init();
 
-        private void Init()
-        {
-            var line02 = rootElement.Q(_line02Name);
-            var line02Right = line02.Q(_line02RightName);
-            _reputationValueElement = line02Right.Q<Label>(_reputationValueElementName);
-            LoadReputation();
+            buttonCommandCenter.clicked += ClickedCommandCenter;
+            buttonMining.clicked += ClickedButtonMining;
+            buttonActorSelected.clicked += ClickedActorSelected;
+            buttonItems.clicked += ClickedButtonItems;
+            buttonDungeon.clicked += ClickedDungeon;
+            buttonBuildType.clicked += ClickedBuildingMode;
 
-            var line03 = rootElement.Q(_line03Name);
-            var line03Left = line03.Q(_line03LeftName);
-            var line03Right = line03.Q(_line03RightName);
-
-            _buttonCommandCenter = line03Right.Q<Button>(_buttonCommandCenterName);
-            _buttonCommandCenter.clicked += ClickedCommandCenter;
-
-            _buttonMining = line03Right.Q<Button>(_buttonMiningName);
-            _buttonMining.clicked += ClickedButtonMining;
-
-            _buttonActorSelected = line03Right.Q<Button>(_buttonActorSelectedName);
-            _buttonActorSelected.clicked += ClickedActorSelected;
-
-            _buttonItems = line03Right.Q<Button>(_buttonItemsName);
-            _buttonItems.clicked += ClickedButtonItems;
-
-            _buttonDungeon = line03Right.Q<Button>(_buttonDungeonName);
-            _buttonDungeon.clicked += ClickedDungeon;
-
-            _buttonBuildType = line03Right.Q<Button>(_buttonBuildTypeName);
-            _buttonBuildTypeText = _buttonBuildType.text;
-            _buttonBuildType.clicked += ClickedBuildingMode;
-
-            _globalResourcesRoot = line03Left.Q(_globalResourcesRootName);
-            _globalResourcesRoot.Clear();
             _resourceDefinitionTemplates = new List<ResourceDefinitionTemplate>();
             foreach (var resource in PlayerGlobalResourcesContainer.Instance.GetGlobalResources)
             {
-                var newResource = new ResourceDefinitionTemplate(_globalResourcesRoot, resource);
+                var newResource = new ResourceDefinitionTemplate(globalResourcesRoot, resource);
                 _resourceDefinitionTemplates.Add(newResource);
             }
+
+            LoadReputation();
         }
 
         private void ClickedBuildingMode()
         {
             SelectedDruggedObjects selectedDruggedObjects = SelectedDruggedObjects.Instance;
             selectedDruggedObjects.Active = !selectedDruggedObjects.Active;
-            _buttonBuildType.text = $"{_buttonBuildTypeText}:\n{selectedDruggedObjects.Active}";
+            buttonBuildType.text = $"{buttonBuildTypeText}:\n{selectedDruggedObjects.Active}";
         }
 
         private void ClickedButtonMining()
@@ -138,23 +80,23 @@ namespace Gameplay.UI
             CommandCenterPage.Instance.Show();
         }
 
-        public void UpdateReputation(int value)
-        {
-            _reputationValueElement.text = value.ToString().ToPriceStyle();
-        }
-
-        public void LoadReputation()
-        {
-            UpdateReputation(PlayerReputation.GetReputation);
-        }
-
-        public void RepaintResource(ResourceDefinition resourceDefinition)
+        private void RepaintResource(ResourceDefinition resourceDefinition)
         {
             foreach (var item in _resourceDefinitionTemplates)
             {
                 if (resourceDefinition.ID == item.GetResourceID)
                     item.SetText(resourceDefinition);
             }
+        }
+
+        private void UpdateReputation(int value)
+        {
+            reputationValueElement.text = value.ToString().ToPriceStyle();
+        }
+
+        private void LoadReputation()
+        {
+            UpdateReputation(PlayerReputation.GetReputation);
         }
     }
 }

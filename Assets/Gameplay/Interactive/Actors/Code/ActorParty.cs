@@ -8,7 +8,7 @@ namespace Gameplay
     public class ActorParty
     {
         private List<ActorDefinition> _actors;
-        private int _partyLimit = 3;
+        private byte _partyLimit = 3;
         private byte _partyCount = 0;
 
         public bool IsFullParty
@@ -34,7 +34,6 @@ namespace Gameplay
 
         public ActorParty()
         {
-            Debug.Log($"[ActorParty] Ты чего меня за дурака держишь? _partyLimit: {_partyLimit}");
             _actors = new List<ActorDefinition>(_partyLimit);
             _partyCount = 0;
             for (int i = 0; i < _partyLimit; i++)

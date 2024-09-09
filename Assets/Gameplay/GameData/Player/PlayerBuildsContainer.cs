@@ -38,13 +38,13 @@ namespace Gameplay
         private void OnEnable()
         {
             BuildingBehaviorEvents.Instance.OnBuildCreateStart += OnBuildCreateStart;
-            BuildingBehaviorEvents.Instance.OnBuildCreateComplete += OnBuildCreateComplete;
+            BuildingBehaviorEvents.Instance.OnBuildingComplete += OnBuildCreateComplete;
         }
 
         private void OnDisable()
         {
             BuildingBehaviorEvents.Instance.OnBuildCreateStart -= OnBuildCreateStart;
-            BuildingBehaviorEvents.Instance.OnBuildCreateComplete -= OnBuildCreateComplete;
+            BuildingBehaviorEvents.Instance.OnBuildingComplete -= OnBuildCreateComplete;
         }
 
         private void OnBuildCreateStart(BuildingBehavior buildingBehavior)
