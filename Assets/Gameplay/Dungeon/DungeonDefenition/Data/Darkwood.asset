@@ -47,4 +47,6 @@ MonoBehaviour:
       _chance: 0
     _actors: []
     _pets: []
-    _drawings: []
+    _drawings:
+    - Drawing: {fileID: 11400000, guid: e82115bf0af6db947bcea2d65d81a132, type: 2}
+      Chance: 0

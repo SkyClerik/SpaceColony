@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9fc4baa1e76f74bb6689248686e506, type: 3}
   m_Name: New MonsterDefinition
   m_EditorClassIdentifier: 
-  _frendlyName: "\u0420\u0430\u0437\u0431\u043E\u0439\u043D\u0438\u043A"
+  _friendlyName: 
   _description: "\u041F\u0440\u043E\u0441\u0442\u043E\u0439 \u0447\u0435\u043B\u043E\u0432\u0435\u043A.
     \u041D\u0438\u0447\u0435\u0433\u043E \u043D\u0435\u043E\u0431\u044B\u0447\u043D\u043E\u0433\u043E."
-  _icon: {fileID: 21300000, guid: c50ecf4cb0747f64487b52e59758d9a7, type: 3}
+  _icon: {fileID: 5469306851782731028, guid: eeac123894a68534590c3197728fced1, type: 3}
   _minPCS: 0
   _maxPCS: 0
   _level: 1
@@ -24,7 +24,8 @@ MonoBehaviour:
     CurrentHP: 0
     MaxHP: 0
     Damage: 0
-    Speed: 0
+    AttackSpeed: 0
+    MoveSpeed: 0
     Stamina: 0
   _coast:
     _price: 0

@@ -12,16 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d63b93eed9e4dfc4fb6314c3b959486d, type: 3}
   m_Name: PetDefenition
   m_EditorClassIdentifier: 
-  _frendlyName: 
+  _friendlyName: 
   _description: 
-  _icon: {fileID: 21300000, guid: 09e4c6a7d75923945afe43953ef58ad2, type: 3}
+  _icon: {fileID: 7357415831794460539, guid: 006f7f82ca50d224a993a4ca8304ad81, type: 3}
+  _minPCS: 0
+  _maxPCS: 0
   _level: 1
   _stats:
+    GS: 0
     CurrentHP: 0
     MaxHP: 0
     Damage: 0
-    GS: 0
-    Speed: 0
+    AttackSpeed: 0
+    MoveSpeed: 0
     Stamina: 0
   _coast:
     _price: 0

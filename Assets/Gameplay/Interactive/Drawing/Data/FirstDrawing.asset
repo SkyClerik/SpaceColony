@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21c46b9f1977e1a419432dae335827d2, type: 3}
   m_Name: FirstDrawing
   m_EditorClassIdentifier: 
-  _frendlyName: 
+  _friendlyName: 
   _description: 
   _icon: {fileID: 21300000, guid: 33e104ffb9168144ba9ff901fd2e54ae, type: 3}
+  _minPCS: 0
+  _maxPCS: 0
   _inResource: {fileID: 11400000, guid: 277eb985b564cba4f991bb473ba60daf, type: 2}
   _inItem: {fileID: 0}
   _inCount: 6
   _jobPrice: 0
   _learningDegree: 0
   _outResource: {fileID: 11400000, guid: b1471316ddd8114458152679fe0d0204, type: 2}
-  _outItem: {fileID: 0}
+  _outItem: {fileID: 11400000, guid: 33ed5159614475547b0f1694d60f4353, type: 2}
   _outCount: 1

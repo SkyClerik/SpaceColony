@@ -1,4 +1,5 @@
 using Gameplay.Data;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Gameplay
@@ -6,14 +7,15 @@ namespace Gameplay
     [System.Serializable]
     public class ActorParty
     {
-        private ActorDefinition[] _actors;
-        private int _partyLimit;
+        private List<ActorDefinition> _actors;
+        private int _partyLimit = 3;
+        private byte _partyCount = 0;
 
         public bool IsFullParty
         {
             get
             {
-                return (_actors.Length + 1) == _partyLimit ? true : false;
+                return _partyCount == _partyLimit ? true : false;
             }
         }
 
@@ -30,12 +32,26 @@ namespace Gameplay
             }
         }
 
-        public ActorParty(int partyLimit)
+        public ActorParty()
         {
-            _partyLimit = partyLimit;
+            Debug.Log($"[ActorParty] Ты чего меня за дурака держишь? _partyLimit: {_partyLimit}");
+            _actors = new List<ActorDefinition>(_partyLimit);
+            _partyCount = 0;
+            for (int i = 0; i < _partyLimit; i++)
+            {
+                _actors.Add(null);
+            }
+        }
 
-            if (_actors == null)
-                _actors = new ActorDefinition[_partyLimit];
+        public ActorParty(List<ActorDefinition> party)
+        {
+            _actors = party;
+
+            foreach (var actor in _actors)
+            {
+                if (actor != null)
+                    _partyCount++;
+            }
         }
 
         public void AddActor(ref ActorDefinition actorData, byte index)
@@ -48,11 +64,12 @@ namespace Gameplay
 
             _actors[index] = actorData;
             actorData.Busy = true;
+            _partyCount++;
         }
 
         public void RemoveAllActors()
         {
-            for (int i = 0; i < _actors.Length; i++)
+            for (int i = 0; i < _actors.Count; i++)
             {
                 if (_actors[i] == null)
                     continue;
@@ -60,29 +77,20 @@ namespace Gameplay
                 _actors[i].Busy = false;
                 _actors[i] = null;
             }
+            _partyCount = 0;
         }
 
         public void RemoveActor(ActorDefinition actorData)
         {
-            for (int i = 0; i < _actors.Length; i++)
+            for (int i = 0; i < _actors.Count; i++)
             {
                 if (_actors[i] == actorData)
                 {
                     actorData.Busy = false;
                     _actors[i] = null;
+                    _partyCount--;
                     break;
                 }
-            }
-        }
-
-        private void FreeTheParty()
-        {
-            foreach (ActorDefinition actorData in _actors)
-            {
-                if (actorData == null)
-                    continue;
-
-                actorData.Busy = false;
             }
         }
 
@@ -93,7 +101,7 @@ namespace Gameplay
                 if (actorData == null)
                     continue;
 
-                actorData.Experience += Mathf.FloorToInt(dungeonDefinition.ExpFromWin * multiple) / _actors.Length;
+                actorData.Experience += Mathf.FloorToInt(dungeonDefinition.ExpFromWin * multiple) / _actors.Count;
             }
         }
 
@@ -128,6 +136,12 @@ namespace Gameplay
             }
             actorDefinition = null;
             return false;
+        }
+
+        public ActorParty Clone()
+        {
+            List<ActorDefinition> actors = new List<ActorDefinition>(_actors);
+            return new ActorParty(actors);
         }
     }
 }

@@ -16,15 +16,17 @@ namespace Gameplay
         [SerializeField]
         private GameObject _transportPoolObjectID;
         [SerializeField]
-        private ActorParty _actorParty = new ActorParty(partyLimit: 3);
+        private ActorParty _actorParty = new ActorParty();
         [SerializeField]
         private DungeonDefinition _dungeonDefinition;
 
         private BuildingBehavior _mainBuild;
         private CarBehavior _carInMission;
         private Billboard _billboard;
+        private byte _progress = 0;
 
         public ActorParty GetActorParty => _actorParty;
+        public byte Progress => _progress;
 
         private void Awake()
         {
@@ -59,7 +61,7 @@ namespace Gameplay
 
         public void SendOnMission(ActorParty actorParty)
         {
-            _actorParty = actorParty;
+            _actorParty = actorParty.Clone();
             var car = Pool.Instance.Get(_transportPoolObjectID);
             if (car.TryGetComponent(out _carInMission))
             {
@@ -69,6 +71,7 @@ namespace Gameplay
                 dungeonEvents.OnQuestStarting(dungeonBehavior: this);
                 dungeonEvents.CarTaskComplete += OnCarTaskComplete;
             }
+            _progress = 1;
         }
 
         private void OnCarTaskComplete(CarBehavior carBehavior, Transform destination)
@@ -109,6 +112,8 @@ namespace Gameplay
         {
             int partyGS = _actorParty.GetPartyGS();
             CalculateMissionResult(partyGS);
+            _actorParty.RemoveAllActors();
+            _progress = 0;
         }
 
         private void CalculateMissionResult(int partyGS)
