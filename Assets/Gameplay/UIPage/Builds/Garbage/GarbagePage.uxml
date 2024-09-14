@@ -1,0 +1,68 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement picking-mode="Ignore" name="VisualElement" style="flex-grow: 1; flex-direction: column; flex-shrink: 1; width: 100%; height: 100%; justify-content: center; align-items: center; align-self: center; display: flex; visibility: visible; overflow: visible;">
+        <ui:VisualElement name="wind" picking-mode="Ignore" style="flex-grow: 0; display: flex; visibility: visible; overflow: visible; width: 700px; position: relative; justify-content: flex-start; align-items: stretch; height: 700px;">
+            <ui:VisualElement name="body" picking-mode="Ignore" style="flex-grow: 0; width: 700px; justify-content: flex-start; background-color: rgb(100, 97, 100); border-bottom-left-radius: 32px; min-height: 600px; height: 100%;">
+                <ui:VisualElement picking-mode="Ignore" style="flex-grow: 0; position: relative; flex-direction: row-reverse; width: 100%;">
+                    <ui:Button text="X" parse-escape-sequences="true" display-tooltip-when-elided="true" name="button_close" style="padding-top: 2px; padding-right: 20px; padding-bottom: 2px; padding-left: 20px; background-color: rgb(255, 0, 0); border-top-left-radius: 0; border-top-right-radius: 10px; border-bottom-right-radius: 0; border-bottom-left-radius: 10px; border-left-color: rgb(120, 0, 0); border-right-color: rgb(120, 0, 0); border-top-color: rgb(120, 0, 0); border-bottom-color: rgb(120, 0, 0); border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; opacity: 1; -unity-font-style: bold; color: rgb(255, 255, 255); flex-grow: 0; height: 26px;" />
+                </ui:VisualElement>
+                <ui:VisualElement picking-mode="Ignore" name="Spacing" style="flex-grow: 0; margin-right: 15px; margin-left: 15px; margin-bottom: 5px; margin-top: 14px;" />
+                <ui:VisualElement style="flex-grow: 1; min-height: 60px; display: flex; align-items: center;">
+                    <ui:VisualElement style="flex-grow: 0; flex-direction: row; align-items: center; align-self: auto; margin-right: 15px; margin-left: 15px;">
+                        <ui:VisualElement style="flex-grow: 0; flex-direction: row; align-items: center;">
+                            <ui:VisualElement style="flex-grow: 0; background-image: url(&quot;project://database/Assets/Images/icon_palette.png?fileID=-160090826&amp;guid=44b66327c30beb14aac3426c7a8a6607&amp;type=3#icon_palette_32&quot;); -unity-background-scale-mode: scale-to-fit; flex-shrink: 1; width: 16px; height: 16px;" />
+                            <ui:Label tabindex="-1" text="231" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(111, 4, 154); font-size: 10px; -unity-font-style: bold; -unity-text-align: middle-left; -unity-text-outline-width: 0.1px; -unity-text-outline-color: rgb(255, 255, 255); text-shadow: 0.5px 0.5px 1px rgb(0, 0, 0);" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="flex-grow: 0; flex-direction: row; align-items: center;">
+                            <ui:VisualElement style="flex-grow: 0; background-image: url(&quot;project://database/Assets/Images/icon_palette.png?fileID=-692772144&amp;guid=44b66327c30beb14aac3426c7a8a6607&amp;type=3#icon_palette_40&quot;); -unity-background-scale-mode: scale-to-fit; flex-shrink: 1; width: 16px; height: 16px;" />
+                            <ui:Label tabindex="-1" text="231" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(207, 0, 3); font-size: 10px; -unity-font-style: bold; -unity-text-align: middle-left; -unity-text-outline-color: rgb(255, 255, 255); -unity-text-outline-width: 0.1px; text-shadow: 0.5px 0.5px 1px rgb(0, 0, 0);" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="flex-grow: 0; flex-direction: row; align-items: center;">
+                            <ui:VisualElement style="flex-grow: 0; background-image: url(&quot;project://database/Assets/Images/icon_palette.png?fileID=2117708370&amp;guid=44b66327c30beb14aac3426c7a8a6607&amp;type=3#icon_palette_34&quot;); -unity-background-scale-mode: scale-to-fit; flex-shrink: 1; width: 16px; height: 16px;" />
+                            <ui:Label tabindex="-1" text="12" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(255, 111, 0); font-size: 10px; -unity-font-style: bold; -unity-text-align: middle-left; -unity-text-outline-color: rgb(255, 255, 255); -unity-text-outline-width: 0.1px; text-shadow: 0.5px 0.5px 1px rgb(0, 0, 0);" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="flex-grow: 0; flex-direction: row; align-items: center;">
+                            <ui:VisualElement style="flex-grow: 0; background-image: url(&quot;project://database/Assets/Images/icon_palette.png?fileID=1894903116&amp;guid=44b66327c30beb14aac3426c7a8a6607&amp;type=3#icon_palette_38&quot;); -unity-background-scale-mode: scale-to-fit; flex-shrink: 1; width: 16px; height: 16px;" />
+                            <ui:Label tabindex="-1" text="321" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(54, 129, 176); font-size: 10px; -unity-font-style: bold; -unity-text-align: middle-left; -unity-text-outline-width: 0.1px; -unity-text-outline-color: rgb(255, 255, 255); text-shadow: 0.5px 0.5px 1px rgb(0, 0, 0);" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement style="flex-grow: 0; flex-direction: row;">
+                        <ui:VisualElement style="flex-grow: 1; margin-right: 5px;">
+                            <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center; justify-content: center; margin-top: 5px; margin-bottom: 5px;">
+                                <ui:Label tabindex="-1" text="Время сноса:" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); font-size: 14px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 0; margin-right: 5px; margin-bottom: 0; margin-left: 0;" />
+                                <ui:Label tabindex="-1" text="2ч 12м 32с" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(212, 144, 0); font-size: 14px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;" />
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                        <ui:VisualElement style="flex-grow: 1;">
+                            <ui:Button text="Снести" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 0; flex-shrink: 1; flex-direction: row; width: 100%; height: 100%;">
+                    <ui:VisualElement style="flex-direction: column; flex-grow: 0; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; flex-basis: auto; flex-shrink: 0; min-width: 220px; margin-left: 20px;">
+                        <ui:VisualElement style="flex-grow: 0; justify-content: flex-start; align-items: center;">
+                            <ui:Label tabindex="-1" text="Обломки корабля" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); -unity-font-style: bold; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; opacity: 1; flex-wrap: nowrap; white-space: nowrap;" />
+                            <ui:VisualElement name="main_image" style="flex-grow: 0; background-image: url(&quot;project://database/Assets/Images/BuildImagesPalette.png?fileID=-1098771508&amp;guid=a484d6e62113de545adc74b45974d346&amp;type=3#BuildImagesPalette_0&quot;); -unity-background-scale-mode: scale-to-fit; width: 256px; height: 256px; border-left-color: rgb(135, 135, 135); border-right-color: rgb(135, 135, 135); border-top-color: rgb(135, 135, 135); border-bottom-color: rgb(135, 135, 135); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; margin-top: 8px;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement style="flex-direction: column; flex-grow: 1; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; flex-basis: auto; flex-shrink: 1; margin-right: 20px; justify-content: space-around;">
+                        <ui:VisualElement style="flex-grow: 1; flex-direction: row; height: 80%; width: 100%;">
+                            <ui:VisualElement style="flex-grow: 0; flex-wrap: nowrap; height: 100%;">
+                                <ui:VisualElement style="flex-grow: 0; height: 20px;" />
+                                <ui:Label tabindex="-1" text="Этот объект мешает строительству. Снесите его для освобождения места для новых строений.&#10;&#10;Старые обломки корабля (ориг. Prelude Shipwreck) — кораблекрушение в игре The Elder Scrolls III: Morrowind.&#10;&#10;Это обломки судна под названием «Вступление», которое застряло между скал крохотного островка побережья Азуры к востоку от Бал Фелла и к западу от Тель Браноры.&#10;&#10;Вступив в дом Хлаалу, по мере продвижения по службе нужно будет отыскать эти обломки и добыть оттуда оружие." parse-escape-sequences="true" display-tooltip-when-elided="true" name="label_description" style="color: rgb(255, 255, 255); flex-wrap: nowrap; flex-direction: column; white-space: normal; flex-grow: 1; flex-shrink: 1; text-overflow: clip; -unity-text-align: upper-left; margin-left: 17px;" />
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="style_border" picking-mode="Ignore" style="flex-grow: 0; position: absolute; visibility: visible; display: flex; overflow: visible; width: 700px; height: 100%; -unity-background-scale-mode: stretch-to-fill; min-height: 600px;">
+                <ui:VisualElement picking-mode="Ignore" style="flex-grow: 0; background-image: url(&quot;project://database/Assets/UI%20Toolkit/%D0%9D%D0%B0%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B8%20UI.png?fileID=729583378&amp;guid=4beb5328af1321b4d8519aa325f171c0&amp;type=3#Наработки UI_6&quot;); -unity-background-scale-mode: scale-and-crop; position: absolute; width: 137px; height: 11px; scale: -1 1; -unity-background-image-tint-color: rgb(100, 97, 100); overflow: visible; top: -10px;" />
+                <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; position: absolute; background-image: url(&quot;project://database/Assets/UI%20Toolkit/%D0%9D%D0%B0%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B8%20UI.png?fileID=-837130312&amp;guid=4beb5328af1321b4d8519aa325f171c0&amp;type=3#Наработки UI_7&quot;); -unity-background-image-tint-color: rgb(255, 121, 0); -unity-slice-bottom: 50; -unity-slice-right: 40; -unity-slice-top: 200; -unity-slice-left: 140; height: 722px; left: -11px; top: -12px; -unity-background-scale-mode: scale-and-crop; visibility: visible; overflow: visible; opacity: 1; align-items: flex-start; justify-content: flex-start; width: 722px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="header" picking-mode="Ignore" style="flex-grow: 1; align-items: center; justify-content: flex-start; align-self: auto; position: absolute; width: 100%; top: -16px; height: 32px;">
+                <ui:VisualElement picking-mode="Ignore" style="flex-grow: 0; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; min-width: 200px; position: relative; background-color: rgb(100, 97, 100); border-left-color: rgb(255, 121, 0); border-right-color: rgb(255, 121, 0); border-top-color: rgb(255, 121, 0); border-bottom-color: rgb(255, 121, 0);">
+                    <ui:Label tabindex="-1" text="Мусор" parse-escape-sequences="true" display-tooltip-when-elided="true" picking-mode="Ignore" style="color: rgb(255, 255, 255); -unity-font-style: bold; font-size: 20px; -unity-text-align: middle-center;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

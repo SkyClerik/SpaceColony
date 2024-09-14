@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; flex-direction: column; justify-content: flex-end; align-items: flex-end;">
+        <ui:VisualElement name="result" picking-mode="Ignore" style="flex-grow: 0; width: 30%; background-color: rgba(0, 70, 176, 0.75); justify-content: center; align-items: flex-end;">
+            <ui:Label tabindex="-1" text="Задание провалено&#10;Транспорт утерян&#10;Отряд не вернулся&#10;Репутация -987&#10;Сколько бы не было информации в этом уведомлении оно будет становиться выше и больше" parse-escape-sequences="true" display-tooltip-when-elided="true" picking-mode="Ignore" style="color: rgb(255, 28, 0); font-size: 27px; -unity-text-align: middle-right; white-space: normal;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

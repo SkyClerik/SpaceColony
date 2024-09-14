@@ -1,18 +1,12 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="ActorClickedTemplate" src="project://database/Assets/Gameplay/UIPage/DungeonPage/ActorClickedTemplate.uxml?fileID=9197481963319205126&amp;guid=9137f45eceeac0b4c89e6abaad3738dc&amp;type=3#ActorClickedTemplate" />
     <Style src="project://database/Assets/UI%20Toolkit/ShopVisualStyle.uss?fileID=7433441132597879392&amp;guid=6e94202e9a104b744a173ffa7f2da36e&amp;type=3#ShopVisualStyle" />
-    <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
+    <ui:VisualElement style="flex-grow: 1; flex-direction: row; margin-top: 150px; margin-right: 150px; margin-bottom: 150px; margin-left: 150px;">
         <ui:VisualElement name="actors_area" picking-mode="Ignore" style="flex-grow: 1; flex-direction: row;">
-            <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1;">
-                <ui:VisualElement name="actor_icon_1" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Plugins/OML/Demo_Tutorial/Images/16x16.png?fileID=2800000&amp;guid=a6e4690f6ca09684ab0cf20e874e8a02&amp;type=3#16x16&quot;); -unity-background-scale-mode: scale-to-fit;" />
-                <ui:Button text="+" parse-escape-sequences="true" display-tooltip-when-elided="true" name="actor_button_1" />
-            </ui:VisualElement>
-            <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1;">
-                <ui:VisualElement name="actor_icon_2" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Plugins/OML/Demo_Tutorial/Images/16x16.png?fileID=2800000&amp;guid=a6e4690f6ca09684ab0cf20e874e8a02&amp;type=3#16x16&quot;); -unity-background-scale-mode: scale-to-fit;" />
-                <ui:Button text="+" parse-escape-sequences="true" display-tooltip-when-elided="true" name="actor_button_2" />
-            </ui:VisualElement>
-            <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1;">
-                <ui:VisualElement name="actor_icon_3" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Plugins/OML/Demo_Tutorial/Images/16x16.png?fileID=2800000&amp;guid=a6e4690f6ca09684ab0cf20e874e8a02&amp;type=3#16x16&quot;); -unity-background-scale-mode: scale-to-fit;" />
-                <ui:Button text="+" parse-escape-sequences="true" display-tooltip-when-elided="true" name="actor_button_3" />
+            <ui:VisualElement name="party_image" style="flex-grow: 1; flex-direction: row; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Character/2DView_Party.renderTexture?fileID=8400000&amp;guid=92556d0a944ec264d906fea946769c31&amp;type=2#2DView_Party&quot;); -unity-background-scale-mode: scale-and-crop; justify-content: space-around; align-items: center;">
+                <ui:Instance template="ActorClickedTemplate" name="ActorClickedTemplate" />
+                <ui:Instance template="ActorClickedTemplate" name="ActorClickedTemplate" />
+                <ui:Instance template="ActorClickedTemplate" name="ActorClickedTemplate" />
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement picking-mode="Ignore" style="flex-grow: 0; justify-content: center; align-items: flex-start;">
@@ -29,7 +23,6 @@
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1;" />
     </ui:VisualElement>
     <ui:VisualElement name="bottom_panel" picking-mode="Ignore" style="flex-grow: 0; align-self: stretch; height: 10%; background-color: rgb(55, 55, 55); border-top-color: rgb(132, 132, 132); border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;" />
 </ui:UXML>

@@ -8,8 +8,11 @@ namespace Gameplay.UI
     {
         private Label _mainWindowTitle;
         private const string _mainWindowTitleName = "main_window_title";
-        private VisualElement _actorsArea;
-        private const string _actorsAreaName = "actors_area";
+        //private VisualElement _actorsArea;
+        //private const string _actorsAreaName = "actors_area";
+
+        private VisualElement _partyImage;
+        private const string _partyImageName = "party_image";
         private Button _buttonGo;
         private const string _buttonGoName = "button_go";
         private Button _closeButton;
@@ -47,12 +50,13 @@ namespace Gameplay.UI
         {
             _mainWindowTitle = rootElement.Q<Label>(_mainWindowTitleName);
 
-            _actorsArea = rootElement.Q(_actorsAreaName);
-            _actorsArea.Clear();
+            //_actorsArea = rootElement.Q(_actorsAreaName);
+            _partyImage = rootElement.Q(_partyImageName);
+            _partyImage.Clear();
 
             _actorClickedTemplate = UserInterfaceShare.Instance.GetActorClickedTemplate;
             for (byte i = 0; i < _actorClickedTemplates.Length; i++)
-                _actorClickedTemplates[i] = new ActorClickedTemplate(i, _actorClickedTemplate, _actorsArea, ClickedTemplateButton);
+                _actorClickedTemplates[i] = new ActorClickedTemplate(i, _actorClickedTemplate, _partyImage, ClickedTemplateButton);
 
             _buttonGo = rootElement.Q<Button>(_buttonGoName);
             _buttonGo.clicked += ClickedButtonGo;
@@ -73,7 +77,8 @@ namespace Gameplay.UI
                 currentActor.Busy = false;
 
             _party.AddActor(ref actorData, index: index);
-            _actorClickedTemplates[index].Icon.style.backgroundImage = new StyleBackground(actorData.Icon);
+            //_actorClickedTemplates[index].Icon.style.backgroundImage = new StyleBackground(actorData.Icon);
+            Debug.Log($"Я запускаю снова окно данжа");
 
             Show();
         }
@@ -125,10 +130,10 @@ namespace Gameplay.UI
         private void Repaint()
         {
             Debug.Log($"Repaint");
-            for (byte i = 0; i < _actorClickedTemplates.Length; i++)
-            {
-                _actorClickedTemplates[i].Icon.style.backgroundImage = null;
-            }
+            //for (byte i = 0; i < _actorClickedTemplates.Length; i++)
+            //{
+            //    _actorClickedTemplates[i].Icon.style.backgroundImage = null;
+            //}
         }
     }
 }
